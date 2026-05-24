@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Marco Studio — Agencia digital boutique. Marketing, e-commerce, desarrollo web y producción de contenido para PyMEs argentinas.">
+  <title>Marco Studio — Tu socio digital estratégico</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="index.html" class="logo">
+        <span class="logo__mark"></span>
+        Marco<em style="font-style: italic; font-weight: 300;">Studio</em>
+      </a>
+
+      <nav class="nav">
+        <ul class="nav__list">
+          <li><a href="index.html" class="nav__link is-active">Inicio</a></li>
+          <li class="nav__dropdown">
+            <button class="nav__dropdown-trigger">
+              Servicios
+              <svg viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="nav__dropdown-menu">
+              <a href="pages/marketing.html" class="nav__dropdown-link">
+                <strong>Marketing Digital</strong>
+                <small>Estrategia, contenidos y ads</small>
+              </a>
+              <a href="pages/ecommerce.html" class="nav__dropdown-link">
+                <strong>E-commerce</strong>
+                <small>Tiendas online que convierten</small>
+              </a>
+              <a href="pages/desarrollo.html" class="nav__dropdown-link">
+                <strong>Desarrollo Web</strong>
+                <small>Landings y webs institucionales</small>
+              </a>
+              <a href="pages/produccion.html" class="nav__dropdown-link">
+                <strong>Producción de Contenido</strong>
+                <small>Foto y video profesional</small>
+              </a>
+            </div>
+          </li>
+          <li><a href="pages/servicios.html" class="nav__link">Servicios</a></li>
+          <li><a href="pages/nosotros.html" class="nav__link">Nosotros</a></li>
+          <li><a href="pages/contacto.html" class="nav__link">Contacto</a></li>
+        </ul>
+        <a href="pages/contacto.html" class="btn-header">Agendá una llamada →</a>
+      </nav>
+
+      <button class="hamburger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu">
+    <ul class="mobile-menu__list">
+      <li><a href="index.html" class="mobile-menu__link">Inicio</a></li>
+      <li>
+        <span class="mobile-menu__link">Servicios</span>
+        <div class="mobile-menu__submenu">
+          <a href="pages/marketing.html">Marketing Digital</a>
+          <a href="pages/ecommerce.html">E-commerce</a>
+          <a href="pages/desarrollo.html">Desarrollo Web</a>
+          <a href="pages/produccion.html">Producción de Contenido</a>
+        </div>
+      </li>
+      <li><a href="pages/nosotros.html" class="mobile-menu__link">Nosotros</a></li>
+      <li><a href="pages/contacto.html" class="mobile-menu__link">Contacto</a></li>
+      <li style="margin-top: 2rem;">
+        <a href="pages/contacto.html" class="btn btn--primary">Agendá una llamada →</a>
+      </li>
+    </ul>
+  </div>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <span class="eyebrow reveal">Agencia digital boutique · Argentina</span>
+          <h1 class="display hero__title reveal" style="transition-delay: 0.1s;">
+            Tu socio digital,
+            <span class="display-italic text-accent">no un proveedor más.</span>
+          </h1>
+          <p class="hero__subtitle reveal" style="transition-delay: 0.2s;">
+            Marketing, e-commerce, desarrollo web y producción de contenido bajo un mismo equipo. Atención directa, precio justo y resultados medibles.
+          </p>
+          <div class="hero__ctas reveal" style="transition-delay: 0.3s;">
+            <a href="pages/contacto.html" class="btn btn--primary">
+              Agendá una llamada
+              <svg class="btn__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8h10m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <a href="pages/servicios.html" class="btn btn--secondary">Ver servicios</a>
+          </div>
+        </div>
+
+        <div class="hero__visual reveal" style="transition-delay: 0.4s;">
+          <div class="hero__frame">
+            <div class="hero__frame-inner">
+              <div class="hero__corner hero__corner--tl"></div>
+              <div class="hero__corner hero__corner--tr"></div>
+              <div class="hero__corner hero__corner--bl"></div>
+              <div class="hero__corner hero__corner--br"></div>
+              <div class="hero__placeholder">
+                <span class="eyebrow">Imagen / video del equipo</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__marquee reveal" style="transition-delay: 0.5s;">
+        <div class="hero__marquee-track">
+          <span>Marketing Digital</span>
+          <span>·</span>
+          <span>E-commerce</span>
+          <span>·</span>
+          <span>Desarrollo Web</span>
+          <span>·</span>
+          <span>Producción de Contenido</span>
+          <span>·</span>
+          <span>Marketing Digital</span>
+          <span>·</span>
+          <span>E-commerce</span>
+          <span>·</span>
+          <span>Desarrollo Web</span>
+          <span>·</span>
+          <span>Producción de Contenido</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICIOS GENERAL -->
+    <section class="services">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-header__text">
+            <span class="eyebrow">01 — Servicios</span>
+            <h2 class="display">Lo que <span class="display-italic">hacemos</span>.</h2>
+            <p class="section-header__sub">Cuatro áreas que se combinan según lo que tu negocio necesite.</p>
+          </div>
+        </div>
+
+        <div class="services-grid">
+          <a href="pages/marketing.html" class="service-card reveal">
+            <div class="service-card__num">01</div>
+            <h3 class="service-card__title">Marketing<br>Digital</h3>
+            <p class="service-card__desc">Estrategia, contenidos, ads y email marketing que generan resultados medibles.</p>
+            <div class="service-card__modules">
+              <span>Starter</span>
+              <span>Growth</span>
+            </div>
+            <span class="service-card__link">
+              Conocé más
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </a>
+
+          <a href="pages/ecommerce.html" class="service-card reveal" style="transition-delay: 0.1s;">
+            <div class="service-card__num">02</div>
+            <h3 class="service-card__title">E-<br>commerce</h3>
+            <p class="service-card__desc">Catálogos, Tiendanube, Shopify y WooCommerce. Tiendas online que convierten.</p>
+            <div class="service-card__modules">
+              <span>Catálogo</span>
+              <span>Tiendanube</span>
+              <span>WooCommerce</span>
+            </div>
+            <span class="service-card__link">
+              Conocé más
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </a>
+
+          <a href="pages/desarrollo.html" class="service-card reveal" style="transition-delay: 0.2s;">
+            <div class="service-card__num">03</div>
+            <h3 class="service-card__title">Desarrollo<br>Web</h3>
+            <p class="service-card__desc">Landings de alta conversión y webs institucionales con identidad propia.</p>
+            <div class="service-card__modules">
+              <span>Landing</span>
+              <span>Web Institucional</span>
+            </div>
+            <span class="service-card__link">
+              Conocé más
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </a>
+
+          <a href="pages/produccion.html" class="service-card reveal" style="transition-delay: 0.3s;">
+            <div class="service-card__num">04</div>
+            <h3 class="service-card__title">Producción<br>de Contenido</h3>
+            <p class="service-card__desc">Sesiones, contenido mensual y cobertura de eventos con identidad de marca.</p>
+            <div class="service-card__modules">
+              <span>Sesión</span>
+              <span>Mensual</span>
+              <span>Evento</span>
+            </div>
+            <span class="service-card__link">
+              Conocé más
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CÓMO TRABAJAMOS -->
+    <section class="process">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-header__text">
+            <span class="eyebrow">02 — Proceso</span>
+            <h2 class="display">Cómo <span class="display-italic">trabajamos</span>.</h2>
+            <p class="section-header__sub">Un proceso simple, claro y sin sorpresas.</p>
+          </div>
+        </div>
+
+        <div class="process-grid">
+          <div class="process-step reveal">
+            <div class="process-step__num">01</div>
+            <h3 class="process-step__title">Diagnóstico</h3>
+            <p class="process-step__desc">Llamada consultiva inicial sin cargo para entender tu negocio, objetivos y necesidades.</p>
+          </div>
+
+          <div class="process-step reveal" style="transition-delay: 0.1s;">
+            <div class="process-step__num">02</div>
+            <h3 class="process-step__title">Propuesta</h3>
+            <p class="process-step__desc">Armamos una propuesta a medida combinando los módulos que mejor se adapten.</p>
+          </div>
+
+          <div class="process-step reveal" style="transition-delay: 0.2s;">
+            <div class="process-step__num">03</div>
+            <h3 class="process-step__title">Ejecución</h3>
+            <p class="process-step__desc">Trabajamos con cronograma claro, comunicación directa y revisiones incluidas.</p>
+          </div>
+
+          <div class="process-step reveal" style="transition-delay: 0.3s;">
+            <div class="process-step__num">04</div>
+            <h3 class="process-step__title">Resultados</h3>
+            <p class="process-step__desc">Reportes claros, mejoras continuas y acompañamiento real, no automatizado.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- POR QUÉ ELEGIRNOS -->
+    <section class="why">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-header__text">
+            <span class="eyebrow">03 — Diferenciales</span>
+            <h2 class="display">Por qué <span class="display-italic">elegirnos</span>.</h2>
+          </div>
+        </div>
+
+        <div class="why-grid">
+          <div class="why-card reveal">
+            <div class="why-card__icon">→</div>
+            <h3 class="why-card__title">Atención directa</h3>
+            <p class="why-card__desc">Hablás directo con quien ejecuta tu proyecto. Sin pasar por ejecutivos de cuenta ni intermediarios.</p>
+          </div>
+
+          <div class="why-card reveal" style="transition-delay: 0.1s;">
+            <div class="why-card__icon">$</div>
+            <h3 class="why-card__title">Precio justo</h3>
+            <p class="why-card__desc">Tarifas honestas pensadas para PyMEs. Sin letra chica, sin cargos ocultos.</p>
+          </div>
+
+          <div class="why-card reveal" style="transition-delay: 0.2s;">
+            <div class="why-card__icon">◇</div>
+            <h3 class="why-card__title">Estrategia integral</h3>
+            <p class="why-card__desc">Marketing, e-commerce, web y contenido bajo un mismo equipo. Coherencia total.</p>
+          </div>
+
+          <div class="why-card reveal" style="transition-delay: 0.3s;">
+            <div class="why-card__icon">⚡</div>
+            <h3 class="why-card__title">Entrega ágil</h3>
+            <p class="why-card__desc">Equipo chico, decisiones rápidas. Sin burocracia, sin tiempos muertos.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRABAJOS DESTACADOS -->
+    <section class="works">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-header__text">
+            <span class="eyebrow">04 — Trabajos</span>
+            <h2 class="display">Algunos trabajos <span class="display-italic">seleccionados</span>.</h2>
+          </div>
+        </div>
+
+        <div class="works-grid">
+          <article class="work-card work-card--large reveal">
+            <div class="work-card__image">
+              <span class="eyebrow">Cobertura de evento</span>
+            </div>
+            <div class="work-card__info">
+              <span class="work-card__tag">Producción · Evento</span>
+              <h3 class="work-card__title">Cumpleaños en Estadio River Plate</h3>
+              <div class="work-card__modules">
+                <span>Cobertura de Evento</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card reveal" style="transition-delay: 0.1s;">
+            <div class="work-card__image">
+              <span class="eyebrow">Local gastronómico</span>
+            </div>
+            <div class="work-card__info">
+              <span class="work-card__tag">Producción · Mensual</span>
+              <h3 class="work-card__title">Contenido para local</h3>
+              <div class="work-card__modules">
+                <span>Contenido Mensual</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card reveal" style="transition-delay: 0.2s;">
+            <div class="work-card__image">
+              <span class="eyebrow">Próximamente</span>
+            </div>
+            <div class="work-card__info">
+              <span class="work-card__tag">Tu marca acá</span>
+              <h3 class="work-card__title">¿Querés ser el próximo?</h3>
+              <div class="work-card__modules">
+                <span>Sumate</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODELOS DE COBRO -->
+    <section class="pricing">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-header__text">
+            <span class="eyebrow">05 — Modalidades</span>
+            <h2 class="display">Elegí cómo querés <span class="display-italic">trabajar</span>.</h2>
+            <p class="section-header__sub">Te asesoramos para que elijas el modelo que mejor se adapta a tu negocio.</p>
+          </div>
+        </div>
+
+        <div class="pricing-grid">
+          <div class="pricing-card reveal">
+            <div class="pricing-card__icon">◯</div>
+            <h3 class="pricing-card__title">Proyecto puntual</h3>
+            <p class="pricing-card__desc">Pago 50% al inicio + 50% a la entrega. Ideal para desarrollos web, tiendas y sesiones específicas.</p>
+            <div class="pricing-card__ideal">
+              <span class="eyebrow">Ideal para</span>
+              <p>Landings · Webs · Tiendas · Sesiones</p>
+            </div>
+          </div>
+
+          <div class="pricing-card pricing-card--featured reveal" style="transition-delay: 0.1s;">
+            <span class="pricing-card__badge">Recomendado</span>
+            <div class="pricing-card__icon">◐</div>
+            <h3 class="pricing-card__title">Fee mensual</h3>
+            <p class="pricing-card__desc">Compromiso mínimo de 3 meses para poder medir resultados reales. Ideal para servicios continuos.</p>
+            <div class="pricing-card__ideal">
+              <span class="eyebrow">Ideal para</span>
+              <p>Gestión de redes · Ads · Contenido mensual</p>
+            </div>
+          </div>
+
+          <div class="pricing-card reveal" style="transition-delay: 0.2s;">
+            <div class="pricing-card__icon">●</div>
+            <h3 class="pricing-card__title">Setup + Mensualidad</h3>
+            <p class="pricing-card__desc">La opción mixta: inversión inicial para arrancar + cuota mensual de gestión y mantenimiento.</p>
+            <div class="pricing-card__ideal">
+              <span class="eyebrow">Ideal para</span>
+              <p>Tiendas online · Marketing integral</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta-final">
+      <div class="container">
+        <div class="cta-final__inner reveal">
+          <div class="cta-final__content">
+            <span class="eyebrow" style="color: var(--color-accent);">Conversemos</span>
+            <h2 class="display cta-final__title">
+              ¿Listos para llevar tu marca <span class="display-italic">al siguiente nivel</span>?
+            </h2>
+            <p class="cta-final__sub">Llamada consultiva de 30 minutos, sin cargo y sin compromiso. Te asesoramos sin que tengas que firmar nada.</p>
+            <div class="cta-final__ctas">
+              <a href="https://wa.me/541100000000" class="btn btn--accent" target="_blank">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11.94 11.94 0 0012.04 0C5.46 0 .1 5.36.1 11.94c0 2.1.55 4.16 1.6 5.97L0 24l6.27-1.65a11.91 11.91 0 005.77 1.47h.01c6.58 0 11.94-5.36 11.94-11.94 0-3.19-1.24-6.19-3.49-8.38zm-8.46 18.36h-.01a9.9 9.9 0 01-5.05-1.38l-.36-.22-3.74.98 1-3.65-.24-.37a9.92 9.92 0 01-1.52-5.28c0-5.47 4.46-9.93 9.93-9.93 2.65 0 5.14 1.03 7.02 2.91a9.86 9.86 0 012.91 7.02c0 5.48-4.46 9.92-9.94 9.92zm5.45-7.43c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.21-.24-.58-.49-.5-.67-.51-.17-.01-.37-.01-.57-.01-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.48 0 1.46 1.07 2.88 1.21 3.08.15.2 2.1 3.21 5.09 4.5.71.31 1.26.49 1.7.63.71.23 1.36.19 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35z"/></svg>
+                Escribinos por WhatsApp
+              </a>
+              <a href="pages/contacto.html" class="btn btn--secondary">
+                Enviá un mail
+              </a>
+            </div>
+          </div>
+
+          <form class="cta-final__form contact-form">
+            <span class="eyebrow" style="color: var(--color-accent); margin-bottom: 1rem; display: block;">O contanos brevemente</span>
+            <div class="form-group">
+              <input type="text" placeholder="Tu nombre" required>
+            </div>
+            <div class="form-group">
+              <input type="email" placeholder="Tu email" required>
+            </div>
+            <div class="form-group">
+              <textarea placeholder="¿En qué podemos ayudarte?" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn--accent" style="width: 100%; justify-content: center;">
+              Enviar consulta
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8h10m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand">
+          <a href="index.html" class="logo">
+            <span class="logo__mark"></span>
+            Marco<em style="font-style: italic; font-weight: 300;">Studio</em>
+          </a>
+          <p>Tu socio digital boutique. Estrategia, e-commerce, desarrollo y contenido bajo un mismo equipo.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s0 3.6-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.6 0-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 01-1.38-.9 3.7 3.7 0 01-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s0-3.6.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.4 2.2 8.8 2.2 12 2.2zM12 0C8.74 0 8.33 0 7.05.07 5.78.13 4.9.33 4.14.63a5.86 5.86 0 00-2.13 1.38A5.86 5.86 0 00.63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.73 1.46 1.38 2.13a5.86 5.86 0 002.13 1.38c.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.86 5.86 0 002.13-1.38 5.86 5.86 0 001.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.86 5.86 0 00-1.38-2.13A5.86 5.86 0 0019.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 100 12.32 6.16 6.16 0 000-12.32zM12 16a4 4 0 110-8 4 4 0 010 8zm6.4-11.85a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/></svg></a>
+            <a href="#" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.56c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.13 1.45-2.13 2.94v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.8 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a>
+            <a href="#" aria-label="TikTok"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005.8 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1.84-.1z"/></svg></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Servicios</h4>
+          <ul>
+            <li><a href="pages/marketing.html">Marketing Digital</a></li>
+            <li><a href="pages/ecommerce.html">E-commerce</a></li>
+            <li><a href="pages/desarrollo.html">Desarrollo Web</a></li>
+            <li><a href="pages/produccion.html">Producción de Contenido</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Empresa</h4>
+          <ul>
+            <li><a href="pages/nosotros.html">Nosotros</a></li>
+            <li><a href="pages/servicios.html">Servicios</a></li>
+            <li><a href="pages/contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <ul>
+            <li><a href="mailto:hola@marcostudio.com.ar">hola@marcostudio.com.ar</a></li>
+            <li><a href="https://wa.me/541100000000">+54 11 0000-0000</a></li>
+            <li>Buenos Aires, Argentina</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> Marco Studio. Todos los derechos reservados.</span>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="#">Política de Privacidad</a>
+          <a href="#">Términos</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/541100000000" class="wa-float" target="_blank" aria-label="WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
+      <path d="M20.5 3.5A11.94 11.94 0 0012.04 0C5.46 0 .1 5.36.1 11.94c0 2.1.55 4.16 1.6 5.97L0 24l6.27-1.65a11.91 11.91 0 005.77 1.47h.01c6.58 0 11.94-5.36 11.94-11.94 0-3.19-1.24-6.19-3.49-8.38zm-8.46 18.36h-.01a9.9 9.9 0 01-5.05-1.38l-.36-.22-3.74.98 1-3.65-.24-.37a9.92 9.92 0 01-1.52-5.28c0-5.47 4.46-9.93 9.93-9.93 2.65 0 5.14 1.03 7.02 2.91a9.86 9.86 0 012.91 7.02c0 5.48-4.46 9.92-9.94 9.92zm5.45-7.43c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.21-.24-.58-.49-.5-.67-.51-.17-.01-.37-.01-.57-.01-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.48 0 1.46 1.07 2.88 1.21 3.08.15.2 2.1 3.21 5.09 4.5.71.31 1.26.49 1.7.63.71.23 1.36.19 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35z"/>
+    </svg>
+  </a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

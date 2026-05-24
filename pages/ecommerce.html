@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-commerce — Marco Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="../index.html" class="logo">
+        <span class="logo__mark"></span>
+        Marco<em style="font-style: italic; font-weight: 300;">Studio</em>
+      </a>
+      <nav class="nav">
+        <ul class="nav__list">
+          <li><a href="../index.html" class="nav__link">Inicio</a></li>
+          <li class="nav__dropdown">
+            <button class="nav__dropdown-trigger">Servicios<svg viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <div class="nav__dropdown-menu">
+              <a href="marketing.html" class="nav__dropdown-link"><strong>Marketing Digital</strong><small>Estrategia, contenidos y ads</small></a>
+              <a href="ecommerce.html" class="nav__dropdown-link"><strong>E-commerce</strong><small>Tiendas online que convierten</small></a>
+              <a href="desarrollo.html" class="nav__dropdown-link"><strong>Desarrollo Web</strong><small>Landings y webs institucionales</small></a>
+              <a href="produccion.html" class="nav__dropdown-link"><strong>Producción de Contenido</strong><small>Foto y video profesional</small></a>
+            </div>
+          </li>
+          <li><a href="servicios.html" class="nav__link">Servicios</a></li>
+          <li><a href="nosotros.html" class="nav__link">Nosotros</a></li>
+          <li><a href="contacto.html" class="nav__link">Contacto</a></li>
+        </ul>
+        <a href="contacto.html" class="btn-header">Agendá una llamada →</a>
+      </nav>
+      <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <div class="mobile-menu">
+    <ul class="mobile-menu__list">
+      <li><a href="../index.html" class="mobile-menu__link">Inicio</a></li>
+      <li>
+        <span class="mobile-menu__link">Servicios</span>
+        <div class="mobile-menu__submenu">
+          <a href="marketing.html">Marketing Digital</a>
+          <a href="ecommerce.html">E-commerce</a>
+          <a href="desarrollo.html">Desarrollo Web</a>
+          <a href="produccion.html">Producción de Contenido</a>
+        </div>
+      </li>
+      <li><a href="nosotros.html" class="mobile-menu__link">Nosotros</a></li>
+      <li><a href="contacto.html" class="mobile-menu__link">Contacto</a></li>
+      <li style="margin-top: 2rem;"><a href="contacto.html" class="btn btn--primary">Agendá una llamada →</a></li>
+    </ul>
+  </div>
+
+  <main>
+
+    <section class="service-hero">
+      <div class="container">
+        <nav class="breadcrumb reveal">
+          <a href="../index.html">Inicio</a>
+          <span class="breadcrumb__sep">/</span>
+          <a href="servicios.html">Servicios</a>
+          <span class="breadcrumb__sep">/</span>
+          <span>E-commerce</span>
+        </nav>
+        <div class="service-hero__inner">
+          <div class="reveal">
+            <span class="eyebrow">Servicio 02</span>
+            <h1 class="display page-hero__title">E-<span class="display-italic text-accent">commerce</span>.</h1>
+            <p class="page-hero__subtitle">
+              Desde catálogos profesionales con WhatsApp hasta tiendas completas en Tiendanube, Shopify o WooCommerce. Te ayudamos a elegir la plataforma correcta para tu negocio y la implementamos de punta a punta.
+            </p>
+            <div style="display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap;">
+              <a href="contacto.html" class="btn btn--primary">Quiero vender online →</a>
+              <a href="#modulos" class="btn btn--secondary">Ver paquetes</a>
+            </div>
+          </div>
+          <div class="service-hero__visual reveal" style="transition-delay: 0.2s;">
+            <div class="service-hero__placeholder"><span class="eyebrow">Imagen / video</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-header__text">
+            <span class="eyebrow">Problemas que escuchamos</span>
+            <h2 class="display">Qué <span class="display-italic">resolvemos</span>.</h2>
+          </div>
+        </div>
+        <div class="problems-grid">
+          <div class="problem-card reveal">
+            <p class="problem-card__quote">"Quiero vender online pero no sé por dónde empezar."</p>
+            <p class="problem-card__answer">Te asesoramos para elegir la plataforma correcta y nos hacemos cargo de toda la implementación.</p>
+          </div>
+          <div class="problem-card reveal" style="transition-delay: 0.1s;">
+            <p class="problem-card__quote">"Mi tienda actual no convierte."</p>
+            <p class="problem-card__answer">Auditamos checkout, fichas de producto y velocidad. Optimizamos para que más visitas terminen en venta.</p>
+          </div>
+          <div class="problem-card reveal" style="transition-delay: 0.2s;">
+            <p class="problem-card__quote">"No quiero pagar comisiones por venta."</p>
+            <p class="problem-card__answer">Te armamos tu propia tienda en WooCommerce: 100% tuya, sin comisiones de plataforma.</p>
+          </div>
+          <div class="problem-card reveal" style="transition-delay: 0.3s;">
+            <p class="problem-card__quote">"Necesito integrar pagos y envíos."</p>
+            <p class="problem-card__answer">Mercado Pago, MODO, Andreani, OCA, Mercado Envíos. Configuramos todo y lo dejamos funcionando.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="methodology">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-header__text">
+            <span class="eyebrow">Cómo lo hacemos</span>
+            <h2 class="display">Nuestra <span class="display-italic">metodología</span>.</h2>
+          </div>
+        </div>
+        <div class="method-grid">
+          <div class="method-step reveal">
+            <span class="method-step__num">01 / Análisis</span>
+            <h3 class="method-step__title">Producto y mercado</h3>
+            <p class="method-step__desc">Estudiamos tu catálogo, volumen, logística y tipo de cliente para definir la solución correcta.</p>
+          </div>
+          <div class="method-step reveal" style="transition-delay: 0.1s;">
+            <span class="method-step__num">02 / Elección</span>
+            <h3 class="method-step__title">Plataforma adecuada</h3>
+            <p class="method-step__desc">No vendemos la misma solución a todos. Recomendamos la plataforma que mejor se adapta a tu negocio.</p>
+          </div>
+          <div class="method-step reveal" style="transition-delay: 0.2s;">
+            <span class="method-step__num">03 / Setup</span>
+            <h3 class="method-step__title">Implementación técnica</h3>
+            <p class="method-step__desc">Carga de productos, configuración de pagos y envíos, integraciones, diseño a medida.</p>
+          </div>
+          <div class="method-step reveal" style="transition-delay: 0.3s;">
+            <span class="method-step__num">04 / Entrega</span>
+            <h3 class="method-step__title">Capacitación + soporte</h3>
+            <p class="method-step__desc">Te enseñamos a gestionar tu tienda y te acompañamos los primeros meses.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="modulos">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-header__text">
+            <span class="eyebrow">Paquetes</span>
+            <h2 class="display">Tres formas de <span class="display-italic">vender online</span>.</h2>
+            <p class="section-header__sub">Desde lo más simple hasta lo más profesional. Te ayudamos a elegir la que mejor se adapte.</p>
+          </div>
+        </div>
+
+        <div class="modules-grid modules-grid--3">
+
+          <div class="module-card reveal">
+            <span class="module-card__badge">M4 — Catálogo</span>
+            <h3 class="module-card__title">Catálogo + WhatsApp</h3>
+            <p class="module-card__bajada">Web con catálogo profesional. El cliente arma su pedido y te llega por WhatsApp.</p>
+            <ul class="module-card__features">
+              <li>Web catálogo (hasta 50 productos)</li>
+              <li>Filtros, buscador, fichas de producto</li>
+              <li>Carrito de consulta que arma pedido en WhatsApp</li>
+              <li>Integración con Meta Catalog (Instagram Shopping)</li>
+              <li>Panel de autogestión (WordPress)</li>
+              <li>Capacitación incluida</li>
+              <li>Hosting + dominio primer año</li>
+            </ul>
+            <div class="module-card__meta">
+              <span class="module-card__meta-label">Plazo</span>
+              <span class="module-card__meta-value">3-4 semanas</span>
+            </div>
+            <a href="contacto.html?modulo=ecommerce-catalogo" class="btn btn--primary" style="width: 100%; justify-content: center;">Lo quiero →</a>
+          </div>
+
+          <div class="module-card reveal" style="transition-delay: 0.1s;">
+            <span class="module-card__badge">M5 — Tiendanube</span>
+            <h3 class="module-card__title">Tiendanube / Shopify</h3>
+            <p class="module-card__bajada">Tienda online completa con checkout automatizado y pagos integrados.</p>
+            <ul class="module-card__features">
+              <li>Setup completo en Tiendanube o Shopify</li>
+              <li>Hasta 200 productos cargados</li>
+              <li>Mercado Pago + MODO + Transferencia</li>
+              <li>Mercado Envíos, Andreani, OCA</li>
+              <li>Theme personalizado a la marca</li>
+              <li>Conexión con Meta Catalog</li>
+              <li>Capacitación + soporte primer mes</li>
+            </ul>
+            <div class="module-card__meta">
+              <span class="module-card__meta-label">Plazo</span>
+              <span class="module-card__meta-value">4-5 semanas</span>
+            </div>
+            <a href="contacto.html?modulo=ecommerce-tiendanube" class="btn btn--primary" style="width: 100%; justify-content: center;">Lo quiero →</a>
+          </div>
+
+          <div class="module-card reveal" style="transition-delay: 0.2s;">
+            <span class="module-card__badge">M6 — WooCommerce</span>
+            <h3 class="module-card__title">WooCommerce</h3>
+            <p class="module-card__bajada">Tienda 100% propia, sin comisiones por venta. Máximo control y personalización.</p>
+            <ul class="module-card__features">
+              <li>Desarrollo en WordPress + WooCommerce</li>
+              <li>Integraciones custom (AFIP via TusFacturas)</li>
+              <li>Productos ilimitados con variantes</li>
+              <li>Optimización de conversión y velocidad</li>
+              <li>Hosting profesional + dominio primer año</li>
+              <li>Soporte técnico primeros 2 meses</li>
+              <li>Sin comisiones por venta</li>
+            </ul>
+            <div class="module-card__meta">
+              <span class="module-card__meta-label">Plazo</span>
+              <span class="module-card__meta-value">6-8 semanas</span>
+            </div>
+            <a href="contacto.html?modulo=ecommerce-woo" class="btn btn--primary" style="width: 100%; justify-content: center;">Lo quiero →</a>
+          </div>
+
+        </div>
+
+        <div class="a-medida reveal">
+          <span class="eyebrow" style="color: var(--color-accent);">Operación más compleja</span>
+          <h3>Propuesta a medida.</h3>
+          <p>¿Tenés varias tiendas, integración con ERP, B2B con precios por cliente, o necesitás algo que no encaja en estos paquetes? Hablemos.</p>
+          <a href="contacto.html" class="btn btn--accent">Llamada consultiva →</a>
+        </div>
+      </div>
+    </section>
+
+    <section style="background: var(--color-bg-alt);">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-header__text">
+            <span class="eyebrow">Comparativa</span>
+            <h2 class="display">¿Cuál te <span class="display-italic">conviene</span>?</h2>
+            <p class="section-header__sub">Una comparación honesta para que decidas con criterio.</p>
+          </div>
+        </div>
+
+        <div class="reveal" style="overflow-x: auto;">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Característica</th>
+                <th>M4 · Catálogo</th>
+                <th>M5 · Tiendanube</th>
+                <th>M6 · WooCommerce</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Inversión inicial</td>
+                <td>Baja</td>
+                <td>Media</td>
+                <td>Alta</td>
+              </tr>
+              <tr>
+                <td>Costo mensual</td>
+                <td>Solo hosting</td>
+                <td>Plan Tiendanube (USD)</td>
+                <td>Solo hosting</td>
+              </tr>
+              <tr>
+                <td>Comisiones por venta</td>
+                <td>—</td>
+                <td>Sí (de la plataforma)</td>
+                <td>No</td>
+              </tr>
+              <tr>
+                <td>Productos máximos</td>
+                <td>50</td>
+                <td>200</td>
+                <td>Ilimitados</td>
+              </tr>
+              <tr>
+                <td>Checkout automático</td>
+                <td>✗ (WhatsApp)</td>
+                <td>✓</td>
+                <td>✓</td>
+              </tr>
+              <tr>
+                <td>Tiempo de entrega</td>
+                <td>3-4 semanas</td>
+                <td>4-5 semanas</td>
+                <td>6-8 semanas</td>
+              </tr>
+              <tr>
+                <td>Ideal para</td>
+                <td>Catálogos chicos · venta consultiva</td>
+                <td>PyMEs que escalan rápido</td>
+                <td>Negocios que quieren control total</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-header__text">
+            <span class="eyebrow">Preguntas frecuentes</span>
+            <h2 class="display">Lo que <span class="display-italic">solés preguntar</span>.</h2>
+          </div>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item reveal">
+            <button class="faq-item__trigger">¿Cuál plataforma me conviene?<span class="faq-item__icon">+</span></button>
+            <div class="faq-item__content">
+              <p>Depende del catálogo, volumen, presupuesto y plan a futuro. Si recién arrancás con productos consultivos (gastronomía, servicios, productos a medida), el catálogo con WhatsApp es ideal. Si querés escalar rápido sin complicaciones técnicas, Tiendanube. Si querés control total y no pagar comisiones, WooCommerce. En la llamada consultiva te recomendamos honestamente.</p>
+            </div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-item__trigger">¿Qué pasa con AFIP y la facturación?<span class="faq-item__icon">+</span></button>
+            <div class="faq-item__content">
+              <p>En Tiendanube y Shopify la facturación se integra con apps externas como TusFacturas, Bill.com.ar o similar. En WooCommerce integramos directo con AFIP via TusFacturas API. En el módulo Catálogo + WhatsApp, vos facturás manualmente al cerrar cada venta.</p>
+            </div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-item__trigger">¿Cómo se manejan los envíos?<span class="faq-item__icon">+</span></button>
+            <div class="faq-item__content">
+              <p>Configuramos integración directa con Mercado Envíos, Andreani y OCA. Las etiquetas se generan automáticamente y los costos se calculan al momento del checkout según el código postal del comprador.</p>
+            </div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-item__trigger">¿Puedo migrar después de Tiendanube a WooCommerce?<span class="faq-item__icon">+</span></button>
+            <div class="faq-item__content">
+              <p>Sí, es una migración común. Cuando una tienda crece y las comisiones de Tiendanube empiezan a pesar, muchos clientes migran a WooCommerce. Lo hacemos con un proceso de migración cuidado para no perder SEO ni clientes existentes.</p>
+            </div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-item__trigger">¿Qué incluye el soporte post-entrega?<span class="faq-item__icon">+</span></button>
+            <div class="faq-item__content">
+              <p>El primer mes (M5) o los primeros 2 meses (M6) incluyen soporte técnico para resolver dudas, ajustes menores y bugs. Después podés sumar un plan de mantenimiento mensual o trabajar a demanda.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-final">
+      <div class="container">
+        <div class="cta-final__inner reveal" style="grid-template-columns: 1fr;">
+          <div class="cta-final__content text-center" style="max-width: 700px; margin: 0 auto;">
+            <span class="eyebrow" style="color: var(--color-accent);">Conversemos</span>
+            <h2 class="display cta-final__title">¿Listos para <span class="display-italic">vender online</span>?</h2>
+            <p class="cta-final__sub" style="margin: 0 auto 2rem;">Llamada consultiva de 30 min, sin cargo. Te decimos honestamente qué plataforma te conviene.</p>
+            <div class="cta-final__ctas" style="justify-content: center;">
+              <a href="contacto.html" class="btn btn--accent">Agendá una llamada</a>
+              <a href="https://wa.me/541100000000" class="btn btn--secondary" style="border-color: rgba(255,255,255,0.3); color: var(--color-bg);" target="_blank">WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand">
+          <a href="../index.html" class="logo">
+            <span class="logo__mark"></span>
+            Marco<em style="font-style: italic; font-weight: 300;">Studio</em>
+          </a>
+          <p>Tu socio digital boutique. Estrategia, e-commerce, desarrollo y contenido bajo un mismo equipo.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s0 3.6-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.6 0-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 01-1.38-.9 3.7 3.7 0 01-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s0-3.6.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.4 2.2 8.8 2.2 12 2.2zM12 0C8.74 0 8.33 0 7.05.07 5.78.13 4.9.33 4.14.63a5.86 5.86 0 00-2.13 1.38A5.86 5.86 0 00.63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.73 1.46 1.38 2.13a5.86 5.86 0 002.13 1.38c.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.86 5.86 0 002.13-1.38 5.86 5.86 0 001.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.86 5.86 0 00-1.38-2.13A5.86 5.86 0 0019.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 100 12.32 6.16 6.16 0 000-12.32zM12 16a4 4 0 110-8 4 4 0 010 8zm6.4-11.85a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/></svg></a>
+            <a href="#" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.56c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.13 1.45-2.13 2.94v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.8 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Servicios</h4>
+          <ul>
+            <li><a href="marketing.html">Marketing Digital</a></li>
+            <li><a href="ecommerce.html">E-commerce</a></li>
+            <li><a href="desarrollo.html">Desarrollo Web</a></li>
+            <li><a href="produccion.html">Producción de Contenido</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Empresa</h4>
+          <ul>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <ul>
+            <li><a href="mailto:hola@marcostudio.com.ar">hola@marcostudio.com.ar</a></li>
+            <li><a href="https://wa.me/541100000000">+54 11 0000-0000</a></li>
+            <li>Buenos Aires, Argentina</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> Marco Studio. Todos los derechos reservados.</span>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="#">Política de Privacidad</a>
+          <a href="#">Términos</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/541100000000" class="wa-float" target="_blank" aria-label="WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M20.5 3.5A11.94 11.94 0 0012.04 0C5.46 0 .1 5.36.1 11.94c0 2.1.55 4.16 1.6 5.97L0 24l6.27-1.65a11.91 11.91 0 005.77 1.47h.01c6.58 0 11.94-5.36 11.94-11.94 0-3.19-1.24-6.19-3.49-8.38zm-8.46 18.36h-.01a9.9 9.9 0 01-5.05-1.38l-.36-.22-3.74.98 1-3.65-.24-.37a9.92 9.92 0 01-1.52-5.28c0-5.47 4.46-9.93 9.93-9.93 2.65 0 5.14 1.03 7.02 2.91a9.86 9.86 0 012.91 7.02c0 5.48-4.46 9.92-9.94 9.92zm5.45-7.43c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.21-.24-.58-.49-.5-.67-.51-.17-.01-.37-.01-.57-.01-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.48 0 1.46 1.07 2.88 1.21 3.08.15.2 2.1 3.21 5.09 4.5.71.31 1.26.49 1.7.63.71.23 1.36.19 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35z"/></svg>
+  </a>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
