@@ -18,8 +18,8 @@
   --color-mauve: #4A4452;
 
   /* Tipografías */
-  --font-display: 'Fraunces', Georgia, serif;
-  --font-body: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'Geist Mono', 'Courier New', monospace;
 
   /* Tamaños tipográficos */
