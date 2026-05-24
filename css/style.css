@@ -5,7 +5,7 @@
 /* ---------- TOKENS ---------- */
 :root {
   /* Colores */
-  --color-bg: #E8DFCD;
+  --color-bg: #FFFFFF;
   --color-bg-alt: #C7C4B7;
   --color-ink: #1A1A1A;
   --color-ink-soft: #2A2A28;
@@ -154,7 +154,7 @@ ol {
   left: 0;
   right: 0;
   z-index: 100;
-  background: rgba(232, 223, 205, 0.85);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--color-line);
@@ -595,7 +595,7 @@ main {
 
 .footer-col a {
   font-size: var(--fs-small);
-  color: rgba(232, 223, 205, 0.7);
+  color: rgba(255, 255, 255, 0.7);
   transition: color var(--transition-fast);
 }
 
@@ -614,7 +614,7 @@ main {
 
 .footer-brand p {
   font-size: var(--fs-small);
-  color: rgba(232, 223, 205, 0.6);
+  color: rgba(255, 255, 255, 0.6);
   max-width: 300px;
   line-height: 1.6;
 }
@@ -631,7 +631,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(232, 223, 205, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: var(--radius-full);
   transition: all var(--transition-fast);
 }
@@ -643,7 +643,7 @@ main {
 
 .footer-bottom {
   padding-top: var(--space-lg);
-  border-top: 1px solid rgba(232, 223, 205, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   justify-content: space-between;
   align-items: center;
