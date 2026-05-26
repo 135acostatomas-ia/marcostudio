@@ -432,17 +432,18 @@
 }
 
 .cta-final__inner::before {
-  content: 'M';
+  content: '';
   position: absolute;
   bottom: -40px;
-  right: -20px;
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: 25rem;
-  line-height: 1;
-  color: rgba(255, 255, 255, 0.03);
+  right: -40px;
+  width: 480px;
+  height: 480px;
+  background-image: url('../images/logo-mark.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  opacity: 0.1;
   pointer-events: none;
-  font-weight: 400;
 }
 
 .cta-final__title {
