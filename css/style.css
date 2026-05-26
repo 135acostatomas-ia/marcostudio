@@ -6,7 +6,7 @@
 :root {
   /* Colores */
   --color-bg: #FFFFFF;
-  --color-bg-alt: #C7C4B7;
+  --color-bg-alt: #E8F2F1;
   --color-ink: #111111;
   --color-ink-soft: #333333;
   --color-muted: #4A4A47;
@@ -411,7 +411,7 @@ ol {
 }
 
 .btn--primary {
-  background: var(--color-ink);
+  background: var(--color-dark);
   color: var(--color-bg);
 }
 
@@ -428,7 +428,7 @@ ol {
 }
 
 .btn--secondary:hover {
-  background: var(--color-ink);
+  background: var(--color-dark);
   color: var(--color-bg);
 }
 
@@ -438,7 +438,7 @@ ol {
 }
 
 .btn--accent:hover {
-  background: var(--color-ink);
+  background: var(--color-dark-soft);
   transform: translateY(-2px);
 }
 
