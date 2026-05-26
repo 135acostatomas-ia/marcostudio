@@ -325,9 +325,37 @@
   line-height: 1;
   letter-spacing: -0.04em;
   margin-bottom: 1.5rem;
-  background: var(--color-bg);
+  background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-dark-soft) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
   display: inline-block;
   padding-right: 1rem;
+}
+
+.process-step:nth-child(1) .process-step__num {
+  background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-dark-soft) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.process-step:nth-child(2) .process-step__num {
+  background: linear-gradient(135deg, var(--color-dark-soft) 0%, var(--color-mauve) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.process-step:nth-child(3) .process-step__num {
+  background: linear-gradient(135deg, var(--color-mauve) 0%, var(--color-accent) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.process-step:nth-child(4) .process-step__num {
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-soft) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
 }
 
 .process-step__title {
