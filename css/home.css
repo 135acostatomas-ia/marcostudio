@@ -253,7 +253,7 @@
 
 /* ---------- PROCESO ---------- */
 .process {
-  background: var(--color-bg-alt);
+  background: var(--color-bg);
   position: relative;
 }
 
@@ -297,7 +297,7 @@
   line-height: 1;
   letter-spacing: -0.04em;
   margin-bottom: 1.5rem;
-  background: var(--color-bg-alt);
+  background: var(--color-bg);
   display: inline-block;
   padding-right: 1rem;
 }

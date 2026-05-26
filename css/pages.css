@@ -130,7 +130,7 @@
 
 /* ---------- SISTEMA MODULAR ---------- */
 .modular {
-  background: var(--color-bg-alt);
+  background: var(--color-bg);
 }
 
 .modular-diagram {
@@ -581,7 +581,7 @@
 
 /* Methodology */
 .methodology {
-  background: var(--color-bg-alt);
+  background: var(--color-bg);
 }
 
 .method-grid {
