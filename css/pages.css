@@ -345,9 +345,9 @@
 }
 
 .pricing-card--featured {
-  background: var(--color-ink);
+  background: var(--color-dark-soft);
   color: var(--color-bg);
-  border-color: var(--color-ink);
+  border-color: var(--color-dark-soft);
 }
 
 .pricing-card--featured .pricing-card__desc,
@@ -419,7 +419,7 @@
 }
 
 .cta-final__inner {
-  background: var(--color-dark);
+  background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-dark-soft) 100%);
   color: var(--color-bg);
   border-radius: var(--radius-lg);
   padding: var(--space-2xl);
