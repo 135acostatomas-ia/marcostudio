@@ -122,11 +122,25 @@
 
 /* Marquee */
 .hero__marquee {
-  background: var(--color-dark);
+  background: linear-gradient(
+    90deg,
+    var(--color-dark) 0%,
+    var(--color-dark-soft) 35%,
+    var(--color-accent) 50%,
+    var(--color-dark-soft) 65%,
+    var(--color-dark) 100%
+  );
+  background-size: 200% 100%;
+  animation: marquee-gradient 8s ease-in-out infinite;
   color: var(--color-bg);
   padding: 1.5rem 0;
   overflow: hidden;
   margin-top: var(--space-xl);
+}
+
+@keyframes marquee-gradient {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
 }
 
 .hero__marquee-track {
@@ -555,17 +569,18 @@
 }
 
 .cta-final__inner::before {
-  content: 'M';
+  content: '';
   position: absolute;
   bottom: -40px;
-  right: -20px;
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: 25rem;
-  line-height: 1;
-  color: rgba(255, 255, 255, 0.03);
+  right: -40px;
+  width: 480px;
+  height: 480px;
+  background-image: url('../images/logo-mark.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  opacity: 0.1;
   pointer-events: none;
-  font-weight: 400;
 }
 
 .cta-final__title {
