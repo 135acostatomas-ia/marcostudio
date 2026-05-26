@@ -6,16 +6,16 @@
 :root {
   /* Colores */
   --color-bg: #FFFFFF;
-  --color-bg-alt: #C7C4B7;
+  --color-bg-alt: #E8F2F1;
   --color-ink: #111111;
   --color-ink-soft: #333333;
   --color-muted: #4A4A47;
   --color-line: #E0E0E0;
-  --color-accent: #4A5651;
-  --color-accent-soft: #D4DAD5;
-  --color-dark: #111111;
-  --color-dark-soft: #222222;
-  --color-mauve: #333333;
+  --color-accent: #3DA5A8;
+  --color-accent-soft: #B8DCDE;
+  --color-dark: #120A17;
+  --color-dark-soft: #1F6F7A;
+  --color-mauve: #1F6F7A;
 
   /* Tipografías */
   --font-display: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -224,7 +224,7 @@ ol {
   left: 0;
   width: 0;
   height: 1px;
-  background: var(--color-ink);
+  background: var(--color-dark);
   transition: width var(--transition);
 }
 
@@ -304,7 +304,7 @@ ol {
 
 /* CTA Header */
 .btn-header {
-  background: var(--color-ink);
+  background: var(--color-dark);
   color: var(--color-bg);
   padding: 0.75rem 1.25rem;
   border-radius: var(--radius-full);
@@ -334,7 +334,7 @@ ol {
   display: block;
   width: 20px;
   height: 1.5px;
-  background: var(--color-ink);
+  background: var(--color-dark);
   transition: var(--transition);
 }
 
@@ -411,7 +411,7 @@ ol {
 }
 
 .btn--primary {
-  background: var(--color-ink);
+  background: var(--color-dark);
   color: var(--color-bg);
 }
 
@@ -428,7 +428,7 @@ ol {
 }
 
 .btn--secondary:hover {
-  background: var(--color-ink);
+  background: var(--color-dark);
   color: var(--color-bg);
 }
 
@@ -438,7 +438,7 @@ ol {
 }
 
 .btn--accent:hover {
-  background: var(--color-ink);
+  background: var(--color-dark-soft);
   transform: translateY(-2px);
 }
 

@@ -122,7 +122,7 @@
 
 /* Marquee */
 .hero__marquee {
-  background: var(--color-ink);
+  background: var(--color-dark);
   color: var(--color-bg);
   padding: 1.5rem 0;
   overflow: hidden;
@@ -171,7 +171,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--color-ink);
+  background: var(--color-dark);
   transform: translateY(101%);
   transition: transform var(--transition);
   z-index: 0;
@@ -271,7 +271,7 @@
   left: 5%;
   right: 5%;
   height: 1px;
-  background: var(--color-ink);
+  background: var(--color-dark);
   opacity: 0.2;
   z-index: 0;
 }
@@ -468,9 +468,9 @@
 }
 
 .pricing-card--featured {
-  background: var(--color-ink);
+  background: var(--color-dark-soft);
   color: var(--color-bg);
-  border-color: var(--color-ink);
+  border-color: var(--color-dark-soft);
 }
 
 .pricing-card--featured .pricing-card__desc,
@@ -542,7 +542,7 @@
 }
 
 .cta-final__inner {
-  background: var(--color-dark);
+  background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-dark-soft) 100%);
   color: var(--color-bg);
   border-radius: var(--radius-lg);
   padding: var(--space-2xl);

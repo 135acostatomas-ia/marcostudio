@@ -97,7 +97,7 @@
 .badge {
   font-family: var(--font-mono);
   font-size: 0.7rem;
-  background: var(--color-ink);
+  background: var(--color-dark);
   color: var(--color-bg);
   padding: 0.25rem 0.5rem;
   border-radius: var(--radius-sm);
@@ -170,7 +170,7 @@
 }
 
 .modular-module:hover {
-  background: var(--color-ink);
+  background: var(--color-dark);
   color: var(--color-bg);
   transform: translateX(4px);
 }
@@ -188,7 +188,7 @@
   display: inline-block;
   font-family: var(--font-mono);
   font-size: 0.8rem;
-  background: var(--color-ink);
+  background: var(--color-dark);
   color: var(--color-bg);
   padding: 0.25rem 0.625rem;
   border-radius: var(--radius-full);
@@ -198,7 +198,7 @@
 
 /* ---------- COMBOS ---------- */
 .combos__banner {
-  background: var(--color-dark);
+  background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-dark-soft) 100%);
   color: var(--color-bg);
   border-radius: var(--radius-lg);
   padding: var(--space-xl);
@@ -345,9 +345,9 @@
 }
 
 .pricing-card--featured {
-  background: var(--color-ink);
+  background: var(--color-dark-soft);
   color: var(--color-bg);
-  border-color: var(--color-ink);
+  border-color: var(--color-dark-soft);
 }
 
 .pricing-card--featured .pricing-card__desc,
@@ -419,7 +419,7 @@
 }
 
 .cta-final__inner {
-  background: var(--color-dark);
+  background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-dark-soft) 100%);
   color: var(--color-bg);
   border-radius: var(--radius-lg);
   padding: var(--space-2xl);
@@ -645,7 +645,7 @@
 .module-card__badge {
   font-family: var(--font-mono);
   font-size: 0.7rem;
-  background: var(--color-ink);
+  background: var(--color-dark);
   color: var(--color-bg);
   padding: 0.375rem 0.75rem;
   border-radius: var(--radius-sm);
@@ -715,7 +715,7 @@
 
 /* A medida */
 .a-medida {
-  background: var(--color-ink);
+  background: var(--color-dark);
   color: var(--color-bg);
   padding: var(--space-xl);
   border-radius: var(--radius-lg);
