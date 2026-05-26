@@ -224,7 +224,7 @@ ol {
   left: 0;
   width: 0;
   height: 1px;
-  background: var(--color-ink);
+  background: var(--color-dark);
   transition: width var(--transition);
 }
 
@@ -304,7 +304,7 @@ ol {
 
 /* CTA Header */
 .btn-header {
-  background: var(--color-ink);
+  background: var(--color-dark);
   color: var(--color-bg);
   padding: 0.75rem 1.25rem;
   border-radius: var(--radius-full);
@@ -334,7 +334,7 @@ ol {
   display: block;
   width: 20px;
   height: 1.5px;
-  background: var(--color-ink);
+  background: var(--color-dark);
   transition: var(--transition);
 }
 
