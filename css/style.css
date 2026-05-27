@@ -154,10 +154,27 @@ ol {
   left: 0;
   right: 0;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--color-line);
+  background: linear-gradient(
+    135deg,
+    rgba(184, 220, 222, 0.4) 0%,
+    rgba(232, 242, 241, 0.5) 50%,
+    rgba(184, 220, 222, 0.4) 100%
+  );
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(61, 165, 168, 0.15);
+  transition: all var(--transition);
+}
+
+.site-header.is-scrolled {
+  background: linear-gradient(
+    135deg,
+    rgba(184, 220, 222, 0.7) 0%,
+    rgba(232, 242, 241, 0.75) 50%,
+    rgba(184, 220, 222, 0.7) 100%
+  );
+  border-bottom-color: rgba(61, 165, 168, 0.25);
+  box-shadow: 0 4px 24px -8px rgba(31, 111, 122, 0.1);
 }
 
 .site-header__inner {
