@@ -154,10 +154,27 @@ ol {
   left: 0;
   right: 0;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--color-line);
+  background: linear-gradient(
+    135deg,
+    rgba(184, 220, 222, 0.4) 0%,
+    rgba(232, 242, 241, 0.5) 50%,
+    rgba(184, 220, 222, 0.4) 100%
+  );
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(61, 165, 168, 0.15);
+  transition: all var(--transition);
+}
+
+.site-header.is-scrolled {
+  background: linear-gradient(
+    135deg,
+    rgba(184, 220, 222, 0.7) 0%,
+    rgba(232, 242, 241, 0.75) 50%,
+    rgba(184, 220, 222, 0.7) 100%
+  );
+  border-bottom-color: rgba(61, 165, 168, 0.25);
+  box-shadow: 0 4px 24px -8px rgba(31, 111, 122, 0.1);
 }
 
 .site-header__inner {
@@ -181,14 +198,21 @@ ol {
 }
 
 .logo__mark {
-  width: 70px;
-  height: 70px;
-  background-image: url('../images/Logos/logosinfondo.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+  width: 32px;
+  height: 32px;
+  border: 2px solid var(--color-ink);
+  position: relative;
   display: inline-block;
-  flex-shrink: 0;
+}
+
+.logo__mark::after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: 4px;
+  bottom: 4px;
+  background: var(--color-accent);
 }
 
 .nav {
@@ -602,7 +626,7 @@ main {
 }
 
 .footer-brand .logo__mark {
-  /* Hereda la imagen del .logo__mark base. El fondo oscuro del PNG se mimetiza con el footer. */
+  border-color: var(--color-bg);
 }
 
 .footer-brand p {
