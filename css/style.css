@@ -181,10 +181,20 @@ ol {
 }
 
 .logo__mark {
+  width: 40px;
+  height: 40px;
+  background-image: url('../images/Logos/logosinfondo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.logo__name {
+  height: 36px;
   width: auto;
-  height: 48px;
-  min-width: 160px;
-  aspect-ratio: auto;
+  min-width: 130px;
   background-image: url('../images/Logos/marcostudioniebla.png');
   background-size: contain;
   background-repeat: no-repeat;
