@@ -181,12 +181,14 @@ ol {
 }
 
 .logo__mark {
-  width: 70px;
-  height: 70px;
-  background-image: url('../images/Logos/logosinfondo.png');
+  width: auto;
+  height: 48px;
+  min-width: 160px;
+  aspect-ratio: auto;
+  background-image: url('../images/Logos/marcostudioniebla.png');
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center left;
   display: inline-block;
   flex-shrink: 0;
 }
