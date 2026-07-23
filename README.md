@@ -17,12 +17,10 @@ marco-studio/
 │   └── main.js             → Menu mobile, scroll reveal, FAQ accordion, form
 ├── images/                 → Acá van todas las imágenes (vacío por ahora)
 └── pages/
-    ├── servicios.html      → Servicios (vista general)
     ├── marketing.html      → Marketing Digital
     ├── ecommerce.html      → E-commerce
     ├── desarrollo.html     → Desarrollo Web
     ├── produccion.html     → Producción de Contenido
-    ├── nosotros.html       → Nosotros
     └── contacto.html       → Contacto
 ```
 
@@ -52,9 +50,8 @@ Reemplazá en TODOS los archivos:
 2. **Email**: cambiar `hola@marcostudio.com.ar` por el email real
 3. **Redes sociales**: cambiar los `href="#"` de Instagram/LinkedIn/TikTok por las URLs reales
 4. **Imágenes**: reemplazar los placeholders (los `<div class="placeholder">`) por imágenes reales en `/images/`
-5. **Equipo (`pages/nosotros.html`)**: reemplazar "Nombre Apellido", roles y bios reales del equipo
-6. **Formulario de contacto**: integrar con Formspree, Brevo, EmailJS o similar (ver `js/main.js`)
-7. **Dominio**: cuando tengas `marcostudio.com.ar`, actualizar meta tags y OG tags
+5. **Formulario de contacto**: integrar con Formspree, Brevo, EmailJS o similar (ver `js/main.js`)
+6. **Dominio**: cuando tengas `marcostudio.com.ar`, actualizar meta tags y OG tags
 
 ## Cómo correr localmente
 
