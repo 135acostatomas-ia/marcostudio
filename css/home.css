@@ -23,7 +23,7 @@
 
 .hero__title {
   font-size: var(--fs-hero);
-  font-weight: 400;
+  font-weight: 700;
   letter-spacing: -0.03em;
   line-height: 0.95;
   text-align: center;
@@ -163,7 +163,7 @@
 .service-card__title {
   font-family: var(--font-display);
   font-size: 2rem;
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1;
   letter-spacing: -0.02em;
   margin-bottom: 1rem;
@@ -289,7 +289,7 @@
 .process-step__title {
   font-family: var(--font-display);
   font-size: 1.5rem;
-  font-weight: 400;
+  font-weight: 700;
   margin-bottom: 0.75rem;
   text-align: center;
 }
@@ -330,7 +330,7 @@
 .why-card__title {
   font-family: var(--font-display);
   font-size: 1.5rem;
-  font-weight: 400;
+  font-weight: 700;
   margin-bottom: 0.75rem;
   letter-spacing: -0.01em;
   text-align: center;
@@ -408,7 +408,7 @@
 .work-card__title {
   font-family: var(--font-display);
   font-size: 1.5rem;
-  font-weight: 400;
+  font-weight: 700;
   margin-bottom: 1rem;
   letter-spacing: -0.01em;
   text-align: center;
@@ -493,7 +493,7 @@
 .pricing-card__title {
   font-family: var(--font-display);
   font-size: 1.75rem;
-  font-weight: 400;
+  font-weight: 700;
   margin-bottom: 1rem;
   letter-spacing: -0.01em;
   text-align: center;
@@ -559,7 +559,7 @@
 
 .cta-final__title {
   font-size: var(--fs-h1);
-  font-weight: 400;
+  font-weight: 700;
   margin: 1rem 0 1.5rem;
   text-align: center;
 }
