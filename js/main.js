@@ -29,6 +29,15 @@ document.addEventListener('DOMContentLoaded', () => {
   // ---------- SCROLL REVEAL ----------
   const reveals = document.querySelectorAll('.reveal');
 
+  // Cada elemento entra desde el lado del viewport donde está ubicado
+  // (izquierda o derecha), para que converjan hacia el centro al hacer scroll.
+  const viewportCenter = window.innerWidth / 2;
+  reveals.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    const elCenter = rect.left + rect.width / 2;
+    el.classList.add(elCenter < viewportCenter ? 'reveal--from-left' : 'reveal--from-right');
+  });
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
