@@ -12,6 +12,7 @@
 
 .page-hero__inner {
   max-width: 800px;
+  margin: 0 auto;
 }
 
 .page-hero__title {
@@ -20,6 +21,7 @@
   line-height: 1;
   letter-spacing: -0.03em;
   margin: 1.5rem 0;
+  text-align: center;
 }
 
 .page-hero__subtitle {
@@ -27,6 +29,9 @@
   color: var(--color-muted);
   line-height: 1.5;
   max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 /* ---------- ÁREAS DETALLE ---------- */
@@ -450,6 +455,7 @@
   font-size: var(--fs-h1);
   font-weight: 400;
   margin: 1rem 0 1.5rem;
+  text-align: center;
 }
 
 .cta-final__sub {
@@ -457,6 +463,9 @@
   font-size: 1.125rem;
   max-width: 450px;
   margin-bottom: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 .cta-final__ctas {
@@ -609,6 +618,7 @@
   font-size: 1.5rem;
   font-weight: 400;
   margin-bottom: 0.75rem;
+  text-align: center;
 }
 
 .method-step__desc {

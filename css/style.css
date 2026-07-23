@@ -488,13 +488,15 @@ main {
   margin-bottom: var(--space-xl);
   display: flex;
   align-items: flex-end;
-  justify-content: space-between;
+  justify-content: center;
   gap: 2rem;
   flex-wrap: wrap;
 }
 
 .section-header__text {
   max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .section-header .eyebrow {
