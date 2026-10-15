@@ -280,6 +280,11 @@ document.addEventListener('DOMContentLoaded', () => {
       card.classList.toggle('is-active', on);
       trigger(card).setAttribute('aria-expanded', String(on));
       detail(card).inert = !on;
+      // el "+" es el botón de cerrar: solo es accesible mientras la tarjeta está abierta
+      const x = card.querySelector('.service-card__arrow');
+      x.tabIndex = on ? 0 : -1;
+      x.setAttribute('aria-hidden', String(!on));
+      x.setAttribute('aria-label', 'Cerrar ' + trigger(card).textContent.trim());
     };
 
     // Las tarjetas pueden estar sin "revelar" si se entra por un enlace con #
@@ -391,7 +396,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       history.replaceState(null, '', '#' + card.id);
-      if (opts.focus) detail(card).querySelector('.detail__close')?.focus({ preventScroll: true });
+      if (opts.focus) card.querySelector('.service-card__arrow')?.focus({ preventScroll: true });
       await wait(animate ? 900 : 0);
       busy = false;
     }
@@ -433,7 +438,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (card === active) close({ focus: e.detail === 0 });
         else open(card, { focus: e.detail === 0 });
       });
-      detail(card).querySelector('.detail__close').addEventListener('click', (e) => close({ focus: e.detail === 0 }));
+      card.querySelector('.service-card__arrow').addEventListener('click', (e) => { if (card === active) close({ focus: e.detail === 0 }); });
     });
 
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && active) close({ focus: true }); });

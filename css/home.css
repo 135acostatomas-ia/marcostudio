@@ -362,6 +362,11 @@ html.is-playing .hero-mark__img {
 }
 
 .service-card__arrow {
+  border: 0;
+  padding: 0;
+  font-family: inherit;
+  color: inherit;
+  cursor: pointer;
   width: 32px;
   height: 32px;
   flex-shrink: 0;
@@ -427,6 +432,8 @@ html.is-playing .hero-mark__img {
   background-color: var(--color-coral);
   color: #fff;
 }
+.service-card.is-active .service-card__arrow:hover { background-color: #C9503A; }
+.service-card.is-active .service-card__arrow:focus-visible { outline: 2px solid var(--color-ink); outline-offset: 3px; }
 .service-card__arrow span { display: block; transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
 .service-card.is-active .service-card__arrow span { transform: rotate(45deg); }
 .service-card.is-active .service-card__detail { display: block; }
@@ -441,28 +448,6 @@ html.is-playing .hero-mark__img {
   padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1rem, 3vw, 2rem) clamp(1.75rem, 3vw, 2.5rem);
   border-top: 1px solid var(--color-line);
 }
-
-.detail__close {
-  position: absolute;
-  z-index: 8;
-  top: clamp(1rem, 2.5vw, 1.75rem);
-  right: clamp(1rem, 2.5vw, 1.75rem);
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.5rem 1rem;
-  border-radius: 999px;
-  border: 1px solid var(--color-line-strong);
-  background: transparent;
-  font: inherit;
-  font-size: var(--fs-small);
-  color: var(--color-ink);
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-}
-.detail__close span { font-size: 1.125rem; line-height: 1; transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
-.detail__close:hover { background: var(--color-coral); border-color: var(--color-coral); color: #fff; }
-.detail__close:hover span { transform: rotate(90deg); }
 
 .detail__intro { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1.5rem; }
 .detail__lead {
@@ -568,8 +553,6 @@ html.is-playing .hero-mark__img {
   .detail__cta { flex-direction: column; align-items: flex-start; }
   .detail__cta-btns { width: 100%; }
   .detail__cta-btns .btn { flex: 1 1 auto; justify-content: center; }
-  .detail__close { top: 0.75rem; right: 0.75rem; }
-  .service-card.is-active .service-card__media span:last-child { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -924,6 +907,26 @@ html.is-playing .hero-mark__img {
   flex-wrap: wrap;
   gap: 0.625rem;
 }
+
+.home-cta__info {
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.home-cta__info li { display: flex; flex-wrap: wrap; gap: 0.25rem 0.875rem; align-items: baseline; }
+.home-cta__info span {
+  min-width: 5.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+.home-cta__info a { font-size: 1.0625rem; border-bottom: 1px solid currentColor; padding-bottom: 1px; }
+.home-cta__info a:hover { opacity: 0.8; }
 
 .btn--light {
   background: #F7F3F4;
