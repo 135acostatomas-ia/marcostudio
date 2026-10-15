@@ -398,10 +398,10 @@ html.is-playing .hero-mark__img {
   color: transparent;
 }
 
-.process__step:nth-child(1) .process__num span { background-image: linear-gradient(135deg, #849F98, #647F78); }
-.process__step:nth-child(2) .process__num span { background-image: linear-gradient(135deg, #647F78, #727C79); }
-.process__step:nth-child(3) .process__num span { background-image: linear-gradient(135deg, #727C79, #160D0C); }
-.process__step:nth-child(4) .process__num span { background-image: linear-gradient(135deg, #647F78, #160D0C); }
+/* Números en coral (con un leve degradé hacia un tono más profundo) */
+.process__num span {
+  background-image: linear-gradient(135deg, var(--color-coral), #C9503A);
+}
 
 .process__step h3 {
   font-family: var(--font-display);
