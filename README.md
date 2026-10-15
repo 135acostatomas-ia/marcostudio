@@ -2,7 +2,7 @@
 
 Sitio web institucional de Marco Studio — agencia digital boutique argentina.
 
-Multi-página, HTML/CSS/JS vanilla, mobile-first.
+Una sola página (los servicios se despliegan dentro de la home), HTML/CSS/JS vanilla, mobile-first.
 
 ## Estructura
 
@@ -11,19 +11,16 @@ marco-studio/
 ├── index.html               → Home
 ├── css/
 │   ├── style.css           → Sistema de diseño (tokens, header, footer)
-│   ├── home.css            → Estilos de Home
-│   └── pages.css           → Estilos de páginas internas
+│   └── home.css            → Estilos de Home (incluye las tarjetas de servicios desplegables)
 ├── js/
 │   └── main.js             → Menu mobile, scroll reveal, FAQ accordion, form
-├── images/                 → Acá van todas las imágenes (vacío por ahora)
-└── pages/
-    ├── marketing.html      → Marketing Digital
-    ├── ecommerce.html      → E-commerce
-    ├── desarrollo.html     → Desarrollo Web
-    └── produccion.html     → Producción de Contenido
+├── images/                 → Logos e imágenes
+└── vercel.json             → Redirige las viejas URLs /pages/*.html a la tarjeta correspondiente
 ```
 
-El contacto vive en el Home (`index.html#contacto`).
+Cada servicio (Marketing, E-commerce, Desarrollo, Producción) vive dentro de su tarjeta en el Home:
+al hacer clic se despliega ahí mismo. Se puede enlazar directo con `index.html#servicio-marketing`
+(`-ecommerce`, `-desarrollo`, `-produccion`). El contacto vive en `index.html#contacto`.
 
 ## Stack
 

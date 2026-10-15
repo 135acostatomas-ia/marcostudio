@@ -207,13 +207,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const tilt = () => {
         frame = 0;
+        if (card.classList.contains('is-active')) return;   // la tarjeta abierta no se inclina
         const r = card.getBoundingClientRect();
         const x = (ex - r.left) / r.width - 0.5;
         const y = (ey - r.top) / r.height - 0.5;
         card.style.transform = `perspective(1000px) translateY(-6px) rotateX(${(-y * 10).toFixed(2)}deg) rotateY(${(x * 12).toFixed(2)}deg)`;
       };
 
-      card.addEventListener('mouseenter', () => { card.style.transition = FOLLOW; });
+      card.addEventListener('mouseenter', () => { if (!card.classList.contains('is-active')) card.style.transition = FOLLOW; });
       card.addEventListener('mousemove', (e) => {
         ex = e.clientX; ey = e.clientY;
         if (!frame) frame = requestAnimationFrame(tilt);   // una vez por cuadro
@@ -256,6 +257,164 @@ document.addEventListener('DOMContentLoaded', () => {
     card.addEventListener('touchend', () => release(450), { passive: true });
     card.addEventListener('touchcancel', () => release(), { passive: true });
   });
+
+
+  // ---------- SERVICIOS: se abren en la misma página ----------
+  // Clic en una tarjeta → las otras se apartan, la elegida pasa al frente y se
+  // despliega con la info del servicio. Sin cambiar de página.
+  (() => {
+    const grid = document.querySelector('.services-grid');
+    if (!grid) return;
+    const cards = [...grid.querySelectorAll('.service-card')];
+    const head = document.querySelector('#servicios .home-head');
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const EASE = 'cubic-bezier(0.16, 1, 0.3, 1)';
+    const PHASE_OUT = 240;
+    const wait = (ms) => new Promise(r => setTimeout(r, ms));
+    let active = null, busy = false;
+
+    const trigger = (c) => c.querySelector('.service-card__trigger');
+    const detail = (c) => c.querySelector('.service-card__detail');
+
+    const setState = (card, on) => {
+      card.classList.toggle('is-active', on);
+      trigger(card).setAttribute('aria-expanded', String(on));
+      detail(card).inert = !on;
+    };
+
+    // Las tarjetas pueden estar sin "revelar" si se entra por un enlace con #
+    const forceVisible = () => cards.forEach(c => c.classList.add('is-visible', 'reveal-done'));
+
+    const scrollToY = (y, smooth) => window.scrollTo({ top: Math.max(0, y), behavior: smooth ? 'smooth' : 'instant' });
+    const cardTop = (c) => c.getBoundingClientRect().top + window.scrollY;
+
+    async function open(card, opts = {}) {
+      if (busy || card === active) return;
+      busy = true;
+      forceVisible();
+      const animate = !reduce.matches && !opts.instant;
+      const prev = active;
+      const first = card.getBoundingClientRect();
+      const others = cards.filter(c => c !== card);
+
+      // 1) Las demás se apartan; la elegida "se levanta"
+      let held = [];
+      if (animate) {
+        held = others.map(c => c.animate(
+          [{ opacity: 1, transform: 'none' }, { opacity: 0, transform: 'translateY(18px) scale(0.96)' }],
+          { duration: PHASE_OUT, easing: 'ease-in', fill: 'forwards' }));
+        if (!prev) held.push(card.animate(
+          [{ transform: 'none' }, { transform: 'translateY(-8px) scale(1.02)' }],
+          { duration: PHASE_OUT, easing: 'ease-out', fill: 'forwards' }));
+        await wait(PHASE_OUT);
+      }
+
+      // 2) Cambio de layout (la tarjeta pasa al frente, ocupa todo el ancho)
+      card.style.transform = ''; card.style.transition = '';
+      grid.style.setProperty('--card-w', Math.round(first.width) + 'px');
+      grid.classList.add('has-active');
+      if (prev) setState(prev, false);
+      setState(card, true);
+      active = card;
+      held.forEach(a => a.cancel());
+      const next = card.getBoundingClientRect();
+
+      // 3) Scroll para que el panel quede a la vista
+      const targetY = cardTop(card) - 104;
+      const inside = first.left >= next.left - 1 && first.right <= next.right + 1 &&
+                     first.top >= next.top - 1 && first.bottom <= next.bottom + 1;
+      if (opts.instant) scrollToY(targetY, false);
+      else if (inside && animate) scrollToY(targetY, true);
+      else scrollToY(targetY, false);
+
+      // 4) Entrada coreografiada
+      if (animate) {
+        const main = card.querySelector('.service-card__main');
+        if (inside) {
+          // el panel se abre alrededor de la tarjeta, que se desliza al frente
+          const clip = (t, r, b, l) => `inset(${t}px ${r}px ${b}px ${l}px round 20px)`;
+          card.animate(
+            [{ clipPath: clip(first.top - next.top, next.right - first.right, next.bottom - first.bottom, first.left - next.left) },
+             { clipPath: clip(0, 0, 0, 0) }],
+            { duration: 820, easing: EASE, fill: 'backwards' });
+          main.animate(
+            [{ transform: `translate(${first.left - next.left}px, ${first.top - next.top}px)` }, { transform: 'none' }],
+            { duration: 820, easing: EASE, fill: 'backwards' });
+        } else {
+          card.animate(
+            [{ opacity: 0, transform: 'translateY(36px) scale(0.97)' }, { opacity: 1, transform: 'none' }],
+            { duration: 700, easing: EASE, fill: 'backwards' });
+        }
+        others.forEach((c, i) => c.animate(
+          [{ opacity: 0, transform: 'translateY(34px) scale(0.96)' }, { opacity: 1, transform: 'none' }],
+          { duration: 700, delay: 380 + i * 90, easing: EASE, fill: 'backwards' }));
+      }
+
+      history.replaceState(null, '', '#' + card.id);
+      if (opts.focus) detail(card).querySelector('.detail__close')?.focus({ preventScroll: true });
+      await wait(animate ? 900 : 0);
+      busy = false;
+    }
+
+    async function close(opts = {}) {
+      if (busy || !active) return;
+      busy = true;
+      const card = active;
+      const animate = !reduce.matches && !opts.instant;
+
+      let held = [];
+      if (animate) {
+        held = [card, ...cards.filter(c => c !== card)].map(c => c.animate(
+          [{ opacity: 1, transform: 'none' }, { opacity: 0, transform: 'translateY(14px) scale(0.985)' }],
+          { duration: PHASE_OUT, easing: 'ease-in', fill: 'forwards' }));
+        await wait(PHASE_OUT);
+      }
+
+      setState(card, false);
+      grid.classList.remove('has-active');
+      active = null;
+      held.forEach(a => a.cancel());
+      const headTop = head ? cardTop(head) - 100 : cardTop(grid) - 140;
+      if (window.scrollY > headTop + 40 || cardTop(grid) - window.scrollY > window.innerHeight * 0.6) scrollToY(headTop, false);
+
+      if (animate) {
+        cards.forEach((c, i) => c.animate(
+          [{ opacity: 0, transform: 'translateY(30px) scale(0.97)' }, { opacity: 1, transform: 'none' }],
+          { duration: 700, delay: i * 80, easing: EASE, fill: 'backwards' }));
+      }
+      history.replaceState(null, '', '#servicios');
+      if (opts.focus) trigger(card).focus({ preventScroll: true });
+      await wait(animate ? 700 : 0);
+      busy = false;
+    }
+
+    cards.forEach(card => {
+      trigger(card).addEventListener('click', (e) => {
+        if (card === active) close({ focus: e.detail === 0 });
+        else open(card, { focus: e.detail === 0 });
+      });
+      detail(card).querySelector('.detail__close').addEventListener('click', (e) => close({ focus: e.detail === 0 }));
+    });
+
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && active) close({ focus: true }); });
+
+    // Enlaces del menú / footer / trabajos: #servicio-xxx abre la tarjeta en la misma página
+    const byHash = (hash) => cards.find(c => '#' + c.id === hash);
+    document.addEventListener('click', (e) => {
+      const a = e.target.closest('a[href^="#servicio-"]');
+      if (!a) return;
+      const card = byHash(a.getAttribute('href'));
+      if (!card) return;
+      e.preventDefault();
+      if (card === active) { scrollToY(cardTop(card) - 104, true); return; }
+      if (!active) scrollToY(cardTop(grid) - 140, true);
+      setTimeout(() => open(card), active ? 0 : 350);
+    });
+
+    // Entrada directa con #servicio-xxx (ej. viejos enlaces a las páginas)
+    const initial = byHash(location.hash);
+    if (initial) open(initial, { instant: true });
+  })();
 
   // ---------- MODALIDADES (+) ----------
   document.querySelectorAll('.plan__toggle').forEach(btn => {
