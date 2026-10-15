@@ -265,10 +265,14 @@ html.is-playing .hero-mark__img {
 
 
 
-.service-card__arrow { transition: transform 0.3s ease; }
+.service-card__arrow { transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease; }
 .service-card:hover .service-card__arrow,
 .service-card.is-touched .service-card__arrow,
-.service-card:active .service-card__arrow { transform: translateX(3px); }
+.service-card:active .service-card__arrow {
+  transform: translateX(3px);
+  background-color: var(--color-coral);   /* acento coral al pasar el mouse / tocar */
+  color: #fff;
+}
 
 .service-card__media {
   aspect-ratio: 4 / 3;
