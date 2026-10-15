@@ -63,17 +63,39 @@ document.addEventListener('DOMContentLoaded', () => {
     reveals.forEach(el => observer.observe(el));
   };
 
-  if (intro && !reduceMotion) {
-    const root = document.documentElement;
-    root.classList.add('is-intro');
+  const root = document.documentElement;
+  if (intro && root.classList.contains('is-intro')) {
+    let playing = false;
+    let finished = false;
+
     const finishIntro = () => {
+      if (finished) return;
+      finished = true;
       root.classList.remove('is-intro');
       startReveals();
     };
+
+    // Arranca la línea de tiempo recién cuando el logo ya está cargado
+    // (en celulares con conexión lenta, si no, la intro pasaría sin verse).
+    const play = () => {
+      if (playing) return;
+      playing = true;
+      root.classList.add('is-playing');
+      setTimeout(finishIntro, 5000); // seguro por si la animación no corre
+    };
+
     intro.addEventListener('animationend', (e) => {
       if (e.animationName === 'introOut') finishIntro();
     });
-    setTimeout(finishIntro, 4200); // seguro por si la animación no corre
+
+    const logo = intro.querySelector('.intro__logo');
+    if (!logo || (logo.complete && logo.naturalWidth)) {
+      play();
+    } else {
+      logo.addEventListener('load', play, { once: true });
+      logo.addEventListener('error', play, { once: true });
+      setTimeout(play, 2500); // no esperar más que esto
+    }
   } else {
     startReveals();
   }
@@ -82,6 +104,18 @@ document.addEventListener('DOMContentLoaded', () => {
   // Baja con el scroll y se desvanece hasta desaparecer.
   const heroMark = document.getElementById('hero-mark');
   if (heroMark) {
+    // Centra la marca detrás del título "Tu socio digital"
+    const heroTitle = document.querySelector('.hero__title');
+    const alignHeroMark = () => {
+      if (!heroTitle) return;
+      const r = heroTitle.getBoundingClientRect();
+      heroMark.style.setProperty('--mark-y', `${Math.round(r.top + window.scrollY + r.height / 2)}px`);
+    };
+    alignHeroMark();
+    window.addEventListener('resize', alignHeroMark);
+    window.addEventListener('load', alignHeroMark);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(alignHeroMark);
+
     let ticking = false;
     const updateHeroMark = () => {
       const y = window.scrollY;
@@ -137,6 +171,37 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  // ---------- TARJETAS DE SERVICIOS: "pintado" al tocar ----------
+  // En pantallas táctiles no hay :hover, así que se pinta al apoyar el dedo.
+  document.querySelectorAll('.service-card').forEach(card => {
+    let startX = 0, startY = 0, releaseTimer = null;
+
+    const paint = () => {
+      clearTimeout(releaseTimer);
+      card.classList.add('is-touched');
+    };
+    const release = (delay = 0) => {
+      clearTimeout(releaseTimer);
+      releaseTimer = setTimeout(() => card.classList.remove('is-touched'), delay);
+    };
+
+    card.addEventListener('touchstart', (e) => {
+      const t = e.touches[0];
+      startX = t.clientX;
+      startY = t.clientY;
+      paint();
+    }, { passive: true });
+
+    // Si el dedo se desliza (scroll), se suelta el pintado
+    card.addEventListener('touchmove', (e) => {
+      const t = e.touches[0];
+      if (Math.abs(t.clientX - startX) > 10 || Math.abs(t.clientY - startY) > 10) release();
+    }, { passive: true });
+
+    card.addEventListener('touchend', () => release(450), { passive: true });
+    card.addEventListener('touchcancel', () => release(), { passive: true });
+  });
 
   // ---------- MODALIDADES (+) ----------
   document.querySelectorAll('.plan__toggle').forEach(btn => {
