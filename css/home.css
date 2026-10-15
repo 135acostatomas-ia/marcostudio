@@ -30,7 +30,7 @@
   padding-bottom: 0.5rem;
   /* leve sombreado para que se lea sobre la marca de fondo */
   text-shadow:
-    0 2px 16px rgba(22, 13, 12, 0.14),
+    0 2px 16px rgba(59, 34, 19, 0.14),
     0 0 10px rgba(247, 243, 244, 0.9);
 }
 
@@ -94,7 +94,7 @@ html.is-playing .intro__logo {
   width: min(220px, 40vw);
   height: 3px;
   border-radius: 999px;
-  background: rgba(22, 13, 12, 0.08);
+  background: rgba(59, 34, 19, 0.08);
   overflow: hidden;
   transform: translateX(-50%);
   opacity: 0;
@@ -260,7 +260,7 @@ html.is-playing .hero-mark__img {
   background-size: 100% 100%;
   border-color: var(--color-accent);
   transform: translateY(-6px);
-  box-shadow: 0 24px 48px -24px rgba(22, 13, 12, 0.25);
+  box-shadow: 0 24px 48px -24px rgba(59, 34, 19, 0.25);
 }
 
 
@@ -277,7 +277,7 @@ html.is-playing .hero-mark__img {
 .service-card__media {
   aspect-ratio: 4 / 3;
   border-radius: 12px;
-  background: var(--color-placeholder) repeating-linear-gradient(135deg, transparent 0 11px, rgba(22, 13, 12, 0.04) 11px 12px);
+  background: var(--color-placeholder) repeating-linear-gradient(135deg, transparent 0 11px, rgba(59, 34, 19, 0.04) 11px 12px);
   background-size: cover;
   background-position: center;
   display: flex;
@@ -473,7 +473,7 @@ html.is-playing .hero-mark__img {
   aspect-ratio: 4 / 5;
   border-radius: 20px;
   border: 1px solid var(--color-line);
-  background: var(--color-surface) repeating-linear-gradient(135deg, transparent 0 11px, rgba(22, 13, 12, 0.04) 11px 12px);
+  background: var(--color-surface) repeating-linear-gradient(135deg, transparent 0 11px, rgba(59, 34, 19, 0.04) 11px 12px);
   background-size: cover;
   background-position: center;
   display: flex;
@@ -486,7 +486,7 @@ html.is-playing .hero-mark__img {
 
 .work-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 40px -20px rgba(22, 13, 12, 0.18);
+  box-shadow: 0 20px 40px -20px rgba(59, 34, 19, 0.18);
   border-color: var(--color-line-strong);
 }
 
@@ -568,7 +568,7 @@ html.is-playing .hero-mark__img {
   background: var(--gradient-sage);
   border-color: rgba(255, 255, 255, 0.35);
   color: #FFFFFF;
-  box-shadow: 0 30px 60px -24px rgba(22, 13, 12, 0.35);
+  box-shadow: 0 30px 60px -24px rgba(59, 34, 19, 0.35);
 }
 
 .plan__kicker {
@@ -755,7 +755,7 @@ html.is-playing .hero-mark__img {
 .home-cta__form button {
   height: 52px;
   border-radius: 10px;
-  background: rgba(22, 13, 12, 0.82);
+  background: rgba(59, 34, 19, 0.96);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   color: #FFFFFF;

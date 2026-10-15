@@ -353,7 +353,7 @@
   background: var(--gradient-sage);
   color: #FFFFFF;
   border-color: rgba(255, 255, 255, 0.35);
-  box-shadow: 0 30px 60px -24px rgba(22, 13, 12, 0.35);
+  box-shadow: 0 30px 60px -24px rgba(59, 34, 19, 0.35);
 }
 
 .pricing-card--featured .pricing-card__desc,
@@ -1341,7 +1341,7 @@
 
 .cta-final__form .btn,
 .cta-final__form button[type="submit"] {
-  background: rgba(22, 13, 12, 0.82);
+  background: rgba(59, 34, 19, 0.82);
   color: #FFFFFF;
   border-radius: 10px;
 }
