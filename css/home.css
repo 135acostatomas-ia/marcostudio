@@ -153,16 +153,27 @@ html.is-playing .intro__bar span {
 }
 
 /* ---------- MARCA TRASLÚCIDA DEL HERO ---------- */
-/* Va entre "Tu socio digital" y el texto, centrado en la pantalla. Con el scroll baja y se desvanece (js/main.js). */
+/* El logo queda FIJO en el centro de la pantalla (el mismo lugar y tamaño que en la
+   presentación), detrás de la web. Se desvanece y baja al pasar "Lo que hacemos"
+   (js/main.js). .hero-mark-space solo reserva su lugar entre el título y el texto. */
+.hero-mark-space {
+  width: var(--mark-w);
+  aspect-ratio: 1672 / 941;
+}
+
 .hero-mark {
-  width: var(--mark-w);   /* mismo tamaño que el logo de la presentación */
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  display: grid;
+  place-items: center;
   pointer-events: none;
   will-change: transform, opacity;
 }
 
 .hero-mark__img {
+  width: var(--mark-w);
   display: block;
-  width: 100%;
   height: auto;
   opacity: 0.16;
 }
