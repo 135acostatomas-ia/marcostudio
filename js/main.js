@@ -127,25 +127,46 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ---------- MARCA DE FONDO DEL HERO ----------
-  // Baja con el scroll y se desvanece hasta desaparecer.
+  // El logo queda fijo detrás de la web. Recién cuando se llega a "Lo que hacemos"
+  // empieza a bajar y a desvanecerse, hasta desaparecer.
   const heroMark = document.getElementById('hero-mark');
   if (heroMark) {
+    const servicesHead = document.querySelector('#servicios .home-head');
+    let fadeStart = window.innerHeight;
+    let fadeLen = window.innerHeight;
+
+    const measure = () => {
+      const vh = window.innerHeight;
+      if (servicesHead) {
+        const top = servicesHead.getBoundingClientRect().top + window.scrollY;
+        fadeStart = Math.max(vh * 0.5, top - vh * 0.35);  // el título ya está a la vista
+      } else {
+        fadeStart = vh;
+      }
+      fadeLen = vh * 0.9;
+    };
+
     let ticking = false;
     const updateHeroMark = () => {
-      const y = window.scrollY;
-      const p = Math.min(y / (window.innerHeight * 0.5), 1);
+      const d = window.scrollY - fadeStart;
+      const p = Math.min(Math.max(d / fadeLen, 0), 1);
       heroMark.style.opacity = String(1 - p);
-      heroMark.style.transform = reduceMotion ? '' : `translate3d(0, ${(y * 0.3).toFixed(1)}px, 0)`;
+      heroMark.style.transform = reduceMotion || d <= 0 ? '' : `translate3d(0, ${(d * 0.35).toFixed(1)}px, 0)`;
       heroMark.style.visibility = p >= 1 ? 'hidden' : 'visible';
       ticking = false;
     };
+
+    const refresh = () => { measure(); updateHeroMark(); };
+    window.addEventListener('resize', refresh);
+    window.addEventListener('load', refresh);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(refresh);
     window.addEventListener('scroll', () => {
       if (!ticking) {
         ticking = true;
         requestAnimationFrame(updateHeroMark);
       }
     }, { passive: true });
-    updateHeroMark();
+    refresh();
   }
 
   // ---------- FAQ ACCORDION ----------
