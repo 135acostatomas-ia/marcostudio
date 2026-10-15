@@ -50,9 +50,9 @@
               </a>
             </div>
           </li>
-          <li><a href="pages/contacto.html" class="nav__link">Contacto</a></li>
+          <li><a href="#contacto" class="nav__link">Contacto</a></li>
         </ul>
-        <a href="pages/contacto.html" class="btn-header">Agendá una llamada →</a>
+        <a href="#contacto" class="btn-header">Agendá una llamada →</a>
       </nav>
 
       <button class="hamburger" aria-label="Menu">
@@ -76,9 +76,9 @@
           <a href="pages/produccion.html">Producción de Contenido</a>
         </div>
       </li>
-      <li><a href="pages/contacto.html" class="mobile-menu__link">Contacto</a></li>
+      <li><a href="#contacto" class="mobile-menu__link">Contacto</a></li>
       <li style="margin-top: 2rem;">
-        <a href="pages/contacto.html" class="btn btn--primary">Agendá una llamada →</a>
+        <a href="#contacto" class="btn btn--primary">Agendá una llamada →</a>
       </li>
     </ul>
   </div>
@@ -88,335 +88,223 @@
     <!-- HERO -->
     <section class="hero">
       <div class="container hero__inner">
-        <div class="hero__content">
-          <span class="eyebrow reveal">Agencia digital boutique · Argentina</span>
-          <h1 class="display hero__title reveal" style="transition-delay: 0.1s;">
-            Tu socio digital,
-            <span class="display-italic text-accent">no un proveedor más.</span>
-          </h1>
-          <p class="hero__subtitle reveal" style="transition-delay: 0.2s;">
-            Marketing, e-commerce, desarrollo web y producción de contenido bajo un mismo equipo. Atención directa, precio justo y resultados medibles.
-          </p>
-          <div class="hero__ctas reveal" style="transition-delay: 0.3s;">
-            <a href="pages/contacto.html" class="btn btn--primary">
-              Agendá una llamada
-              <svg class="btn__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M3 8h10m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-            <a href="#servicios" class="btn btn--secondary">Ver servicios</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero__marquee reveal" style="transition-delay: 0.5s;">
-        <div class="hero__marquee-track">
-          <span>Marketing Digital</span>
-          <span>·</span>
-          <span>E-commerce</span>
-          <span>·</span>
-          <span>Desarrollo Web</span>
-          <span>·</span>
-          <span>Producción de Contenido</span>
-          <span>·</span>
-          <span>Marketing Digital</span>
-          <span>·</span>
-          <span>E-commerce</span>
-          <span>·</span>
-          <span>Desarrollo Web</span>
-          <span>·</span>
-          <span>Producción de Contenido</span>
+        <span class="eyebrow reveal">Agencia digital boutique · Argentina</span>
+        <h1 class="display hero__title reveal" style="transition-delay: 0.1s;">
+          Tu socio digital,
+          <span class="text-accent">no un proveedor más.</span>
+        </h1>
+        <p class="hero__subtitle reveal" style="transition-delay: 0.2s;">
+          Marketing, e-commerce, desarrollo web y producción de contenido bajo un mismo equipo. Atención directa, precio justo y resultados medibles.
+        </p>
+        <div class="hero__ctas reveal" style="transition-delay: 0.3s;">
+          <a href="#contacto" class="btn btn--primary">Agendá una llamada <span class="btn__arrow">→</span></a>
+          <a href="#servicios" class="btn btn--secondary">Ver servicios</a>
         </div>
       </div>
     </section>
 
-    <!-- SERVICIOS GENERAL -->
-    <section class="services" id="servicios">
+    <!-- SERVICIOS -->
+    <section id="servicios" class="home-section" style="padding-bottom: 0;">
       <div class="container">
-        <div class="section-header reveal">
-          <div class="section-header__text">
-            <span class="eyebrow">01 — Servicios</span>
-            <h2 class="display">Lo que <span class="display-italic">hacemos</span>.</h2>
-            <p class="section-header__sub">Cuatro áreas que se combinan según lo que tu negocio necesite.</p>
-          </div>
+        <div class="home-head reveal">
+          <h2 class="home-head__title">Lo que <em>hacemos</em></h2>
+          <p class="home-head__sub">Cuatro áreas que se combinan según lo que tu negocio necesite.</p>
         </div>
-
         <div class="services-grid">
-          <a href="pages/marketing.html" class="service-card reveal">
-            <div class="service-card__num">01</div>
-            <h3 class="service-card__title">Marketing<br>Digital</h3>
-            <p class="service-card__desc">Estrategia, contenidos, ads y email marketing que generan resultados medibles.</p>
-            <div class="service-card__modules">
-              <span>Starter</span>
-              <span>Growth</span>
+          <a href="pages/marketing.html" class="service-card reveal" style="transition-delay: 0s;">
+            <div class="service-card__media"><span>01</span><span style="color: var(--color-muted-2); font-size: 0.625rem; letter-spacing: 0.08em; text-transform: uppercase;">Imagen · campaña</span></div>
+            <div class="service-card__body">
+              <h3 class="service-card__title">Marketing Digital</h3>
+              <p class="service-card__desc">Estrategia, contenidos, ads y email marketing que generan resultados medibles.</p>
             </div>
-            <span class="service-card__link">
-              Conocé más
-              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
+            <div class="service-card__foot">
+              <div class="service-card__mods"><span>Starter</span><span>Growth</span></div>
+              <span class="service-card__arrow">→</span>
+            </div>
           </a>
-
           <a href="pages/ecommerce.html" class="service-card reveal" style="transition-delay: 0.1s;">
-            <div class="service-card__num">02</div>
-            <h3 class="service-card__title">E-<br>commerce</h3>
-            <p class="service-card__desc">Catálogos, Tiendanube, Shopify y WooCommerce. Tiendas online que convierten.</p>
-            <div class="service-card__modules">
-              <span>Catálogo</span>
-              <span>Tiendanube</span>
-              <span>WooCommerce</span>
+            <div class="service-card__media"><span>02</span><span style="color: var(--color-muted-2); font-size: 0.625rem; letter-spacing: 0.08em; text-transform: uppercase;">Imagen · tienda</span></div>
+            <div class="service-card__body">
+              <h3 class="service-card__title">E-commerce</h3>
+              <p class="service-card__desc">Catálogos, Tiendanube, Shopify y WooCommerce. Tiendas online que convierten.</p>
             </div>
-            <span class="service-card__link">
-              Conocé más
-              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
+            <div class="service-card__foot">
+              <div class="service-card__mods"><span>Catálogo</span><span>Tiendanube</span><span>WooCommerce</span></div>
+              <span class="service-card__arrow">→</span>
+            </div>
           </a>
-
           <a href="pages/desarrollo.html" class="service-card reveal" style="transition-delay: 0.2s;">
-            <div class="service-card__num">03</div>
-            <h3 class="service-card__title">Desarrollo<br>Web</h3>
-            <p class="service-card__desc">Landings de alta conversión y webs institucionales con identidad propia.</p>
-            <div class="service-card__modules">
-              <span>Landing</span>
-              <span>Web Institucional</span>
+            <div class="service-card__media"><span>03</span><span style="color: var(--color-muted-2); font-size: 0.625rem; letter-spacing: 0.08em; text-transform: uppercase;">Imagen · web</span></div>
+            <div class="service-card__body">
+              <h3 class="service-card__title">Desarrollo Web</h3>
+              <p class="service-card__desc">Landings de alta conversión y webs institucionales con identidad propia.</p>
             </div>
-            <span class="service-card__link">
-              Conocé más
-              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
+            <div class="service-card__foot">
+              <div class="service-card__mods"><span>Landing</span><span>Institucional</span></div>
+              <span class="service-card__arrow">→</span>
+            </div>
           </a>
-
-          <a href="pages/produccion.html" class="service-card reveal" style="transition-delay: 0.3s;">
-            <div class="service-card__num">04</div>
-            <h3 class="service-card__title">Producción<br>de Contenido</h3>
-            <p class="service-card__desc">Sesiones, contenido mensual y cobertura de eventos con identidad de marca.</p>
-            <div class="service-card__modules">
-              <span>Sesión</span>
-              <span>Mensual</span>
-              <span>Evento</span>
+          <a href="pages/produccion.html" class="service-card reveal" style="transition-delay: 0.30000000000000004s;">
+            <div class="service-card__media"><span>04</span><span style="color: var(--color-muted-2); font-size: 0.625rem; letter-spacing: 0.08em; text-transform: uppercase;">Imagen · rodaje</span></div>
+            <div class="service-card__body">
+              <h3 class="service-card__title">Producción de Contenido</h3>
+              <p class="service-card__desc">Sesiones, contenido mensual y cobertura de eventos con identidad de marca.</p>
             </div>
-            <span class="service-card__link">
-              Conocé más
-              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
+            <div class="service-card__foot">
+              <div class="service-card__mods"><span>Sesión</span><span>Mensual</span><span>Evento</span></div>
+              <span class="service-card__arrow">→</span>
+            </div>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- CÓMO TRABAJAMOS -->
-    <section class="process">
+    <!-- PROCESO -->
+    <section id="proceso" class="process">
       <div class="container">
-        <div class="section-header reveal">
-          <div class="section-header__text">
-            <span class="eyebrow">02 — Proceso</span>
-            <h2 class="display">Cómo <span class="display-italic">trabajamos</span>.</h2>
-            <p class="section-header__sub">Un proceso simple, claro y sin sorpresas.</p>
-          </div>
+        <div class="home-head reveal" style="margin-bottom: clamp(2.5rem, 5vw, 4rem);">
+          <h2 class="home-head__title">Cómo <em>trabajamos</em></h2>
+          <p class="home-head__sub">Un proceso simple, claro y sin sorpresas.</p>
         </div>
-
-        <div class="process-grid">
-          <div class="process-step reveal">
-            <div class="process-step__num">01</div>
-            <h3 class="process-step__title">Diagnóstico</h3>
-            <p class="process-step__desc">Llamada consultiva inicial sin cargo para entender tu negocio, objetivos y necesidades.</p>
+        <div class="process__grid">
+          <div class="process__step reveal" style="transition-delay: 0s;">
+            <span class="process__num"><span>01</span></span>
+            <h3>Diagnóstico</h3>
+            <p>Llamada consultiva inicial sin cargo para entender tu negocio, objetivos y necesidades.</p>
           </div>
-
-          <div class="process-step reveal" style="transition-delay: 0.1s;">
-            <div class="process-step__num">02</div>
-            <h3 class="process-step__title">Propuesta</h3>
-            <p class="process-step__desc">Armamos una propuesta a medida combinando los módulos que mejor se adapten.</p>
+          <div class="process__step reveal" style="transition-delay: 0.1s;">
+            <span class="process__num"><span>02</span></span>
+            <h3>Propuesta</h3>
+            <p>Una propuesta a medida combinando los módulos que mejor se adapten.</p>
           </div>
-
-          <div class="process-step reveal" style="transition-delay: 0.2s;">
-            <div class="process-step__num">03</div>
-            <h3 class="process-step__title">Ejecución</h3>
-            <p class="process-step__desc">Trabajamos con cronograma claro, comunicación directa y revisiones incluidas.</p>
+          <div class="process__step reveal" style="transition-delay: 0.2s;">
+            <span class="process__num"><span>03</span></span>
+            <h3>Ejecución</h3>
+            <p>Cronograma claro, comunicación directa y revisiones incluidas.</p>
           </div>
-
-          <div class="process-step reveal" style="transition-delay: 0.3s;">
-            <div class="process-step__num">04</div>
-            <h3 class="process-step__title">Resultados</h3>
-            <p class="process-step__desc">Reportes claros, mejoras continuas y acompañamiento real, no automatizado.</p>
+          <div class="process__step reveal" style="transition-delay: 0.30000000000000004s;">
+            <span class="process__num"><span>04</span></span>
+            <h3>Resultados</h3>
+            <p>Reportes claros, mejoras continuas y acompañamiento real, no automatizado.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- POR QUÉ ELEGIRNOS -->
-    <section class="why">
+    <!-- POR QUÉ -->
+    <section class="home-section" style="padding-bottom: 0;">
       <div class="container">
-        <div class="section-header reveal">
-          <div class="section-header__text">
-            <span class="eyebrow">03 — Diferenciales</span>
-            <h2 class="display">Por qué <span class="display-italic">elegirnos</span>.</h2>
-          </div>
+        <div class="home-head reveal">
+          <h2 class="home-head__title">Por qué <em>elegirnos</em></h2>
         </div>
-
         <div class="why-grid">
-          <div class="why-card reveal">
-            <div class="why-card__icon">→</div>
-            <h3 class="why-card__title">Atención directa</h3>
-            <p class="why-card__desc">Hablás directo con quien ejecuta tu proyecto. Sin pasar por ejecutivos de cuenta ni intermediarios.</p>
+          <div class="why-card reveal" style="transition-delay: 0s;">
+            <span class="why-card__kicker">Sin intermediarios</span>
+            <h3>Atención directa</h3>
+            <p>Hablás con quien ejecuta tu proyecto.</p>
           </div>
-
           <div class="why-card reveal" style="transition-delay: 0.1s;">
-            <div class="why-card__icon">$</div>
-            <h3 class="why-card__title">Precio justo</h3>
-            <p class="why-card__desc">Tarifas honestas pensadas para PyMEs. Sin letra chica, sin cargos ocultos.</p>
+            <span class="why-card__kicker">Para PyMEs</span>
+            <h3>Precio justo</h3>
+            <p>Tarifas honestas. Sin letra chica, sin cargos ocultos.</p>
           </div>
-
           <div class="why-card reveal" style="transition-delay: 0.2s;">
-            <div class="why-card__icon">◇</div>
-            <h3 class="why-card__title">Estrategia integral</h3>
-            <p class="why-card__desc">Marketing, e-commerce, web y contenido bajo un mismo equipo. Coherencia total.</p>
+            <span class="why-card__kicker">Un solo equipo</span>
+            <h3>Estrategia integral</h3>
+            <p>Marketing, e-commerce, web y contenido con coherencia total.</p>
           </div>
-
-          <div class="why-card reveal" style="transition-delay: 0.3s;">
-            <div class="why-card__icon">⚡</div>
-            <h3 class="why-card__title">Entrega ágil</h3>
-            <p class="why-card__desc">Equipo chico, decisiones rápidas. Sin burocracia, sin tiempos muertos.</p>
+          <div class="why-card reveal" style="transition-delay: 0.30000000000000004s;">
+            <span class="why-card__kicker">Sin burocracia</span>
+            <h3>Entrega ágil</h3>
+            <p>Equipo chico, decisiones rápidas, sin tiempos muertos.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- TRABAJOS DESTACADOS -->
-    <section class="works">
+    <!-- TRABAJOS -->
+    <section id="trabajos" class="home-section" style="padding-bottom: 0;">
       <div class="container">
-        <div class="section-header reveal">
-          <div class="section-header__text">
-            <span class="eyebrow">04 — Trabajos</span>
-            <h2 class="display">Algunos trabajos <span class="display-italic">seleccionados</span>.</h2>
-          </div>
+        <div class="home-head reveal">
+          <h2 class="home-head__title">Trabajos <em>seleccionados</em></h2>
         </div>
-
         <div class="works-grid">
-          <article class="work-card work-card--large reveal">
-            <div class="work-card__image">
-              <span class="eyebrow">Cobertura de evento</span>
-            </div>
+          <a href="pages/produccion.html" class="work-card reveal" style="transition-delay: 0s;">
+            <span class="work-card__label">Foto · cobertura de evento</span>
             <div class="work-card__info">
               <span class="work-card__tag">Producción · Evento</span>
               <h3 class="work-card__title">Cumpleaños en Estadio River Plate</h3>
-              <div class="work-card__modules">
-                <span>Cobertura de Evento</span>
-              </div>
             </div>
-          </article>
-
-          <article class="work-card reveal" style="transition-delay: 0.1s;">
-            <div class="work-card__image">
-              <span class="eyebrow">Local gastronómico</span>
-            </div>
+          </a>
+          <a href="pages/produccion.html" class="work-card reveal" style="transition-delay: 0.1s;">
+            <span class="work-card__label">Foto · local gastronómico</span>
             <div class="work-card__info">
               <span class="work-card__tag">Producción · Mensual</span>
-              <h3 class="work-card__title">Contenido para local</h3>
-              <div class="work-card__modules">
-                <span>Contenido Mensual</span>
-              </div>
+              <h3 class="work-card__title">Contenido para local gastronómico</h3>
             </div>
-          </article>
-
-          <article class="work-card reveal" style="transition-delay: 0.2s;">
-            <div class="work-card__image">
-              <span class="eyebrow">Próximamente</span>
-            </div>
+          </a>
+          <a href="#contacto" class="work-card reveal" style="transition-delay: 0.2s;">
+            <span class="work-card__label">Tu proyecto</span>
             <div class="work-card__info">
               <span class="work-card__tag">Tu marca acá</span>
               <h3 class="work-card__title">¿Querés ser el próximo?</h3>
-              <div class="work-card__modules">
-                <span>Sumate</span>
-              </div>
             </div>
-          </article>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- MODELOS DE COBRO -->
-    <section class="pricing">
+    <!-- MODALIDADES -->
+    <section id="modalidades" class="home-section" style="padding-bottom: 0;">
       <div class="container">
-        <div class="section-header reveal">
-          <div class="section-header__text">
-            <span class="eyebrow">05 — Modalidades</span>
-            <h2 class="display">Elegí cómo querés <span class="display-italic">trabajar</span>.</h2>
-            <p class="section-header__sub">Te asesoramos para que elijas el modelo que mejor se adapta a tu negocio.</p>
-          </div>
+        <div class="home-head reveal">
+          <h2 class="home-head__title">Elegí cómo <em>trabajar</em></h2>
+          <p class="home-head__sub">Te asesoramos para que elijas el modelo que mejor se adapta a tu negocio.</p>
         </div>
-
-        <div class="pricing-grid">
-          <div class="pricing-card reveal">
-            <div class="pricing-card__icon">◯</div>
-            <h3 class="pricing-card__title">Proyecto puntual</h3>
-            <p class="pricing-card__desc">Pago 50% al inicio + 50% a la entrega. Ideal para desarrollos web, tiendas y sesiones específicas.</p>
-            <div class="pricing-card__ideal">
-              <span class="eyebrow">Ideal para</span>
-              <p>Landings · Webs · Tiendas · Sesiones</p>
-            </div>
+        <div class="plans">
+          <div class="plan reveal" style="transition-delay: 0s;">
+            <span class="plan__kicker">Proyecto puntual</span>
+            <span class="plan__big">50/50</span>
+            <p class="plan__desc">Pagás 50% al inicio y 50% a la entrega. Sin cuotas ni ataduras.</p>
+            <p class="plan__ideal"><strong>Ideal para:</strong> Landings · Webs · Tiendas · Sesiones</p>
+            <button class="plan__toggle" aria-label="Ver más" aria-expanded="false">+</button>
           </div>
-
-          <div class="pricing-card pricing-card--featured reveal" style="transition-delay: 0.1s;">
-            <span class="pricing-card__badge">Recomendado</span>
-            <div class="pricing-card__icon">◐</div>
-            <h3 class="pricing-card__title">Fee mensual</h3>
-            <p class="pricing-card__desc">Compromiso mínimo de 3 meses para poder medir resultados reales. Ideal para servicios continuos.</p>
-            <div class="pricing-card__ideal">
-              <span class="eyebrow">Ideal para</span>
-              <p>Gestión de redes · Ads · Contenido mensual</p>
-            </div>
+          <div class="plan plan--featured reveal" style="transition-delay: 0.1s;">
+            <span class="plan__kicker">Fee mensual · Recomendado</span>
+            <span class="plan__big">3 meses</span>
+            <p class="plan__desc">El compromiso mínimo para medir resultados reales en servicios continuos.</p>
+            <p class="plan__ideal"><strong>Ideal para:</strong> Gestión de redes · Ads · Contenido mensual</p>
+            <button class="plan__toggle" aria-label="Ver más" aria-expanded="false">+</button>
           </div>
-
-          <div class="pricing-card reveal" style="transition-delay: 0.2s;">
-            <div class="pricing-card__icon">●</div>
-            <h3 class="pricing-card__title">Setup + Mensualidad</h3>
-            <p class="pricing-card__desc">La opción mixta: inversión inicial para arrancar + cuota mensual de gestión y mantenimiento.</p>
-            <div class="pricing-card__ideal">
-              <span class="eyebrow">Ideal para</span>
-              <p>Tiendas online · Marketing integral</p>
-            </div>
+          <div class="plan reveal" style="transition-delay: 0.2s;">
+            <span class="plan__kicker">Setup + mensualidad</span>
+            <span class="plan__big">1 + 1</span>
+            <p class="plan__desc">Una inversión inicial para arrancar y una cuota mensual de gestión.</p>
+            <p class="plan__ideal"><strong>Ideal para:</strong> Tiendas online · Marketing integral</p>
+            <button class="plan__toggle" aria-label="Ver más" aria-expanded="false">+</button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CTA FINAL -->
-    <section class="cta-final">
+    <!-- CONTACTO -->
+    <section id="contacto" class="home-section">
       <div class="container">
-        <div class="cta-final__inner reveal">
-          <div class="cta-final__content">
-            <span class="eyebrow" style="color: var(--color-accent);">Conversemos</span>
-            <h2 class="display cta-final__title">
-              ¿Listos para llevar tu marca <span class="display-italic">al siguiente nivel</span>?
-            </h2>
-            <p class="cta-final__sub">Llamada consultiva de 30 minutos, sin cargo y sin compromiso. Te asesoramos sin que tengas que firmar nada.</p>
-            <div class="cta-final__ctas">
-              <a href="https://wa.me/541100000000" class="btn btn--accent" target="_blank">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11.94 11.94 0 0012.04 0C5.46 0 .1 5.36.1 11.94c0 2.1.55 4.16 1.6 5.97L0 24l6.27-1.65a11.91 11.91 0 005.77 1.47h.01c6.58 0 11.94-5.36 11.94-11.94 0-3.19-1.24-6.19-3.49-8.38zm-8.46 18.36h-.01a9.9 9.9 0 01-5.05-1.38l-.36-.22-3.74.98 1-3.65-.24-.37a9.92 9.92 0 01-1.52-5.28c0-5.47 4.46-9.93 9.93-9.93 2.65 0 5.14 1.03 7.02 2.91a9.86 9.86 0 012.91 7.02c0 5.48-4.46 9.92-9.94 9.92zm5.45-7.43c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.21-.24-.58-.49-.5-.67-.51-.17-.01-.37-.01-.57-.01-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.48 0 1.46 1.07 2.88 1.21 3.08.15.2 2.1 3.21 5.09 4.5.71.31 1.26.49 1.7.63.71.23 1.36.19 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35z"/></svg>
-                Escribinos por WhatsApp
-              </a>
-              <a href="pages/contacto.html" class="btn btn--secondary">
-                Enviá un mail
-              </a>
+        <div class="home-cta reveal">
+          <div class="home-cta__text">
+            <h2 class="home-cta__title">¿Llevamos tu marca al siguiente nivel?</h2>
+            <p style="font-size: 1.0625rem; max-width: 420px;">Llamada consultiva de 30 minutos, sin cargo y sin compromiso.</p>
+            <div class="home-cta__btns">
+              <a href="https://wa.me/541100000000" target="_blank" class="btn btn--light">Escribinos por WhatsApp</a>
+              <a href="mailto:hola@marcostudio.com.ar" class="btn btn--outline-light">Enviá un mail</a>
             </div>
           </div>
-
-          <form class="cta-final__form contact-form">
-            <span class="eyebrow" style="color: var(--color-accent); margin-bottom: 1rem; display: block;">O contanos brevemente</span>
-            <div class="form-group">
-              <input type="text" placeholder="Tu nombre" required>
-            </div>
-            <div class="form-group">
-              <input type="email" placeholder="Tu email" required>
-            </div>
-            <div class="form-group">
-              <textarea placeholder="¿En qué podemos ayudarte?" rows="4" required></textarea>
-            </div>
-            <button type="submit" class="btn btn--accent" style="width: 100%; justify-content: center;">
-              Enviar consulta
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M3 8h10m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </button>
+          <form class="home-cta__form contact-form">
+            <span class="eyebrow">O contanos brevemente</span>
+            <input type="text" placeholder="Tu nombre" required>
+            <input type="email" placeholder="Tu email" required>
+            <textarea rows="4" placeholder="¿En qué podemos ayudarte?"></textarea>
+            <button type="submit">Enviar consulta →</button>
           </form>
         </div>
       </div>
@@ -454,7 +342,7 @@
         <div class="footer-col">
           <h4>Empresa</h4>
           <ul>
-            <li><a href="pages/contacto.html">Contacto</a></li>
+            <li><a href="#contacto">Contacto</a></li>
           </ul>
         </div>
 

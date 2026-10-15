@@ -70,6 +70,42 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // ---------- TARJETAS DE SERVICIOS 3D ----------
+  const canTilt = window.matchMedia('(hover: hover) and (pointer: fine)').matches &&
+    !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (canTilt) {
+    document.querySelectorAll('.service-card').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const r = card.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width - 0.5;
+        const y = (e.clientY - r.top) / r.height - 0.5;
+        card.style.transition = 'transform 0.12s ease-out, background-size 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.4s ease';
+        card.style.transform = `perspective(1000px) translateY(-6px) rotateX(${(-y * 10).toFixed(2)}deg) rotateY(${(x * 12).toFixed(2)}deg)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transition = 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), background-size 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.4s ease';
+        card.style.transform = '';
+      });
+    });
+  }
+
+  // ---------- MODALIDADES (+) ----------
+  document.querySelectorAll('.plan__toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const plan = btn.closest('.plan');
+      const open = !plan.classList.contains('is-open');
+      document.querySelectorAll('.plan').forEach(p => {
+        p.classList.remove('is-open');
+        p.querySelector('.plan__toggle')?.setAttribute('aria-expanded', 'false');
+      });
+      if (open) {
+        plan.classList.add('is-open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
   // ---------- HEADER SCROLL ----------
   const header = document.querySelector('.site-header');
   let lastScroll = 0;

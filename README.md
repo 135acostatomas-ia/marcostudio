@@ -20,9 +20,10 @@ marco-studio/
     ├── marketing.html      → Marketing Digital
     ├── ecommerce.html      → E-commerce
     ├── desarrollo.html     → Desarrollo Web
-    ├── produccion.html     → Producción de Contenido
-    └── contacto.html       → Contacto
+    └── produccion.html     → Producción de Contenido
 ```
+
+El contacto vive en el Home (`index.html#contacto`).
 
 ## Stack
 

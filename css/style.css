@@ -5,21 +5,29 @@
 /* ---------- TOKENS ---------- */
 :root {
   /* Colores */
-  --color-bg: #FFFFFF;
-  --color-bg-alt: #E8F2F1;
-  --color-ink: #111111;
-  --color-ink-soft: #333333;
-  --color-muted: #4A4A47;
-  --color-line: #E0E0E0;
-  --color-accent: #3DA5A8;
-  --color-accent-soft: #B8DCDE;
-  --color-dark: #120A17;
-  --color-dark-soft: #1F6F7A;
-  --color-mauve: #1F6F7A;
+  --color-bg: #F7F3F4;
+  --color-bg-alt: #EDE8E6;
+  --color-surface: #FFFFFF;
+  --color-placeholder: #E9E4E2;
+  --color-ink: #160D0C;
+  --color-ink-soft: #2B2523;
+  --color-muted: #5A6461;
+  --color-muted-2: #727C79;
+  --color-line: #E2DCDA;
+  --color-line-strong: #C0C5C1;
+  --color-accent: #647F78;
+  --color-accent-soft: #C9D6D2;
+  --color-dark: #160D0C;
+  --color-dark-soft: #4E6862;
+  --color-mauve: #4E6862;
+
+  /* Degradés */
+  --gradient-sage: linear-gradient(100deg, #4E6862 0%, #647F78 30%, #9FB1AB 68%, #CFCDC5 100%);
+  --gradient-hover: linear-gradient(180deg, #FFFFFF 0%, #E4EBE8 55%, #C9D6D2 100%);
 
   /* Tipografías */
   --font-display: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'Geist Mono', 'Courier New', monospace;
 
   /* Tamaños tipográficos */
@@ -150,47 +158,40 @@ ol {
 /* ---------- HEADER ---------- */
 .site-header {
   position: fixed;
-  top: 0;
+  top: 12px;
   left: 0;
   right: 0;
   z-index: 100;
-  background: linear-gradient(
-    135deg,
-    rgba(184, 220, 222, 0.4) 0%,
-    rgba(232, 242, 241, 0.5) 50%,
-    rgba(184, 220, 222, 0.4) 100%
-  );
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border-bottom: 1px solid rgba(61, 165, 168, 0.15);
-  transition: all var(--transition);
-}
-
-.site-header.is-scrolled {
-  background: linear-gradient(
-    135deg,
-    rgba(184, 220, 222, 0.7) 0%,
-    rgba(232, 242, 241, 0.75) 50%,
-    rgba(184, 220, 222, 0.7) 100%
-  );
-  border-bottom-color: rgba(61, 165, 168, 0.25);
-  box-shadow: 0 4px 24px -8px rgba(31, 111, 122, 0.1);
+  padding: 0 clamp(12px, 2vw, 24px);
 }
 
 .site-header__inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 72px;
+  gap: 1rem;
+  height: 64px;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 var(--gutter);
+  padding: 0 10px 0 14px;
+  background: rgba(247, 243, 244, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--color-line);
+  border-radius: 16px;
+  transition: background var(--transition), box-shadow var(--transition);
+}
+
+.site-header.is-scrolled .site-header__inner {
+  background: rgba(247, 243, 244, 0.96);
+  box-shadow: 0 8px 32px -12px rgba(22, 13, 12, 0.18);
 }
 
 .logo {
   font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 500;
+  font-size: 1.125rem;
+  font-weight: 600;
+  white-space: nowrap;
   letter-spacing: -0.02em;
   display: flex;
   align-items: center;
@@ -198,10 +199,11 @@ ol {
 }
 
 .logo__mark {
-  width: 70px;
-  height: 70px;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
   background-image: url('../images/Logos/logosinfondo.png');
-  background-size: contain;
+  background-size: 182%;
   background-repeat: no-repeat;
   background-position: center;
   display: inline-block;
@@ -271,7 +273,7 @@ ol {
   position: absolute;
   top: 100%;
   left: -1rem;
-  background: var(--color-bg);
+  background: var(--color-surface);
   border: 1px solid var(--color-line);
   border-radius: var(--radius-md);
   padding: 0.75rem;
@@ -314,10 +316,10 @@ ol {
 
 /* CTA Header */
 .btn-header {
-  background: var(--color-dark);
-  color: var(--color-bg);
-  padding: 0.75rem 1.25rem;
-  border-radius: var(--radius-full);
+  background: var(--color-accent);
+  color: #FFFFFF;
+  padding: 0.75rem 1.125rem;
+  border-radius: 10px;
   font-size: var(--fs-small);
   font-weight: 500;
   transition: all var(--transition-fast);
@@ -325,7 +327,7 @@ ol {
 }
 
 .btn-header:hover {
-  background: var(--color-accent);
+  background: var(--color-muted-2);
   transform: translateY(-1px);
 }
 
@@ -363,7 +365,7 @@ ol {
 /* Mobile menu */
 .mobile-menu {
   position: fixed;
-  top: 72px;
+  top: 88px;
   left: 0;
   right: 0;
   bottom: 0;
@@ -428,7 +430,7 @@ ol {
 .btn--primary:hover {
   background: var(--color-accent);
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px -8px rgba(74, 86, 81, 0.5);
+  box-shadow: 0 10px 24px -8px rgba(100, 127, 120, 0.6);
 }
 
 .btn--secondary {
@@ -439,7 +441,7 @@ ol {
 
 .btn--secondary:hover {
   background: var(--color-dark);
-  color: var(--color-bg);
+  color: #FFFFFF;
 }
 
 .btn--accent {
@@ -448,7 +450,7 @@ ol {
 }
 
 .btn--accent:hover {
-  background: var(--color-dark-soft);
+  background: var(--color-muted-2);
   transform: translateY(-2px);
 }
 
@@ -475,13 +477,78 @@ ol {
   transform: translateX(3px);
 }
 
+/* ---------- BOTONES GLOBO ---------- */
+.btn:not(.btn--ghost),
+.btn-header,
+.plan__toggle,
+.home-cta__form button {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: 999px;
+  box-shadow:
+    inset 0 2px 8px rgba(255, 255, 255, 0.18),
+    inset 0 -8px 16px rgba(22, 13, 12, 0.12),
+    0 12px 24px -14px rgba(22, 13, 12, 0.35);
+  transition: transform 0.45s cubic-bezier(0.34, 1.4, 0.64, 1), box-shadow 0.35s ease, background var(--transition-fast), color var(--transition-fast);
+}
+
+/* volumen suave: luz difusa arriba a la izquierda */
+.btn:not(.btn--ghost)::before,
+.btn-header::before,
+.plan__toggle::before,
+.home-cta__form button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(130% 160% at 28% 0%, rgba(255, 255, 255, 0.28) 0%, rgba(255, 255, 255, 0.08) 35%, rgba(255, 255, 255, 0) 60%);
+  pointer-events: none;
+  z-index: -1;
+  transition: opacity 0.35s ease;
+}
+
+.btn--secondary,
+.btn--outline-light {
+  box-shadow:
+    inset 0 2px 8px rgba(255, 255, 255, 0.25),
+    inset 0 -8px 16px rgba(22, 13, 12, 0.05),
+    0 10px 20px -14px rgba(22, 13, 12, 0.25);
+}
+
+.btn:not(.btn--ghost):hover,
+.btn-header:hover,
+.plan__toggle:hover,
+.home-cta__form button:hover {
+  transform: scale(1.04);
+  box-shadow:
+    inset 0 2px 10px rgba(255, 255, 255, 0.22),
+    inset 0 -8px 16px rgba(22, 13, 12, 0.12),
+    0 18px 30px -16px rgba(22, 13, 12, 0.4);
+}
+
+.btn:not(.btn--ghost):active,
+.btn-header:active,
+.plan__toggle:active,
+.home-cta__form button:active {
+  transform: scale(0.96);
+  box-shadow:
+    inset 0 3px 10px rgba(22, 13, 12, 0.18),
+    0 6px 12px -10px rgba(22, 13, 12, 0.3);
+  transition-duration: 0.12s;
+}
+
 /* ---------- SECCIONES BASE ---------- */
 section {
   padding: var(--space-2xl) 0;
 }
 
 main {
-  padding-top: 72px;
+  padding-top: 88px;
+}
+
+section[id] {
+  scroll-margin-top: 96px;
 }
 
 .section-header {
@@ -516,7 +583,7 @@ main {
 
 /* ---------- CARDS ---------- */
 .card {
-  background: var(--color-bg);
+  background: var(--color-surface);
   border: 1px solid var(--color-line);
   border-radius: var(--radius-md);
   padding: var(--space-lg);
@@ -526,7 +593,7 @@ main {
 }
 
 .card:hover {
-  border-color: var(--color-ink);
+  border-color: var(--color-accent);
   transform: translateY(-4px);
   box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.1);
 }
@@ -577,9 +644,10 @@ main {
 
 /* ---------- FOOTER ---------- */
 .site-footer {
-  background: var(--color-dark);
-  color: var(--color-bg);
-  padding: var(--space-2xl) 0 var(--space-lg);
+  background: var(--color-bg);
+  color: var(--color-ink);
+  border-top: 1px solid var(--color-line);
+  padding: var(--space-xl) 0 var(--space-lg);
   margin-top: var(--space-3xl);
 }
 
@@ -596,7 +664,7 @@ main {
   text-transform: uppercase;
   letter-spacing: 0.15em;
   margin-bottom: 1.5rem;
-  color: var(--color-muted);
+  color: var(--color-muted-2);
 }
 
 .footer-col ul {
@@ -605,9 +673,14 @@ main {
   gap: 0.75rem;
 }
 
+.footer-col li {
+  font-size: var(--fs-small);
+  color: var(--color-muted);
+}
+
 .footer-col a {
   font-size: var(--fs-small);
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--color-muted);
   transition: color var(--transition-fast);
 }
 
@@ -616,7 +689,7 @@ main {
 }
 
 .footer-brand .logo {
-  color: var(--color-bg);
+  color: var(--color-ink);
   margin-bottom: 1rem;
 }
 
@@ -626,7 +699,7 @@ main {
 
 .footer-brand p {
   font-size: var(--fs-small);
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--color-muted);
   max-width: 300px;
   line-height: 1.6;
 }
@@ -643,7 +716,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--color-line-strong);
   border-radius: var(--radius-full);
   transition: all var(--transition-fast);
 }
@@ -651,22 +724,23 @@ main {
 .social-links a:hover {
   background: var(--color-accent);
   border-color: var(--color-accent);
+  color: #FFFFFF;
 }
 
 .footer-bottom {
   padding-top: var(--space-lg);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid var(--color-line);
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: var(--fs-mini);
-  color: var(--color-muted);
+  color: var(--color-muted-2);
   flex-wrap: wrap;
   gap: 1rem;
 }
 
 .footer-bottom a {
-  color: var(--color-muted);
+  color: var(--color-muted-2);
 }
 
 /* ---------- WHATSAPP FLOAT ---------- */
@@ -781,6 +855,11 @@ main {
     bottom: 16px;
     right: 16px;
   }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .wa-float { animation: none; }
 }
 
 /* ---------- UTILIDADES ---------- */

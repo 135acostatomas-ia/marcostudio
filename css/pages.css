@@ -123,8 +123,8 @@
       45deg,
       transparent,
       transparent 10px,
-      rgba(0,0,0,0.03) 10px,
-      rgba(0,0,0,0.03) 20px
+      rgba(22,13,12,0.04) 10px,
+      rgba(22,13,12,0.04) 20px
     );
   display: flex;
   align-items: center;
@@ -203,8 +203,8 @@
 
 /* ---------- COMBOS ---------- */
 .combos__banner {
-  background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-dark-soft) 100%);
-  color: var(--color-bg);
+  background: var(--gradient-sage);
+  color: #FFFFFF;
   border-radius: var(--radius-lg);
   padding: var(--space-xl);
   margin-bottom: var(--space-xl);
@@ -350,9 +350,10 @@
 }
 
 .pricing-card--featured {
-  background: var(--color-dark-soft);
-  color: var(--color-bg);
-  border-color: var(--color-dark-soft);
+  background: var(--gradient-sage);
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 30px 60px -24px rgba(22, 13, 12, 0.35);
 }
 
 .pricing-card--featured .pricing-card__desc,
@@ -424,8 +425,8 @@
 }
 
 .cta-final__inner {
-  background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-dark-soft) 100%);
-  color: var(--color-bg);
+  background: var(--gradient-sage);
+  color: #FFFFFF;
   border-radius: var(--radius-lg);
   padding: var(--space-2xl);
   display: grid;
@@ -475,8 +476,9 @@
 }
 
 .cta-final__form {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: transparent;
+  border: none;
+  color: var(--color-ink);
   padding: var(--space-lg);
   border-radius: var(--radius-md);
   position: relative;
@@ -499,10 +501,12 @@
 .form-group select {
   width: 100%;
   padding: 0.875rem 1rem;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: var(--radius-sm);
-  color: var(--color-bg);
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+  color: var(--color-ink);
   font-family: inherit;
   font-size: var(--fs-small);
   transition: all var(--transition-fast);
@@ -510,15 +514,15 @@
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--color-muted);
 }
 
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus {
   outline: none;
-  border-color: var(--color-accent);
-  background: rgba(255, 255, 255, 0.08);
+  border-color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .form-group textarea {
@@ -946,8 +950,8 @@
       45deg,
       transparent,
       transparent 10px,
-      rgba(0,0,0,0.03) 10px,
-      rgba(0,0,0,0.03) 20px
+      rgba(22,13,12,0.04) 10px,
+      rgba(22,13,12,0.04) 20px
     );
   border-radius: var(--radius-md);
   margin-top: var(--space-xl);
@@ -985,8 +989,8 @@
       45deg,
       transparent,
       transparent 10px,
-      rgba(0,0,0,0.03) 10px,
-      rgba(0,0,0,0.03) 20px
+      rgba(22,13,12,0.04) 10px,
+      rgba(22,13,12,0.04) 20px
     );
   border-radius: var(--radius-md);
 }
@@ -1047,8 +1051,8 @@
       45deg,
       transparent,
       transparent 8px,
-      rgba(0,0,0,0.03) 8px,
-      rgba(0,0,0,0.03) 16px
+      rgba(22,13,12,0.04) 8px,
+      rgba(22,13,12,0.04) 16px
     );
   border-radius: var(--radius-md);
 }
@@ -1133,16 +1137,17 @@
 }
 
 .contact-form-wrap {
-  background: var(--color-bg);
+  background: var(--color-surface);
   border: 1px solid var(--color-line);
-  border-radius: var(--radius-md);
+  border-radius: 20px;
   padding: var(--space-lg);
 }
 
 .contact-form-wrap .form-group input,
 .contact-form-wrap .form-group textarea,
 .contact-form-wrap .form-group select {
-  background: var(--color-bg-alt);
+  backdrop-filter: none;
+  background: var(--color-bg);
   border-color: var(--color-line);
   color: var(--color-ink);
 }
@@ -1309,4 +1314,33 @@
   .module-card__title {
     font-size: 2rem;
   }
+}
+
+/* ---------- AJUSTES PALETA 2026 ---------- */
+.cta-final__inner .eyebrow,
+.pricing-card--featured .eyebrow { color: #F7F3F4 !important; }
+
+.cta-final__inner .btn--accent,
+.combos__banner .btn--accent {
+  background: #F7F3F4;
+  color: var(--color-ink);
+}
+
+.cta-final__inner .btn--accent:hover,
+.combos__banner .btn--accent:hover { background: #FFFFFF; }
+
+.cta-final__inner .btn--secondary {
+  border-color: rgba(255, 255, 255, 0.7) !important;
+  color: #FFFFFF !important;
+}
+
+.cta-final__inner .btn--secondary:hover { background: rgba(255, 255, 255, 0.12); }
+
+.cta-final__sub { color: #F7F3F4; }
+
+.cta-final__form .btn,
+.cta-final__form button[type="submit"] {
+  background: rgba(22, 13, 12, 0.82);
+  color: #FFFFFF;
+  border-radius: 10px;
 }
