@@ -294,13 +294,9 @@ document.addEventListener('DOMContentLoaded', () => {
       forceVisible();
       const animate = !reduce.matches && !opts.instant;
       const prev = active;
-      const first = card.getBoundingClientRect();
       const others = cards.filter(c => c !== card);
-      // Piezas de la tarjeta: se miden donde están para que, al "desarmarse", viajen desde ahí
+      let first = null, olds = [];
       const PARTS = ['.service-card__media', '.service-card__title', '.service-card__desc', '.service-card__mods', '.service-card__arrow'];
-      const olds = (animate && first.width > 0)
-        ? PARTS.map(q => { const el = card.querySelector(q); return { el, r: el.getBoundingClientRect() }; })
-        : [];
 
       // 1) Las demás se apartan; la elegida "se levanta"
       let held = [];
@@ -314,6 +310,12 @@ document.addEventListener('DOMContentLoaded', () => {
         await wait(PHASE_OUT);
       }
 
+      // Se mide recién ahora, con la tarjeta ya levantada, para que no haya saltos
+      first = card.getBoundingClientRect();
+      if (animate && first.width > 0) {
+        olds = PARTS.map(q => { const el = card.querySelector(q); return { el, r: el.getBoundingClientRect() }; });
+      }
+
       // 2) Cambio de layout: la tarjeta se "desarma" en piezas centradas
       card.style.transform = ''; card.style.transition = '';
       grid.classList.add('has-active');
@@ -322,18 +324,28 @@ document.addEventListener('DOMContentLoaded', () => {
       active = card;
       held.forEach(a => a.cancel());
 
-      // Fantasma de la tarjeta: queda en su lugar y se disuelve mientras las piezas salen volando
+      // Fantasma: una copia de la tarjeta, idéntica, que queda en su lugar y se deshace
+      // (se encoge y se difumina) mientras las piezas reales salen de ella.
       if (olds.length) {
+        const gr = grid.getBoundingClientRect();
         const g = document.createElement('div');
         g.className = 'card-ghost';
+        g.setAttribute('aria-hidden', 'true');
+        g.inert = true;
         Object.assign(g.style, {
-          left: first.left + window.scrollX + 'px', top: first.top + window.scrollY + 'px',
+          left: first.left - gr.left + 'px', top: first.top - gr.top + 'px',
           width: first.width + 'px', height: first.height + 'px'
         });
-        document.body.appendChild(g);
+        const copy = card.querySelector('.service-card__main').cloneNode(true);
+        copy.querySelectorAll('[aria-controls],[aria-expanded]').forEach(n => { n.removeAttribute('aria-controls'); n.removeAttribute('aria-expanded'); });
+        copy.querySelectorAll('button, a').forEach(n => n.tabIndex = -1);
+        g.appendChild(copy);
+        grid.appendChild(g);
         g.animate(
-          [{ opacity: 1, transform: 'scale(1)' }, { opacity: 0, transform: 'scale(1.07)' }],
-          { duration: 520, easing: 'ease-out', fill: 'forwards' }).finished.then(() => g.remove());
+          [{ opacity: 1, transform: 'scale(1)', filter: 'blur(0px)', offset: 0 },
+           { opacity: 0.6, transform: 'scale(0.985)', filter: 'blur(1.5px)', offset: 0.4 },
+           { opacity: 0, transform: 'scale(0.95)', filter: 'blur(8px)', offset: 1 }],
+          { duration: 460, easing: 'cubic-bezier(0.25, 0, 0.3, 1)', fill: 'forwards' }).finished.then(() => g.remove());
       }
 
       // Nuevas posiciones (antes de mover el scroll)
@@ -347,7 +359,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // 4) Entrada coreografiada
       if (animate) {
-        const TILT = [-5, 4, -7, 6, -9];
+        const TILT = [0, 4, -7, 6, -9];   // la imagen no rota: arranca calzada con la de la tarjeta
         if (near) {
           moves.forEach((m, i) => {
             const cx = (m.a.left + m.a.width / 2) - (m.b.left + m.b.width / 2);
@@ -356,7 +368,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const k = isMedia ? 1 : Math.min(1.1, Math.max(0.4, m.a.height / (m.b.height || 1)));
             const opts2 = { duration: 950, delay: i * 70, easing: 'cubic-bezier(0.22, 1.25, 0.36, 1)', fill: 'backwards' };
             m.el.animate(
-              [{ transform: `translate(${cx}px, ${cy}px) rotate(${TILT[i]}deg) scale(${k})` }, { transform: 'none' }], opts2);
+              [{ transform: `translate(${cx}px, ${cy}px) rotate(${TILT[i]}deg) scale(${k})`, opacity: isMedia ? 1 : 0, offset: 0 },
+               { opacity: 1, offset: 0.35 },
+               { transform: 'none', opacity: 1, offset: 1 }], opts2);
             if (isMedia) {
               // la imagen se abre como un telón desde el tamaño de la tarjeta hasta el ancho completo
               const ix = Math.max(0, (m.b.width - m.a.width) / 2), iy = Math.max(0, (m.b.height - m.a.height) / 2);

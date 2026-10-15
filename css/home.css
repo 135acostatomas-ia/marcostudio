@@ -229,6 +229,7 @@ html.is-playing .hero-mark__img {
 
 /* ---------- SERVICIOS ---------- */
 .services-grid {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 270px), 1fr));
   gap: 0.75rem;
@@ -383,6 +384,7 @@ html.is-playing .hero-mark__img {
   grid-column: 1 / -1;
   display: block;
   background-size: 100% 0%;
+  will-change: auto;   /* sin contexto de apilado propio: las piezas pueden pasar por encima del fantasma */
 }
 .service-card.is-active,
 .service-card.is-active:hover,
@@ -411,13 +413,16 @@ html.is-playing .hero-mark__img {
 .service-card.is-active .service-card__foot { margin-top: 0; padding: 0; justify-content: center; gap: 0.875rem; }
 .card-ghost {
   position: absolute;
-  z-index: 4;
+  z-index: 3;
   pointer-events: none;
+  overflow: hidden;
   border-radius: 20px;
   border: 1px solid var(--color-accent);
   background: var(--gradient-hover);
   box-shadow: 0 24px 48px -28px rgba(59, 34, 19, 0.3);
 }
+.card-ghost .service-card__main { height: 100%; }
+.card-ghost .service-card__arrow { background-color: var(--color-coral); color: #fff; }
 .service-card.is-active .service-card__arrow {
   background-color: var(--color-coral);
   color: #fff;
