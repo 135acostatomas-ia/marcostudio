@@ -351,7 +351,7 @@ html.is-playing .hero-mark__img {
 .process {
   margin-top: clamp(4.5rem, 9vw, 8rem);
   /* salvia suave y traslúcido, el mismo tono del relleno de las tarjetas de servicios */
-  --process-bg: #E1E9E5;
+  --process-bg: var(--color-sage-soft);
   background: var(--process-bg);
   border-top: 1px solid rgba(100, 127, 120, 0.25);
   border-bottom: 1px solid rgba(100, 127, 120, 0.25);
