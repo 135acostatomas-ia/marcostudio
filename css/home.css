@@ -350,20 +350,12 @@ html.is-playing .hero-mark__img {
 /* ---------- PROCESO ---------- */
 .process {
   margin-top: clamp(4.5rem, 9vw, 8rem);
-  background: var(--color-accent);   /* banda salvia #647F78 */
-  color: #F7F3F4;
+  /* salvia suave y traslúcido, el mismo tono del relleno de las tarjetas de servicios */
+  --process-bg: #E1E9E5;
+  background: var(--process-bg);
+  border-top: 1px solid rgba(100, 127, 120, 0.25);
+  border-bottom: 1px solid rgba(100, 127, 120, 0.25);
   padding: clamp(4rem, 8vw, 7rem) 0;
-}
-
-/* Textos claros sobre la banda salvia */
-.process .home-head__title,
-.process__step h3 {
-  color: #FFFFFF;
-}
-
-.process .home-head__sub,
-.process__step p {
-  color: rgba(255, 255, 255, 0.82);
 }
 
 .process__grid {
@@ -380,8 +372,8 @@ html.is-playing .hero-mark__img {
   left: 0;
   right: 0;
   height: 1px;
-  background: #FFFFFF;
-  opacity: 0.28;
+  background: var(--color-accent);
+  opacity: 0.35;
 }
 
 .process__step {
@@ -398,7 +390,7 @@ html.is-playing .hero-mark__img {
   line-height: 1;
   letter-spacing: -0.04em;
   padding-right: 1rem;
-  background: var(--color-accent);   /* tapa la línea detrás del número */
+  background: var(--process-bg);   /* tapa la línea detrás del número */
 }
 
 .process__num span {
@@ -408,9 +400,9 @@ html.is-playing .hero-mark__img {
   color: transparent;
 }
 
-/* Números en coral claro: el #E2664A puro no se lee sobre la banda salvia */
+/* Números en coral (con un leve degradé hacia un tono más profundo) */
 .process__num span {
-  background-image: linear-gradient(135deg, #FFB09A, #FF8E73);
+  background-image: linear-gradient(135deg, var(--color-coral), #C9503A);
 }
 
 .process__step h3 {
@@ -422,6 +414,7 @@ html.is-playing .hero-mark__img {
 }
 
 .process__step p {
+  color: var(--color-muted);
   font-size: 0.9375rem;
 }
 
@@ -621,7 +614,7 @@ html.is-playing .hero-mark__img {
   height: 56px;
   flex-shrink: 0;
   border-radius: 50%;
-  background: var(--color-ink);
+  background: var(--color-coral);   /* botón "+" en coral */
   color: #FFFFFF;
   font-size: 1.5rem;
   font-weight: 300;
@@ -629,15 +622,28 @@ html.is-playing .hero-mark__img {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 }
 
-.plan--featured .plan__toggle {
+.plan__toggle:hover { background: #D2573B; }
+
+/* Tarjeta destacada (fondo salvia): círculo blanco con el "+" en coral */
+.plan--featured .plan__toggle,
+.plan--featured .plan__toggle:hover {
   background: #FFFFFF;
-  color: var(--color-ink);
+  color: var(--color-coral);
 }
 
-.plan.is-open .plan__toggle { transform: rotate(45deg); }
+/* Abierta: gira a "×" y el coral se oscurece */
+.plan.is-open .plan__toggle {
+  transform: rotate(45deg);
+  background: #C9503A;
+}
+
+.plan--featured.is-open .plan__toggle {
+  background: #FFFFFF;
+  color: #C9503A;
+}
 
 /* ---------- CONTACTO ---------- */
 .home-cta {
