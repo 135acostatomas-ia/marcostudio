@@ -18,6 +18,7 @@
   --color-line-strong: #C0C5C1;
   --color-accent: #647F78;
   --color-accent-soft: #C9D6D2;
+  --color-sage-soft: #E1E9E5;   /* salvia suave: sección Proceso y footer */
   --color-dark: #3B2213;
   --color-dark-soft: #4E6862;
   --color-mauve: #4E6862;
@@ -647,10 +648,11 @@ section[id] {
 
 /* ---------- FOOTER ---------- */
 .site-footer {
-  background: var(--color-brown);
-  color: #F7F3F4;
+  background: var(--color-sage-soft);
+  color: var(--color-ink);
+  border-top: 1px solid rgba(100, 127, 120, 0.25);
   padding: var(--space-xl) 0 var(--space-lg);
-  margin-top: var(--space-xl);
+  margin-top: var(--space-3xl);
 }
 
 .footer-grid {
@@ -666,7 +668,7 @@ section[id] {
   text-transform: uppercase;
   letter-spacing: 0.15em;
   margin-bottom: 1.5rem;
-  color: rgba(247, 243, 244, 0.55);
+  color: var(--color-muted-2);
 }
 
 .footer-col ul {
@@ -677,32 +679,27 @@ section[id] {
 
 .footer-col li {
   font-size: var(--fs-small);
-  color: rgba(247, 243, 244, 0.78);
+  color: var(--color-muted);
 }
 
 .footer-col a {
   font-size: var(--fs-small);
-  color: rgba(247, 243, 244, 0.78);
+  color: var(--color-muted);
   transition: color var(--transition-fast);
 }
 
 .footer-col a:hover {
-  color: var(--color-coral);
+  color: var(--color-accent);
 }
 
 .footer-brand .logo {
-  color: #F7F3F4;
+  color: var(--color-ink);
   margin-bottom: 1rem;
-}
-
-/* el ícono (con su cuadrado marrón) va sobre un recuadro crema para que se vea en el footer */
-.footer-brand .logo__mark {
-  background-color: #F7F3F4;
 }
 
 .footer-brand p {
   font-size: var(--fs-small);
-  color: rgba(247, 243, 244, 0.7);
+  color: var(--color-muted);
   max-width: 300px;
   line-height: 1.6;
 }
@@ -719,36 +716,31 @@ section[id] {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(247, 243, 244, 0.3);
+  border: 1px solid var(--color-line-strong);
   border-radius: var(--radius-full);
-  color: #F7F3F4;
   transition: all var(--transition-fast);
 }
 
 .social-links a:hover {
-  background: var(--color-coral);
-  border-color: var(--color-coral);
+  background: var(--color-accent);
+  border-color: var(--color-accent);
   color: #FFFFFF;
 }
 
 .footer-bottom {
   padding-top: var(--space-lg);
-  border-top: 1px solid rgba(247, 243, 244, 0.15);
+  border-top: 1px solid var(--color-line);
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: var(--fs-mini);
-  color: rgba(247, 243, 244, 0.55);
+  color: var(--color-muted-2);
   flex-wrap: wrap;
   gap: 1rem;
 }
 
 .footer-bottom a {
-  color: rgba(247, 243, 244, 0.55);
-}
-
-.footer-bottom a:hover {
-  color: var(--color-coral);
+  color: var(--color-muted-2);
 }
 
 /* ---------- WHATSAPP FLOAT ---------- */
