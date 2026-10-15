@@ -38,25 +38,43 @@ document.addEventListener('DOMContentLoaded', () => {
     el.classList.add(elCenter < viewportCenter ? 'reveal--from-left' : 'reveal--from-right');
   });
 
+  // Un elemento se anima recién cuando ya asomó una buena parte de la pantalla
+  // (no cuando apenas se ve el borde): así la animación se aprecia mientras se hace scroll.
+  // Los que entran juntos (grillas en escritorio) salen escalonados; en celular, al ser
+  // una columna, cada tarjeta entra sola y sin demora.
+  const show = (el, i) => {
+    if (el.classList.contains('is-visible')) return;
+    const delay = i * 0.1;
+    el.style.transitionDelay = `${delay}s`;
+    el.classList.add('is-visible');
+    observer.unobserve(el);
+    // Al terminar la entrada se quita el retraso y la tarjeta vuelve a su transición
+    // de hover (si no, todos sus hover responderían con demora).
+    setTimeout(() => {
+      el.style.transitionDelay = '';
+      el.classList.add('reveal-done');
+    }, delay * 1000 + 1000);
+  };
+
   const observer = new IntersectionObserver((entries) => {
+    let i = 0;
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const el = entry.target;
-        el.classList.add('is-visible');
-        observer.unobserve(el);
-        // Cuando termina la entrada, se quita el retraso escalonado: si no, queda
-        // pegado y todos los efectos hover de la tarjeta responden con 0.1–0.3 s de demora.
-        const delay = (parseFloat(el.style.transitionDelay) || 0) * 1000;
-        setTimeout(() => {
-          el.style.transitionDelay = '';
-          el.classList.add('reveal-done');
-        }, delay + 900);
-      }
+      if (entry.isIntersecting) show(entry.target, i++);
     });
   }, {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+    threshold: 0,
+    rootMargin: '0px 0px -22% 0px'
   });
+
+  // Al llegar al final de la página, lo que haya quedado sin animar entra igual
+  // (el último bloque puede no llegar a subir hasta la zona de disparo).
+  window.addEventListener('scroll', () => {
+    if (!revealsStarted) return;
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) {
+      let i = 0;
+      reveals.forEach(el => { if (!el.classList.contains('is-visible')) show(el, i++); });
+    }
+  }, { passive: true });
 
   // ---------- PRESENTACIÓN DE INICIO ----------
   // Mientras corre la presentación (css/home.css) se bloquea el scroll y las

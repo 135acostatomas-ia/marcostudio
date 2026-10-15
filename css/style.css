@@ -791,15 +791,16 @@ section[id] {
 /* ---------- ANIMACIONES ---------- */
 .reveal {
   opacity: 0;
-  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Mientras entran, las tarjetas usan SIEMPRE la transición de entrada (si no, el
    `transition` propio de cada tarjeta la pisa y entran de golpe). Al terminar,
    js/main.js agrega .reveal-done y la tarjeta vuelve a su transición de hover. */
 .reveal:not(.reveal-done) {
-  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
 
 .reveal--from-left {
   transform: translateX(-90px);
@@ -812,6 +813,15 @@ section[id] {
 .reveal.is-visible {
   opacity: 1;
   transform: translateX(0);
+}
+
+/* En celular (una sola columna) las tarjetas suben desde abajo mientras se hace scroll,
+   en vez de deslizarse desde un costado. */
+@media (max-width: 768px) {
+  .reveal--from-left,
+  .reveal--from-right {
+    transform: translateY(44px);
+  }
 }
 
 /* ---------- RESPONSIVE ---------- */
