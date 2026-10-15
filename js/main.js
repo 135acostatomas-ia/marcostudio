@@ -104,24 +104,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // Baja con el scroll y se desvanece hasta desaparecer.
   const heroMark = document.getElementById('hero-mark');
   if (heroMark) {
-    // Centra la marca detrás del título "Tu socio digital"
-    const heroTitle = document.querySelector('.hero__title');
-    const alignHeroMark = () => {
-      if (!heroTitle) return;
-      const r = heroTitle.getBoundingClientRect();
-      heroMark.style.setProperty('--mark-y', `${Math.round(r.top + window.scrollY + r.height / 2)}px`);
-    };
-    alignHeroMark();
-    window.addEventListener('resize', alignHeroMark);
-    window.addEventListener('load', alignHeroMark);
-    if (document.fonts && document.fonts.ready) document.fonts.ready.then(alignHeroMark);
-
     let ticking = false;
     const updateHeroMark = () => {
       const y = window.scrollY;
-      const p = Math.min(y / (window.innerHeight * 0.6), 1);
+      const p = Math.min(y / (window.innerHeight * 0.5), 1);
       heroMark.style.opacity = String(1 - p);
-      heroMark.style.transform = reduceMotion ? '' : `translate3d(0, ${(y * 0.45).toFixed(1)}px, 0)`;
+      heroMark.style.transform = reduceMotion ? '' : `translate3d(0, ${(y * 0.3).toFixed(1)}px, 0)`;
       heroMark.style.visibility = p >= 1 ? 'hidden' : 'visible';
       ticking = false;
     };
