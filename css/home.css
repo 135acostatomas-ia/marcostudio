@@ -175,7 +175,7 @@ html.is-playing .intro__bar span {
   width: var(--mark-w);
   display: block;
   height: auto;
-  opacity: 0.32;
+  opacity: 1;
 }
 
 /* Durante la presentación la marca espera; luego aparece mientras la intro se va */
@@ -189,7 +189,7 @@ html.is-playing .hero-mark__img {
 
 @keyframes heroMarkIn {
   from { opacity: 0; }
-  to   { opacity: 0.32; }
+  to   { opacity: 1; }
 }
 
 

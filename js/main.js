@@ -127,32 +127,39 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ---------- MARCA DE FONDO DEL HERO ----------
-  // El logo queda fijo detrás de la web. Recién cuando se llega a "Lo que hacemos"
-  // empieza a bajar y a desvanecerse, hasta desaparecer.
+  // El logo arranca 100% opaco y fijo detrás de la web. Con el scroll se va volviendo
+  // traslúcido de a poco y, al llegar a "Lo que hacemos", baja y se desvanece del todo.
   const heroMark = document.getElementById('hero-mark');
   if (heroMark) {
     const servicesHead = document.querySelector('#servicios .home-head');
-    let fadeStart = window.innerHeight;
-    let fadeLen = window.innerHeight;
+    const FLOOR = 0.3;          // opacidad a la que llega antes de empezar a desaparecer
+    let softEnd = window.innerHeight * 0.6;   // scroll hasta el que se vuelve traslúcido
+    let fadeLen = window.innerHeight;         // scroll que tarda en desaparecer
 
     const measure = () => {
       const vh = window.innerHeight;
       if (servicesHead) {
         const top = servicesHead.getBoundingClientRect().top + window.scrollY;
-        fadeStart = Math.max(vh * 0.2, top - vh * 1.0);  // cuando el título empieza a asomar
+        softEnd = Math.max(vh * 0.35, top - vh * 0.6);   // cuando "Lo que hacemos" asoma
       } else {
-        fadeStart = vh;
+        softEnd = vh * 0.6;
       }
       fadeLen = vh * 0.9;
     };
 
     let ticking = false;
     const updateHeroMark = () => {
-      const d = window.scrollY - fadeStart;
-      const p = Math.min(Math.max(d / fadeLen, 0), 1);
-      heroMark.style.opacity = String(1 - p);
+      const y = window.scrollY;
+      let opacity, d = 0;
+      if (y < softEnd) {
+        opacity = 1 - (1 - FLOOR) * (y / softEnd);             // 1 -> FLOOR, parejo con el scroll
+      } else {
+        d = y - softEnd;
+        opacity = FLOOR * (1 - Math.min(d / fadeLen, 1));      // FLOOR -> 0
+      }
+      heroMark.style.opacity = opacity.toFixed(3);
       heroMark.style.transform = reduceMotion || d <= 0 ? '' : `translate3d(0, ${(d * 0.35).toFixed(1)}px, 0)`;
-      heroMark.style.visibility = p >= 1 ? 'hidden' : 'visible';
+      heroMark.style.visibility = opacity <= 0.001 ? 'hidden' : 'visible';
       ticking = false;
     };
 
