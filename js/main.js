@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const vh = window.innerHeight;
       if (servicesHead) {
         const top = servicesHead.getBoundingClientRect().top + window.scrollY;
-        fadeStart = Math.max(vh * 0.5, top - vh * 0.35);  // el título ya está a la vista
+        fadeStart = Math.max(vh * 0.5, top - vh * 0.65);  // cuando el título empieza a asomar
       } else {
         fadeStart = vh;
       }
