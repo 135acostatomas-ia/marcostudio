@@ -20,6 +20,7 @@
   --color-dark: #160D0C;
   --color-dark-soft: #4E6862;
   --color-mauve: #4E6862;
+  --color-coral: #E2664A;   /* acento cálido (punto de los logos) */
 
   /* Degradés */
   --gradient-sage: linear-gradient(100deg, #4E6862 0%, #647F78 30%, #9FB1AB 68%, #CFCDC5 100%);
@@ -214,6 +215,7 @@ ol {
   display: flex;
   align-items: center;
   gap: 2rem;
+  padding-right: 2rem;   /* separa los links del borde derecho de la barra */
 }
 
 .nav__list {
