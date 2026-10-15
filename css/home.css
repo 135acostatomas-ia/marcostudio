@@ -3,16 +3,20 @@
    ============================================ */
 
 /* ---------- HERO ---------- */
+/* El hero ocupa la pantalla y su logo queda EXACTAMENTE en el centro: el mismo lugar
+   y tamaño que tenía en la presentación de inicio (ver .intro más abajo). */
 .hero {
-  padding: clamp(4rem, 9vw, 7rem) 0 var(--space-xl);
+  margin-top: -88px;      /* compensa el padding-top de main (header fijo) */
+  padding: 88px 0;
 }
 
 .hero__inner {
   max-width: 880px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
+  min-height: calc(100vh - 176px);
+  min-height: calc(100svh - 176px);
+  display: grid;
+  grid-template-rows: 1fr auto 1fr;   /* título | logo | texto */
+  justify-items: center;
   text-align: center;
 }
 
@@ -22,6 +26,8 @@
   letter-spacing: -0.03em;
   line-height: 0.95;
   text-wrap: balance;
+  align-self: end;
+  padding-bottom: 0.5rem;
   /* leve sombreado para que se lea sobre la marca de fondo */
   text-shadow:
     0 2px 16px rgba(22, 13, 12, 0.14),
@@ -34,6 +40,8 @@
   max-width: 520px;
   line-height: 1.5;
   text-wrap: pretty;
+  align-self: start;
+  padding-top: 0.5rem;
 }
 
 /* ---------- PRESENTACIÓN DE INICIO ---------- */
@@ -41,7 +49,7 @@
    agrega html.is-playing cuando el logo ya cargó y recién ahí arrancan las
    animaciones. Así, en celulares con conexión lenta no se "pierde" la intro. */
 :root {
-  --mark-w: min(80vw, 900px);
+  --mark-w: min(80vw, 640px);
   --intro-hold: 2.7s;   /* cuándo empieza a salir la presentación */
   --intro-out: 0.9s;    /* duración del cruce hacia la web */
 }
@@ -145,12 +153,9 @@ html.is-playing .intro__bar span {
 }
 
 /* ---------- MARCA TRASLÚCIDA DEL HERO ---------- */
-/* Va entre "Tu socio digital" y el texto. Con el scroll baja y se desvanece (js/main.js). */
+/* Va entre "Tu socio digital" y el texto, centrado en la pantalla. Con el scroll baja y se desvanece (js/main.js). */
 .hero-mark {
-  --hero-mark-w: min(74vw, 420px);
-  width: var(--hero-mark-w);
-  /* recorta el aire transparente del PNG para que el espaciado sea parejo */
-  margin: calc(var(--hero-mark-w) * -0.08) auto calc(var(--hero-mark-w) * -0.12);
+  width: var(--mark-w);   /* mismo tamaño que el logo de la presentación */
   pointer-events: none;
   will-change: transform, opacity;
 }
