@@ -444,10 +444,11 @@
   right: -40px;
   width: 480px;
   height: 480px;
-  background-image: url('../images/Logos/logosinfondo.png');
+  background-image: url('../images/Logos/logo-marco-studio.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: bottom right;
+  filter: brightness(0) invert(1); /* silueta blanca sobre el degradé */
   opacity: 0.1;
   pointer-events: none;
 }
