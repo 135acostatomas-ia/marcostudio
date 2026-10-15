@@ -400,10 +400,11 @@ html.is-playing .hero-mark__img {
   color: transparent;
 }
 
-/* Números en coral (con un leve degradé hacia un tono más profundo) */
-.process__num span {
-  background-image: linear-gradient(135deg, var(--color-coral), #C9503A);
-}
+/* Números en coral con degradé propio por paso (como los originales: del más claro al más profundo, terminando en el marrón del logo) */
+.process__step:nth-child(1) .process__num span { background-image: linear-gradient(135deg, #F2937A, #E2664A); }
+.process__step:nth-child(2) .process__num span { background-image: linear-gradient(135deg, #E87A5F, #D45A41); }
+.process__step:nth-child(3) .process__num span { background-image: linear-gradient(135deg, #E2664A, #7A3322); }
+.process__step:nth-child(4) .process__num span { background-image: linear-gradient(135deg, #E2664A, #3D2314); }
 
 .process__step h3 {
   font-family: var(--font-display);
