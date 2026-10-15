@@ -794,6 +794,13 @@ section[id] {
   transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* Mientras entran, las tarjetas usan SIEMPRE la transición de entrada (si no, el
+   `transition` propio de cada tarjeta la pisa y entran de golpe). Al terminar,
+   js/main.js agrega .reveal-done y la tarjeta vuelve a su transición de hover. */
+.reveal:not(.reveal-done) {
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 .reveal--from-left {
   transform: translateX(-90px);
 }

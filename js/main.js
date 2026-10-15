@@ -41,8 +41,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target);
+        const el = entry.target;
+        el.classList.add('is-visible');
+        observer.unobserve(el);
+        // Cuando termina la entrada, se quita el retraso escalonado: si no, queda
+        // pegado y todos los efectos hover de la tarjeta responden con 0.1–0.3 s de demora.
+        const delay = (parseFloat(el.style.transitionDelay) || 0) * 1000;
+        setTimeout(() => {
+          el.style.transitionDelay = '';
+          el.classList.add('reveal-done');
+        }, delay + 900);
       }
     });
   }, {
@@ -145,16 +153,28 @@ document.addEventListener('DOMContentLoaded', () => {
     !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   if (canTilt) {
+    const FOLLOW = 'transform 0.12s ease-out, background-size 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.4s ease';
+    const SETTLE = 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), background-size 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.4s ease';
+
     document.querySelectorAll('.service-card').forEach(card => {
-      card.addEventListener('mousemove', (e) => {
+      let frame = 0, ex = 0, ey = 0;
+
+      const tilt = () => {
+        frame = 0;
         const r = card.getBoundingClientRect();
-        const x = (e.clientX - r.left) / r.width - 0.5;
-        const y = (e.clientY - r.top) / r.height - 0.5;
-        card.style.transition = 'transform 0.12s ease-out, background-size 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.4s ease';
+        const x = (ex - r.left) / r.width - 0.5;
+        const y = (ey - r.top) / r.height - 0.5;
         card.style.transform = `perspective(1000px) translateY(-6px) rotateX(${(-y * 10).toFixed(2)}deg) rotateY(${(x * 12).toFixed(2)}deg)`;
+      };
+
+      card.addEventListener('mouseenter', () => { card.style.transition = FOLLOW; });
+      card.addEventListener('mousemove', (e) => {
+        ex = e.clientX; ey = e.clientY;
+        if (!frame) frame = requestAnimationFrame(tilt);   // una vez por cuadro
       });
       card.addEventListener('mouseleave', () => {
-        card.style.transition = 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), background-size 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.4s ease';
+        cancelAnimationFrame(frame); frame = 0;
+        card.style.transition = SETTLE;
         card.style.transform = '';
       });
     });
