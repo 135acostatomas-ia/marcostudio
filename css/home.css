@@ -237,12 +237,8 @@ html.is-playing .hero-mark__img {
 .service-card {
   position: relative;
   will-change: transform;
-  --mx: 50%;
-  --my: 50%;
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  padding: 0.75rem;
+  display: block;
+  scroll-margin-top: 104px;
   border-radius: 20px;
   border: 1px solid var(--color-line);
   background-color: var(--color-surface);
@@ -252,6 +248,36 @@ html.is-playing .hero-mark__img {
   background-size: 100% 0%;
   transition: background-size 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, transform var(--transition), box-shadow var(--transition);
 }
+
+/* Resumen de la tarjeta (lo que se ve cerrada). Es también el botón de abrir/cerrar */
+.service-card__main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 0.75rem;
+  height: 100%;
+}
+
+/* El título es un <button> estirado: toda la tarjeta es clickeable sin anidar interactivos */
+.service-card__trigger {
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.service-card__trigger::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+}
+.service-card__trigger:focus-visible { outline: none; }
+.service-card__trigger:focus-visible::after { outline: 2px solid var(--color-coral); outline-offset: 2px; }
 
 /* :hover (mouse) + .is-touched / :active (táctil, ver js/main.js) */
 .service-card:hover,
@@ -263,13 +289,11 @@ html.is-playing .hero-mark__img {
   box-shadow: 0 24px 48px -24px rgba(59, 34, 19, 0.25);
 }
 
-
-
-.service-card__arrow { transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease; }
+.service-card__arrow { transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease, color 0.3s ease; }
 .service-card:hover .service-card__arrow,
 .service-card.is-touched .service-card__arrow,
 .service-card:active .service-card__arrow {
-  transform: translateX(3px);
+  transform: scale(1.08);
   background-color: var(--color-coral);   /* acento coral al pasar el mouse / tocar */
   color: #fff;
 }
@@ -345,6 +369,204 @@ html.is-playing .hero-mark__img {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+/* ---------- SERVICIOS: modo "abierto" (todo ocurre en la misma página) ---------- */
+.service-card__detail { display: none; }
+
+.services-grid.has-active { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+.service-card.is-active {
+  grid-column: 1 / -1;
+  order: -1;
+  display: grid;
+  grid-template-columns: var(--card-w, 290px) minmax(0, 1fr);
+  background-color: var(--color-surface);
+  background-size: 100% 0%;
+}
+.service-card.is-active,
+.service-card.is-active:hover,
+.service-card.is-active:active,
+.service-card.is-active.is-touched {
+  transform: none !important;
+  background-size: 100% 0% !important;
+  border-color: var(--color-accent);
+  box-shadow: none;
+}
+.service-card.is-active .service-card__main {
+  height: auto;
+  align-self: start;
+  position: sticky;
+  top: 104px;
+}
+.service-card.is-active .service-card__desc { margin-bottom: 0.25rem; }
+.service-card.is-active .service-card__arrow {
+  background-color: var(--color-coral);
+  color: #fff;
+}
+.service-card__arrow span { display: block; transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+.service-card.is-active .service-card__arrow span { transform: rotate(45deg); }
+.service-card.is-active .service-card__detail { display: block; }
+
+/* Las otras tres quedan como tiras compactas debajo */
+.services-grid.has-active .service-card:not(.is-active) .service-card__desc,
+.services-grid.has-active .service-card:not(.is-active) .service-card__mods { display: none; }
+.services-grid.has-active .service-card:not(.is-active) .service-card__main { gap: 0.75rem; }
+.services-grid.has-active .service-card:not(.is-active) .service-card__media { aspect-ratio: 16 / 5; }
+.services-grid.has-active .service-card:not(.is-active) .service-card__title { font-size: 1.125rem; }
+.services-grid.has-active .service-card:not(.is-active) .service-card__foot { margin-top: 0; justify-content: flex-end; }
+.services-grid.has-active .service-card:not(.is-active) .service-card__body { padding-top: 0; }
+
+/* Contenido desplegado */
+.detail {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2rem, 4vw, 2.75rem);
+  padding: clamp(1.5rem, 3vw, 2.25rem) clamp(1.25rem, 3vw, 2.5rem) clamp(1.5rem, 3vw, 2.25rem) clamp(0.5rem, 1.5vw, 1.25rem);
+}
+
+.detail__close {
+  position: absolute;
+  z-index: 3;
+  top: clamp(1rem, 2.5vw, 1.75rem);
+  right: clamp(1rem, 2.5vw, 1.75rem);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-line-strong);
+  background: transparent;
+  font: inherit;
+  font-size: var(--fs-small);
+  color: var(--color-ink);
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+.detail__close span { font-size: 1.125rem; line-height: 1; transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+.detail__close:hover { background: var(--color-coral); border-color: var(--color-coral); color: #fff; }
+.detail__close:hover span { transform: rotate(90deg); }
+
+.detail__intro { display: flex; flex-direction: column; align-items: flex-start; gap: 1.5rem; padding-right: 6.5rem; }
+.detail__lead {
+  font-size: clamp(1.0625rem, 1.5vw, 1.3125rem);
+  line-height: 1.55;
+  color: var(--color-ink);
+  max-width: 62ch;
+}
+
+.detail__kicker {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 0.5rem;
+}
+.detail__heading {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.5rem, 2.6vw, 2.125rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.25rem;
+}
+.detail__heading em { font-style: italic; font-weight: 300; }
+
+.problems { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem; }
+.problem {
+  padding: 1.25rem 1.375rem;
+  border-radius: 14px;
+  background: #fff;
+  border: 1px solid var(--color-line);
+  transition: border-color 0.3s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.problem:hover { border-color: var(--color-accent); transform: translateY(-3px); }
+.problem__q {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.0625rem;
+  line-height: 1.3;
+  margin-bottom: 0.625rem;
+}
+.problem__a { color: var(--color-muted); font-size: var(--fs-small); line-height: 1.55; }
+
+.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr)); gap: 1.25rem; }
+.step { padding-top: 1rem; border-top: 2px solid var(--color-line); transition: border-color 0.3s ease; }
+.step:hover { border-top-color: var(--color-coral); }
+.step__num { display: block; font-family: var(--font-mono); font-size: 0.6875rem; letter-spacing: 0.06em; color: var(--color-coral); margin-bottom: 0.5rem; }
+.step__title { font-family: var(--font-display); font-weight: 600; font-size: 1.0625rem; letter-spacing: -0.01em; margin-bottom: 0.4rem; }
+.step__desc { color: var(--color-muted); font-size: var(--fs-small); line-height: 1.55; }
+
+.showreel {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  min-height: 180px;
+  border-radius: 14px;
+  background: var(--color-placeholder) repeating-linear-gradient(135deg, transparent 0 11px, rgba(59, 34, 19, 0.04) 11px 12px);
+}
+.showreel__play {
+  width: 56px; height: 56px; flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--color-coral); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+}
+.showreel__title { font-family: var(--font-display); font-size: 1.375rem; }
+
+.detail__cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  border-radius: 18px;
+  background: var(--color-sage-soft);
+  border: 1px solid rgba(100, 127, 120, 0.25);
+}
+.detail__cta-title { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.375rem, 2.2vw, 1.75rem); line-height: 1.1; letter-spacing: -0.03em; max-width: 24ch; }
+.detail__cta-title em { font-style: italic; font-weight: 300; }
+.detail__cta-sub { color: var(--color-muted); font-size: var(--fs-small); margin-top: 0.5rem; max-width: 46ch; }
+.detail__cta-btns { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+
+/* Los bloques entran escalonados cuando se abre la tarjeta */
+.service-card.is-active .d-item {
+  animation: detail-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: calc(0.35s + var(--i, 0) * 0.07s);
+}
+@keyframes detail-in {
+  from { opacity: 0; transform: translateY(22px); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (max-width: 1000px) {
+  .service-card.is-active { grid-template-columns: minmax(0, 1fr); }
+  .service-card.is-active .service-card__main { position: relative; top: auto; }
+  .service-card.is-active .service-card__media { aspect-ratio: 16 / 7; }
+  .detail { padding: 0.5rem clamp(1rem, 4vw, 1.5rem) 1.5rem; }
+  .detail__close { top: auto; right: auto; position: relative; align-self: flex-start; order: -1; }
+  .detail__intro { padding-right: 0; }
+}
+
+@media (max-width: 700px) {
+  .services-grid.has-active { grid-template-columns: minmax(0, 1fr); }
+  .problems { grid-template-columns: minmax(0, 1fr); }
+  .services-grid.has-active .service-card:not(.is-active) .service-card__main { flex-direction: row; align-items: center; gap: 0.875rem; }
+  .services-grid.has-active .service-card:not(.is-active) .service-card__media { aspect-ratio: auto; width: 64px; height: 64px; flex-shrink: 0; padding: 0.5rem; }
+  .services-grid.has-active .service-card:not(.is-active) .service-card__media span:last-child { display: none; }
+  .services-grid.has-active .service-card:not(.is-active) .service-card__body { flex: 1; padding: 0; }
+  .services-grid.has-active .service-card:not(.is-active) .service-card__foot { padding: 0 0.5rem 0 0; }
+  .detail__cta-btns .btn { flex: 1 1 auto; justify-content: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-card.is-active .d-item { animation: none; }
 }
 
 /* ---------- PROCESO ---------- */

@@ -1,0 +1,8 @@
+{
+  "redirects": [
+    { "source": "/pages/marketing.html", "destination": "/#servicio-marketing", "permanent": false },
+    { "source": "/pages/ecommerce.html", "destination": "/#servicio-ecommerce", "permanent": false },
+    { "source": "/pages/desarrollo.html", "destination": "/#servicio-desarrollo", "permanent": false },
+    { "source": "/pages/produccion.html", "destination": "/#servicio-produccion", "permanent": false }
+  ]
+}

@@ -48,19 +48,19 @@
               <svg viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
             <div class="nav__dropdown-menu">
-              <a href="pages/marketing.html" class="nav__dropdown-link">
+              <a href="#servicio-marketing" class="nav__dropdown-link">
                 <strong>Marketing Digital</strong>
                 <small>Estrategia, contenidos y ads</small>
               </a>
-              <a href="pages/ecommerce.html" class="nav__dropdown-link">
+              <a href="#servicio-ecommerce" class="nav__dropdown-link">
                 <strong>E-commerce</strong>
                 <small>Tiendas online que convierten</small>
               </a>
-              <a href="pages/desarrollo.html" class="nav__dropdown-link">
+              <a href="#servicio-desarrollo" class="nav__dropdown-link">
                 <strong>Desarrollo Web</strong>
                 <small>Landings y webs institucionales</small>
               </a>
-              <a href="pages/produccion.html" class="nav__dropdown-link">
+              <a href="#servicio-produccion" class="nav__dropdown-link">
                 <strong>Producción de Contenido</strong>
                 <small>Foto y video profesional</small>
               </a>
@@ -85,10 +85,10 @@
       <li>
         <span class="mobile-menu__link">Servicios</span>
         <div class="mobile-menu__submenu">
-          <a href="pages/marketing.html">Marketing Digital</a>
-          <a href="pages/ecommerce.html">E-commerce</a>
-          <a href="pages/desarrollo.html">Desarrollo Web</a>
-          <a href="pages/produccion.html">Producción de Contenido</a>
+          <a href="#servicio-marketing">Marketing Digital</a>
+          <a href="#servicio-ecommerce">E-commerce</a>
+          <a href="#servicio-desarrollo">Desarrollo Web</a>
+          <a href="#servicio-produccion">Producción de Contenido</a>
         </div>
       </li>
       <li><a href="#contacto" class="mobile-menu__link">Contacto</a></li>
@@ -123,50 +123,311 @@
           <p class="home-head__sub">Cuatro áreas que se combinan según lo que tu negocio necesite.</p>
         </div>
         <div class="services-grid">
-          <a href="pages/marketing.html" class="service-card reveal" style="transition-delay: 0s;">
-            <div class="service-card__media"><span>01</span><span style="color: var(--color-muted-2); font-size: 0.625rem; letter-spacing: 0.08em; text-transform: uppercase;">Imagen · campaña</span></div>
-            <div class="service-card__body">
-              <h3 class="service-card__title">Marketing Digital</h3>
-              <p class="service-card__desc">Estrategia, contenidos, ads y email marketing que generan resultados medibles.</p>
+          <article id="servicio-marketing" class="service-card reveal" data-service="marketing" style="transition-delay: 0s;">
+            <div class="service-card__main">
+              <div class="service-card__media"><span>01</span><span style="color: var(--color-muted-2); font-size: 0.625rem; letter-spacing: 0.08em; text-transform: uppercase;">Imagen · campaña</span></div>
+              <div class="service-card__body">
+                <h3 class="service-card__title"><button type="button" class="service-card__trigger" aria-expanded="false" aria-controls="detalle-marketing">Marketing Digital</button></h3>
+                <p class="service-card__desc">Estrategia, contenidos, ads y email marketing que generan resultados medibles.</p>
+              </div>
+              <div class="service-card__foot">
+                <div class="service-card__mods"><span>Starter</span><span>Growth</span></div>
+                <span class="service-card__arrow" aria-hidden="true"><span>+</span></span>
+              </div>
             </div>
-            <div class="service-card__foot">
-              <div class="service-card__mods"><span>Starter</span><span>Growth</span></div>
-              <span class="service-card__arrow">→</span>
+            <div class="service-card__detail" id="detalle-marketing" role="region" aria-label="Marketing Digital" inert>
+              <div class="detail">
+                <button type="button" class="detail__close"><span aria-hidden="true">×</span> Cerrar</button>
+                <div class="detail__intro d-item" style="--i: 9">
+                  <p class="detail__lead">Estrategia, contenidos, ads y email marketing para que tu marca crezca con resultados medibles. Pensamos cada acción con criterio y medimos cada peso invertido.</p>
+                  <a href="#contacto" class="btn btn--primary">Hablemos de tu marca →</a>
+                </div>
+                <div class="detail__block">
+                  <span class="detail__kicker">Problemas que escuchamos</span>
+                  <h4 class="detail__heading">Qué <em>resolvemos</em></h4>
+                  <div class="problems">
+              <div class="problem d-item" style="--i: 1">
+                <p class="problem__q">"No tengo tiempo de manejar mis redes."</p>
+                <p class="problem__a">Nos hacemos cargo: planificación, producción y publicación, mientras vos seguís enfocado en tu negocio.</p>
+              </div>
+              <div class="problem d-item" style="--i: 2">
+                <p class="problem__q">"Publico pero no veo resultados."</p>
+                <p class="problem__a">Diseñamos una estrategia con objetivos claros y medibles, no solo contenido por publicar.</p>
+              </div>
+              <div class="problem d-item" style="--i: 3">
+                <p class="problem__q">"No sé cómo hacer ads que conviertan."</p>
+                <p class="problem__a">Configuramos campañas con tracking real para que sepas exactamente qué te trae cada peso invertido.</p>
+              </div>
+              <div class="problem d-item" style="--i: 4">
+                <p class="problem__q">"Mi marca se ve poco profesional."</p>
+                <p class="problem__a">Construimos un sistema visual coherente que eleva la percepción de tu marca en todos los canales.</p>
+              </div>
+                  </div>
+                </div>
+          <div class="detail__block">
+            <span class="detail__kicker">Cómo lo hacemos</span>
+            <h4 class="detail__heading">Nuestra <em>metodología</em></h4>
+            <ol class="steps">
+              <li class="step d-item" style="--i: 5">
+                <span class="step__num">01 / Análisis</span>
+                <h5 class="step__title">Marca y competencia</h5>
+                <p class="step__desc">Auditamos tu presencia digital actual, identificamos oportunidades y analizamos a tu competencia directa.</p>
+              </li>
+              <li class="step d-item" style="--i: 6">
+                <span class="step__num">02 / Plan</span>
+                <h5 class="step__title">Estrategia de contenidos</h5>
+                <p class="step__desc">Calendario editorial, líneas de contenido y plan de ads alineados a tus objetivos comerciales.</p>
+              </li>
+              <li class="step d-item" style="--i: 7">
+                <span class="step__num">03 / Acción</span>
+                <h5 class="step__title">Producción y publicación</h5>
+                <p class="step__desc">Ejecutamos día a día con calidad consistente. Diseño, copy, edición de reels y gestión integral.</p>
+              </li>
+              <li class="step d-item" style="--i: 8">
+                <span class="step__num">04 / Medición</span>
+                <h5 class="step__title">Análisis y optimización</h5>
+                <p class="step__desc">Reportes claros con métricas reales, no números de vanidad. Iteramos lo que funciona y descartamos lo que no.</p>
+              </li>
+            </ol>
+          </div>
+                <div class="detail__cta d-item" style="--i: 10">
+                  <div>
+                    <h4 class="detail__cta-title">¿Querés escalar tu <em>marca digital</em>?</h4>
+                    <p class="detail__cta-sub">Llamada consultiva de 30 min, sin cargo. Te decimos honestamente si podemos ayudarte y cómo.</p>
+                  </div>
+                  <div class="detail__cta-btns">
+                    <a href="#contacto" class="btn btn--primary">Agendá una llamada</a>
+                    <a href="https://wa.me/541100000000" class="btn btn--secondary" target="_blank" rel="noopener">WhatsApp</a>
+                  </div>
+                </div>
+              </div>
             </div>
-          </a>
-          <a href="pages/ecommerce.html" class="service-card reveal" style="transition-delay: 0.1s;">
-            <div class="service-card__media"><span>02</span><span style="color: var(--color-muted-2); font-size: 0.625rem; letter-spacing: 0.08em; text-transform: uppercase;">Imagen · tienda</span></div>
-            <div class="service-card__body">
-              <h3 class="service-card__title">E-commerce</h3>
-              <p class="service-card__desc">Catálogos, Tiendanube, Shopify y WooCommerce. Tiendas online que convierten.</p>
+          </article>
+          <article id="servicio-ecommerce" class="service-card reveal" data-service="ecommerce" style="transition-delay: 0.1s;">
+            <div class="service-card__main">
+              <div class="service-card__media"><span>02</span><span style="color: var(--color-muted-2); font-size: 0.625rem; letter-spacing: 0.08em; text-transform: uppercase;">Imagen · tienda</span></div>
+              <div class="service-card__body">
+                <h3 class="service-card__title"><button type="button" class="service-card__trigger" aria-expanded="false" aria-controls="detalle-ecommerce">E-commerce</button></h3>
+                <p class="service-card__desc">Catálogos, Tiendanube, Shopify y WooCommerce. Tiendas online que convierten.</p>
+              </div>
+              <div class="service-card__foot">
+                <div class="service-card__mods"><span>Catálogo</span><span>Tiendanube</span><span>WooCommerce</span></div>
+                <span class="service-card__arrow" aria-hidden="true"><span>+</span></span>
+              </div>
             </div>
-            <div class="service-card__foot">
-              <div class="service-card__mods"><span>Catálogo</span><span>Tiendanube</span><span>WooCommerce</span></div>
-              <span class="service-card__arrow">→</span>
+            <div class="service-card__detail" id="detalle-ecommerce" role="region" aria-label="E-commerce" inert>
+              <div class="detail">
+                <button type="button" class="detail__close"><span aria-hidden="true">×</span> Cerrar</button>
+                <div class="detail__intro d-item" style="--i: 9">
+                  <p class="detail__lead">Desde catálogos profesionales con WhatsApp hasta tiendas completas en Tiendanube, Shopify o WooCommerce. Te ayudamos a elegir la plataforma correcta para tu negocio y la implementamos de punta a punta.</p>
+                  <a href="#contacto" class="btn btn--primary">Quiero vender online →</a>
+                </div>
+                <div class="detail__block">
+                  <span class="detail__kicker">Problemas que escuchamos</span>
+                  <h4 class="detail__heading">Qué <em>resolvemos</em></h4>
+                  <div class="problems">
+              <div class="problem d-item" style="--i: 1">
+                <p class="problem__q">"Quiero vender online pero no sé por dónde empezar."</p>
+                <p class="problem__a">Te asesoramos para elegir la plataforma correcta y nos hacemos cargo de toda la implementación.</p>
+              </div>
+              <div class="problem d-item" style="--i: 2">
+                <p class="problem__q">"Mi tienda actual no convierte."</p>
+                <p class="problem__a">Auditamos checkout, fichas de producto y velocidad. Optimizamos para que más visitas terminen en venta.</p>
+              </div>
+              <div class="problem d-item" style="--i: 3">
+                <p class="problem__q">"No quiero pagar comisiones por venta."</p>
+                <p class="problem__a">Te armamos tu propia tienda en WooCommerce: 100% tuya, sin comisiones de plataforma.</p>
+              </div>
+              <div class="problem d-item" style="--i: 4">
+                <p class="problem__q">"Necesito integrar pagos y envíos."</p>
+                <p class="problem__a">Mercado Pago, MODO, Andreani, OCA, Mercado Envíos. Configuramos todo y lo dejamos funcionando.</p>
+              </div>
+                  </div>
+                </div>
+          <div class="detail__block">
+            <span class="detail__kicker">Cómo lo hacemos</span>
+            <h4 class="detail__heading">Nuestra <em>metodología</em></h4>
+            <ol class="steps">
+              <li class="step d-item" style="--i: 5">
+                <span class="step__num">01 / Análisis</span>
+                <h5 class="step__title">Producto y mercado</h5>
+                <p class="step__desc">Estudiamos tu catálogo, volumen, logística y tipo de cliente para definir la solución correcta.</p>
+              </li>
+              <li class="step d-item" style="--i: 6">
+                <span class="step__num">02 / Elección</span>
+                <h5 class="step__title">Plataforma adecuada</h5>
+                <p class="step__desc">No vendemos la misma solución a todos. Recomendamos la plataforma que mejor se adapta a tu negocio.</p>
+              </li>
+              <li class="step d-item" style="--i: 7">
+                <span class="step__num">03 / Setup</span>
+                <h5 class="step__title">Implementación técnica</h5>
+                <p class="step__desc">Carga de productos, configuración de pagos y envíos, integraciones, diseño a medida.</p>
+              </li>
+              <li class="step d-item" style="--i: 8">
+                <span class="step__num">04 / Entrega</span>
+                <h5 class="step__title">Capacitación + soporte</h5>
+                <p class="step__desc">Te enseñamos a gestionar tu tienda y te acompañamos los primeros meses.</p>
+              </li>
+            </ol>
+          </div>
+                <div class="detail__cta d-item" style="--i: 10">
+                  <div>
+                    <h4 class="detail__cta-title">¿Listos para <em>vender online</em>?</h4>
+                    <p class="detail__cta-sub">Llamada consultiva de 30 min, sin cargo. Te decimos honestamente qué plataforma te conviene.</p>
+                  </div>
+                  <div class="detail__cta-btns">
+                    <a href="#contacto" class="btn btn--primary">Agendá una llamada</a>
+                    <a href="https://wa.me/541100000000" class="btn btn--secondary" target="_blank" rel="noopener">WhatsApp</a>
+                  </div>
+                </div>
+              </div>
             </div>
-          </a>
-          <a href="pages/desarrollo.html" class="service-card reveal" style="transition-delay: 0.2s;">
-            <div class="service-card__media"><span>03</span><span style="color: var(--color-muted-2); font-size: 0.625rem; letter-spacing: 0.08em; text-transform: uppercase;">Imagen · web</span></div>
-            <div class="service-card__body">
-              <h3 class="service-card__title">Desarrollo Web</h3>
-              <p class="service-card__desc">Landings de alta conversión y webs institucionales con identidad propia.</p>
+          </article>
+          <article id="servicio-desarrollo" class="service-card reveal" data-service="desarrollo" style="transition-delay: 0.2s;">
+            <div class="service-card__main">
+              <div class="service-card__media"><span>03</span><span style="color: var(--color-muted-2); font-size: 0.625rem; letter-spacing: 0.08em; text-transform: uppercase;">Imagen · web</span></div>
+              <div class="service-card__body">
+                <h3 class="service-card__title"><button type="button" class="service-card__trigger" aria-expanded="false" aria-controls="detalle-desarrollo">Desarrollo Web</button></h3>
+                <p class="service-card__desc">Landings de alta conversión y webs institucionales con identidad propia.</p>
+              </div>
+              <div class="service-card__foot">
+                <div class="service-card__mods"><span>Landing</span><span>Institucional</span></div>
+                <span class="service-card__arrow" aria-hidden="true"><span>+</span></span>
+              </div>
             </div>
-            <div class="service-card__foot">
-              <div class="service-card__mods"><span>Landing</span><span>Institucional</span></div>
-              <span class="service-card__arrow">→</span>
+            <div class="service-card__detail" id="detalle-desarrollo" role="region" aria-label="Desarrollo Web" inert>
+              <div class="detail">
+                <button type="button" class="detail__close"><span aria-hidden="true">×</span> Cerrar</button>
+                <div class="detail__intro d-item" style="--i: 9">
+                  <p class="detail__lead">Landings de alta conversión para campañas puntuales y webs institucionales para representar tu negocio. Diseño a medida, optimizadas en velocidad y pensadas mobile-first.</p>
+                  <a href="#contacto" class="btn btn--primary">Quiero mi web →</a>
+                </div>
+                <div class="detail__block">
+                  <span class="detail__kicker">Problemas que escuchamos</span>
+                  <h4 class="detail__heading">Qué <em>resolvemos</em></h4>
+                  <div class="problems">
+              <div class="problem d-item" style="--i: 1">
+                <p class="problem__q">"Mi web actual no representa mi negocio."</p>
+                <p class="problem__a">Diseñamos a medida, con identidad propia. Tu web debería ser una embajadora de tu marca, no un trámite.</p>
+              </div>
+              <div class="problem d-item" style="--i: 2">
+                <p class="problem__q">"Necesito una landing para mi campaña."</p>
+                <p class="problem__a">Landings de alta conversión, listas en 5-7 días, con tracking integrado para medir cada visita y cada conversión.</p>
+              </div>
+              <div class="problem d-item" style="--i: 3">
+                <p class="problem__q">"Mi sitio carga muy lento."</p>
+                <p class="problem__a">Optimizamos velocidad, imágenes y código. Google premia los sitios rápidos y los usuarios también.</p>
+              </div>
+              <div class="problem d-item" style="--i: 4">
+                <p class="problem__q">"Quiero algo profesional para mi empresa."</p>
+                <p class="problem__a">Webs institucionales completas con autogestión, blog y todo lo que necesitás para crecer.</p>
+              </div>
+                  </div>
+                </div>
+          <div class="detail__block">
+            <span class="detail__kicker">Cómo lo hacemos</span>
+            <h4 class="detail__heading">Nuestra <em>metodología</em></h4>
+            <ol class="steps">
+              <li class="step d-item" style="--i: 5">
+                <span class="step__num">01 / Brief</span>
+                <h5 class="step__title">Arquitectura de información</h5>
+                <p class="step__desc">Definimos objetivos, audiencia y estructura. Cada página tiene una intención clara.</p>
+              </li>
+              <li class="step d-item" style="--i: 6">
+                <span class="step__num">02 / Diseño</span>
+                <h5 class="step__title">Mockup en Figma</h5>
+                <p class="step__desc">Diseño visual completo antes de tocar código. Aprobás cada pantalla antes de desarrollar.</p>
+              </li>
+              <li class="step d-item" style="--i: 7">
+                <span class="step__num">03 / Código</span>
+                <h5 class="step__title">Desarrollo + optimización</h5>
+                <p class="step__desc">Código limpio, optimizado en velocidad, SEO on-page y accesibilidad básica.</p>
+              </li>
+              <li class="step d-item" style="--i: 8">
+                <span class="step__num">04 / Launch</span>
+                <h5 class="step__title">Lanzamiento + soporte</h5>
+                <p class="step__desc">Subida a hosting, configuración de dominio, capacitación y soporte primer mes.</p>
+              </li>
+            </ol>
+          </div>
+                <div class="detail__cta d-item" style="--i: 10">
+                  <div>
+                    <h4 class="detail__cta-title">¿Listos para tener una web <em>que enamore</em>?</h4>
+                    <p class="detail__cta-sub">Llamada consultiva de 30 min, sin cargo. Te asesoramos sobre qué te conviene.</p>
+                  </div>
+                  <div class="detail__cta-btns">
+                    <a href="#contacto" class="btn btn--primary">Agendá una llamada</a>
+                    <a href="https://wa.me/541100000000" class="btn btn--secondary" target="_blank" rel="noopener">WhatsApp</a>
+                  </div>
+                </div>
+              </div>
             </div>
-          </a>
-          <a href="pages/produccion.html" class="service-card reveal" style="transition-delay: 0.30000000000000004s;">
-            <div class="service-card__media"><span>04</span><span style="color: var(--color-muted-2); font-size: 0.625rem; letter-spacing: 0.08em; text-transform: uppercase;">Imagen · rodaje</span></div>
-            <div class="service-card__body">
-              <h3 class="service-card__title">Producción de Contenido</h3>
-              <p class="service-card__desc">Sesiones, contenido mensual y cobertura de eventos con identidad de marca.</p>
+          </article>
+          <article id="servicio-produccion" class="service-card reveal" data-service="produccion" style="transition-delay: 0.30000000000000004s;">
+            <div class="service-card__main">
+              <div class="service-card__media"><span>04</span><span style="color: var(--color-muted-2); font-size: 0.625rem; letter-spacing: 0.08em; text-transform: uppercase;">Imagen · rodaje</span></div>
+              <div class="service-card__body">
+                <h3 class="service-card__title"><button type="button" class="service-card__trigger" aria-expanded="false" aria-controls="detalle-produccion">Producción de Contenido</button></h3>
+                <p class="service-card__desc">Sesiones, contenido mensual y cobertura de eventos con identidad de marca.</p>
+              </div>
+              <div class="service-card__foot">
+                <div class="service-card__mods"><span>Sesión</span><span>Mensual</span><span>Evento</span></div>
+                <span class="service-card__arrow" aria-hidden="true"><span>+</span></span>
+              </div>
             </div>
-            <div class="service-card__foot">
-              <div class="service-card__mods"><span>Sesión</span><span>Mensual</span><span>Evento</span></div>
-              <span class="service-card__arrow">→</span>
+            <div class="service-card__detail" id="detalle-produccion" role="region" aria-label="Producción de Contenido" inert>
+              <div class="detail">
+                <button type="button" class="detail__close"><span aria-hidden="true">×</span> Cerrar</button>
+                <div class="detail__intro d-item" style="--i: 6">
+                  <p class="detail__lead">Producimos el contenido que tu marca necesita: sesiones puntuales, contenido recurrente cada mes y cobertura completa de eventos. Equipo profesional, edición con identidad y entrega lista para publicar.</p>
+                  <a href="#contacto" class="btn btn--primary">Hablemos de tu marca →</a>
+                </div>
+                <div class="detail__block">
+                  <span class="detail__kicker">Problemas que escuchamos</span>
+                  <h4 class="detail__heading">Qué <em>resolvemos</em></h4>
+                  <div class="problems">
+              <div class="problem d-item" style="--i: 1">
+                <p class="problem__q">"No tengo tiempo de generar contenido."</p>
+                <p class="problem__a">Nos hacemos cargo: producción, edición y entrega lista para publicar. Vos solo aprobás.</p>
+              </div>
+              <div class="problem d-item" style="--i: 2">
+                <p class="problem__q">"Mi contenido se ve poco profesional."</p>
+                <p class="problem__a">Equipo profesional, iluminación correcta y edición con identidad. El salto se nota.</p>
+              </div>
+              <div class="problem d-item" style="--i: 3">
+                <p class="problem__q">"Necesito cubrir un evento importante."</p>
+                <p class="problem__a">Cobertura completa, entrega exprés para historias y paquete completo en 7 días.</p>
+              </div>
+              <div class="problem d-item" style="--i: 4">
+                <p class="problem__q">"Mis fotos de producto no venden."</p>
+                <p class="problem__a">Sesiones de producto pensadas para conversión: clean shots, lifestyle y reels.</p>
+              </div>
+                  </div>
+                </div>
+          <div class="detail__block">
+            <span class="detail__kicker">Showreel</span>
+            <h4 class="detail__heading">Mirá una <em>selección</em></h4>
+            <div class="showreel d-item" style="--i: 5">
+              <span class="showreel__play" aria-hidden="true">▶</span>
+              <div>
+                <span class="detail__kicker">Video showreel del equipo</span>
+                <p class="showreel__title">2025 — selección de trabajos</p>
+              </div>
             </div>
-          </a>
+          </div>
+                <div class="detail__cta d-item" style="--i: 7">
+                  <div>
+                    <h4 class="detail__cta-title">¿Listos para subir el nivel <em>visual</em>?</h4>
+                    <p class="detail__cta-sub">Llamada consultiva de 30 min, sin cargo. Te decimos qué paquete te conviene.</p>
+                  </div>
+                  <div class="detail__cta-btns">
+                    <a href="#contacto" class="btn btn--primary">Agendá una llamada</a>
+                    <a href="https://wa.me/541100000000" class="btn btn--secondary" target="_blank" rel="noopener">WhatsApp</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -241,14 +502,14 @@
           <h2 class="home-head__title">Trabajos <em>seleccionados</em></h2>
         </div>
         <div class="works-grid">
-          <a href="pages/produccion.html" class="work-card reveal" style="transition-delay: 0s;">
+          <a href="#servicio-produccion" class="work-card reveal" style="transition-delay: 0s;">
             <span class="work-card__label">Foto · cobertura de evento</span>
             <div class="work-card__info">
               <span class="work-card__tag">Producción · Evento</span>
               <h3 class="work-card__title">Cumpleaños en Estadio River Plate</h3>
             </div>
           </a>
-          <a href="pages/produccion.html" class="work-card reveal" style="transition-delay: 0.1s;">
+          <a href="#servicio-produccion" class="work-card reveal" style="transition-delay: 0.1s;">
             <span class="work-card__label">Foto · local gastronómico</span>
             <div class="work-card__info">
               <span class="work-card__tag">Producción · Mensual</span>
@@ -344,10 +605,10 @@
         <div class="footer-col">
           <h4>Servicios</h4>
           <ul>
-            <li><a href="pages/marketing.html">Marketing Digital</a></li>
-            <li><a href="pages/ecommerce.html">E-commerce</a></li>
-            <li><a href="pages/desarrollo.html">Desarrollo Web</a></li>
-            <li><a href="pages/produccion.html">Producción de Contenido</a></li>
+            <li><a href="#servicio-marketing">Marketing Digital</a></li>
+            <li><a href="#servicio-ecommerce">E-commerce</a></li>
+            <li><a href="#servicio-desarrollo">Desarrollo Web</a></li>
+            <li><a href="#servicio-produccion">Producción de Contenido</a></li>
           </ul>
         </div>
 
