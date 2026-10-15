@@ -393,17 +393,31 @@ html.is-playing .hero-mark__img {
   border-color: transparent;
   box-shadow: none;
 }
-/* La tarjeta elegida es la que queda al centro, pintada; la info se despliega debajo */
+/* La tarjeta se "desarma": ya no hay caja, las piezas quedan centradas como encabezado */
 .service-card.is-active .service-card__main {
-  width: min(100%, var(--card-w, 290px));
+  width: min(100%, 780px);
   height: auto;
   margin: 0 auto;
+  align-items: center;
+  text-align: center;
+  gap: 1.1rem;
+  padding: 0.75rem 0 0;
+}
+.service-card.is-active .service-card__main > * { position: relative; z-index: 5; }
+.service-card.is-active .service-card__media { width: 100%; aspect-ratio: 21 / 8; }
+.service-card.is-active .service-card__body { align-items: center; padding: 0; gap: 0.75rem; }
+.service-card.is-active .service-card__title { font-size: clamp(2rem, 4.4vw, 3.25rem); line-height: 1; letter-spacing: -0.035em; }
+.service-card.is-active .service-card__desc { max-width: 46ch; font-size: 1rem; }
+.service-card.is-active .service-card__foot { margin-top: 0; padding: 0; justify-content: center; gap: 0.875rem; }
+.card-ghost {
+  position: absolute;
+  z-index: 4;
+  pointer-events: none;
   border-radius: 20px;
   border: 1px solid var(--color-accent);
   background: var(--gradient-hover);
   box-shadow: 0 24px 48px -28px rgba(59, 34, 19, 0.3);
 }
-.service-card.is-active .service-card__desc { margin-bottom: 0.25rem; }
 .service-card.is-active .service-card__arrow {
   background-color: var(--color-coral);
   color: #fff;
@@ -425,7 +439,7 @@ html.is-playing .hero-mark__img {
 
 .detail__close {
   position: absolute;
-  z-index: 3;
+  z-index: 8;
   top: clamp(1rem, 2.5vw, 1.75rem);
   right: clamp(1rem, 2.5vw, 1.75rem);
   display: inline-flex;
@@ -537,7 +551,7 @@ html.is-playing .hero-mark__img {
 /* Los bloques entran escalonados cuando se abre la tarjeta */
 .service-card.is-active .d-item {
   animation: detail-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
-  animation-delay: calc(0.35s + var(--i, 0) * 0.07s);
+  animation-delay: calc(0.6s + var(--i, 0) * 0.07s);
 }
 @keyframes detail-in {
   from { opacity: 0; transform: translateY(22px); }

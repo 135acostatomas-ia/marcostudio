@@ -296,6 +296,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const prev = active;
       const first = card.getBoundingClientRect();
       const others = cards.filter(c => c !== card);
+      // Piezas de la tarjeta: se miden donde están para que, al "desarmarse", viajen desde ahí
+      const PARTS = ['.service-card__media', '.service-card__title', '.service-card__desc', '.service-card__mods', '.service-card__arrow'];
+      const olds = (animate && first.width > 0)
+        ? PARTS.map(q => { const el = card.querySelector(q); return { el, r: el.getBoundingClientRect() }; })
+        : [];
 
       // 1) Las demás se apartan; la elegida "se levanta"
       let held = [];
@@ -309,44 +314,66 @@ document.addEventListener('DOMContentLoaded', () => {
         await wait(PHASE_OUT);
       }
 
-      // 2) Cambio de layout (la tarjeta pasa al frente, ocupa todo el ancho)
+      // 2) Cambio de layout: la tarjeta se "desarma" en piezas centradas
       card.style.transform = ''; card.style.transition = '';
-      grid.style.setProperty('--card-w', Math.round(first.width) + 'px');
       grid.classList.add('has-active');
       if (prev) setState(prev, false);
       setState(card, true);
       active = card;
       held.forEach(a => a.cancel());
-      const next = card.getBoundingClientRect();
+
+      // Fantasma de la tarjeta: queda en su lugar y se disuelve mientras las piezas salen volando
+      if (olds.length) {
+        const g = document.createElement('div');
+        g.className = 'card-ghost';
+        Object.assign(g.style, {
+          left: first.left + window.scrollX + 'px', top: first.top + window.scrollY + 'px',
+          width: first.width + 'px', height: first.height + 'px'
+        });
+        document.body.appendChild(g);
+        g.animate(
+          [{ opacity: 1, transform: 'scale(1)' }, { opacity: 0, transform: 'scale(1.07)' }],
+          { duration: 520, easing: 'ease-out', fill: 'forwards' }).finished.then(() => g.remove());
+      }
+
+      // Nuevas posiciones (antes de mover el scroll)
+      const moves = olds.map(o => ({ el: o.el, a: o.r, b: o.el.getBoundingClientRect() }));
+      const near = moves.length && moves.every(m =>
+        Math.abs(m.a.top - m.b.top) < window.innerHeight * 1.2 && Math.abs(m.a.left - m.b.left) < window.innerWidth);
 
       // 3) Scroll para que el panel quede a la vista
       const targetY = cardTop(card) - 104;
-      const inside = first.left >= next.left - 1 && first.right <= next.right + 1 &&
-                     first.top >= next.top - 1 && first.bottom <= next.bottom + 1;
-      if (opts.instant) scrollToY(targetY, false);
-      else if (inside && animate) scrollToY(targetY, true);
-      else scrollToY(targetY, false);
+      scrollToY(targetY, !!(animate && near));
 
       // 4) Entrada coreografiada
       if (animate) {
-        const main = card.querySelector('.service-card__main');
-        if (inside) {
-          // la tarjeta viaja desde su lugar hasta el centro
-          main.animate(
-            [{ transform: `translate(${first.left - next.left}px, ${first.top - next.top}px)` }, { transform: 'none' }],
-            { duration: 820, easing: EASE, fill: 'backwards' });
+        const TILT = [-5, 4, -7, 6, -9];
+        if (near) {
+          moves.forEach((m, i) => {
+            const cx = (m.a.left + m.a.width / 2) - (m.b.left + m.b.width / 2);
+            const cy = (m.a.top + m.a.height / 2) - (m.b.top + m.b.height / 2);
+            const isMedia = i === 0;
+            const k = isMedia ? 1 : Math.min(1.1, Math.max(0.4, m.a.height / (m.b.height || 1)));
+            const opts2 = { duration: 950, delay: i * 70, easing: 'cubic-bezier(0.22, 1.25, 0.36, 1)', fill: 'backwards' };
+            m.el.animate(
+              [{ transform: `translate(${cx}px, ${cy}px) rotate(${TILT[i]}deg) scale(${k})` }, { transform: 'none' }], opts2);
+            if (isMedia) {
+              // la imagen se abre como un telón desde el tamaño de la tarjeta hasta el ancho completo
+              const ix = Math.max(0, (m.b.width - m.a.width) / 2), iy = Math.max(0, (m.b.height - m.a.height) / 2);
+              m.el.animate(
+                [{ clipPath: `inset(${iy}px ${ix}px ${iy}px ${ix}px round 12px)` }, { clipPath: 'inset(0 0 0 0 round 12px)' }],
+                { duration: 950, delay: 60, easing: EASE, fill: 'backwards' });
+            }
+          });
         } else {
           card.animate(
             [{ opacity: 0, transform: 'translateY(36px) scale(0.97)' }, { opacity: 1, transform: 'none' }],
             { duration: 700, easing: EASE, fill: 'backwards' });
         }
-        // la información se despliega hacia abajo y hacia los costados, desde la tarjeta
+        // la información se despliega hacia abajo y hacia los costados, desde el centro
         detail(card).animate(
           [{ clipPath: 'inset(0 50% 100% 50%)' }, { clipPath: 'inset(0 0 0 0)' }],
-          { duration: 900, delay: 220, easing: EASE, fill: 'backwards' });
-        others.forEach((c, i) => c.animate(
-          [{ opacity: 0, transform: 'translateY(34px) scale(0.96)' }, { opacity: 1, transform: 'none' }],
-          { duration: 700, delay: 380 + i * 90, easing: EASE, fill: 'backwards' }));
+          { duration: 900, delay: 450, easing: EASE, fill: 'backwards' });
       }
 
       history.replaceState(null, '', '#' + card.id);
