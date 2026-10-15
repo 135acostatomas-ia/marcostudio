@@ -202,8 +202,8 @@ ol {
   width: 38px;
   height: 38px;
   border-radius: 10px;
-  background-image: url('../images/Logos/logosinfondo.png');
-  background-size: 182%;
+  background-image: url('../images/Logos/logo-marco-studio.png');
+  background-size: 150%;
   background-repeat: no-repeat;
   background-position: center;
   display: inline-block;
@@ -691,10 +691,6 @@ section[id] {
 .footer-brand .logo {
   color: var(--color-ink);
   margin-bottom: 1rem;
-}
-
-.footer-brand .logo__mark {
-  /* logosinfondo.png tiene fondo oscuro, se integra bien con el footer */
 }
 
 .footer-brand p {

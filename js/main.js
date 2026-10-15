@@ -50,7 +50,55 @@ document.addEventListener('DOMContentLoaded', () => {
     rootMargin: '0px 0px -50px 0px'
   });
 
-  reveals.forEach(el => observer.observe(el));
+  // ---------- PRESENTACIÓN DE INICIO ----------
+  // Mientras corre la presentación (css/home.css) se bloquea el scroll y las
+  // animaciones de entrada del hero esperan a que termine.
+  const intro = document.getElementById('intro');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let revealsStarted = false;
+
+  const startReveals = () => {
+    if (revealsStarted) return;
+    revealsStarted = true;
+    reveals.forEach(el => observer.observe(el));
+  };
+
+  if (intro && !reduceMotion) {
+    const root = document.documentElement;
+    root.classList.add('is-intro');
+    const finishIntro = () => {
+      root.classList.remove('is-intro');
+      startReveals();
+    };
+    intro.addEventListener('animationend', (e) => {
+      if (e.animationName === 'introOut') finishIntro();
+    });
+    setTimeout(finishIntro, 4200); // seguro por si la animación no corre
+  } else {
+    startReveals();
+  }
+
+  // ---------- MARCA DE FONDO DEL HERO ----------
+  // Baja con el scroll y se desvanece hasta desaparecer.
+  const heroMark = document.getElementById('hero-mark');
+  if (heroMark) {
+    let ticking = false;
+    const updateHeroMark = () => {
+      const y = window.scrollY;
+      const p = Math.min(y / (window.innerHeight * 0.6), 1);
+      heroMark.style.opacity = String(1 - p);
+      heroMark.style.transform = reduceMotion ? '' : `translate3d(0, ${(y * 0.45).toFixed(1)}px, 0)`;
+      heroMark.style.visibility = p >= 1 ? 'hidden' : 'visible';
+      ticking = false;
+    };
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(updateHeroMark);
+      }
+    }, { passive: true });
+    updateHeroMark();
+  }
 
   // ---------- FAQ ACCORDION ----------
   const faqItems = document.querySelectorAll('.faq-item');
