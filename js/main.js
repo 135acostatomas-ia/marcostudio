@@ -260,8 +260,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // ---------- SERVICIOS: se abren en la misma página ----------
-  // Clic en una tarjeta → las otras se apartan, la elegida pasa al frente y se
-  // despliega con la info del servicio. Sin cambiar de página.
+  // Clic en una tarjeta → las otras desaparecen, la elegida va al centro y se
+  // despliega hacia abajo con la info del servicio. Sin cambiar de página.
   (() => {
     const grid = document.querySelector('.services-grid');
     if (!grid) return;
@@ -331,12 +331,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (animate) {
         const main = card.querySelector('.service-card__main');
         if (inside) {
-          // el panel se abre alrededor de la tarjeta, que se desliza al frente
-          const clip = (t, r, b, l) => `inset(${t}px ${r}px ${b}px ${l}px round 20px)`;
-          card.animate(
-            [{ clipPath: clip(first.top - next.top, next.right - first.right, next.bottom - first.bottom, first.left - next.left) },
-             { clipPath: clip(0, 0, 0, 0) }],
-            { duration: 820, easing: EASE, fill: 'backwards' });
+          // la tarjeta viaja desde su lugar hasta el centro
           main.animate(
             [{ transform: `translate(${first.left - next.left}px, ${first.top - next.top}px)` }, { transform: 'none' }],
             { duration: 820, easing: EASE, fill: 'backwards' });
@@ -345,6 +340,10 @@ document.addEventListener('DOMContentLoaded', () => {
             [{ opacity: 0, transform: 'translateY(36px) scale(0.97)' }, { opacity: 1, transform: 'none' }],
             { duration: 700, easing: EASE, fill: 'backwards' });
         }
+        // la información se despliega hacia abajo y hacia los costados, desde la tarjeta
+        detail(card).animate(
+          [{ clipPath: 'inset(0 50% 100% 50%)' }, { clipPath: 'inset(0 0 0 0)' }],
+          { duration: 900, delay: 220, easing: EASE, fill: 'backwards' });
         others.forEach((c, i) => c.animate(
           [{ opacity: 0, transform: 'translateY(34px) scale(0.96)' }, { opacity: 1, transform: 'none' }],
           { duration: 700, delay: 380 + i * 90, easing: EASE, fill: 'backwards' }));
