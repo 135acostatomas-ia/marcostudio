@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Seleccioná los servicios que necesita tu negocio y armá una consulta a medida para Marco Studio.">
+  <title>Armá tu proyecto — Marco Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:ital,wght@0,400;0,500;0,600;0,700;1,300&family=Geist+Mono:wght@400;500&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/project.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="index.html" class="logo">
+        <span class="logo__mark"></span>
+        Marco<em style="font-style: italic; font-weight: 300;">Studio</em>
+      </a>
+      <nav class="nav">
+        <ul class="nav__list">
+          <li><a href="index.html" class="nav__link">Inicio</a></li>
+          <li><a href="index.html#servicios" class="nav__link">Servicios</a></li>
+          <li><a href="arma-tu-proyecto.html" class="nav__link is-active">Armá tu proyecto</a></li>
+          <li><a href="index.html#contacto" class="nav__link">Contacto</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu">
+    <ul class="mobile-menu__list">
+      <li><a href="index.html" class="mobile-menu__link">Inicio</a></li>
+      <li><a href="index.html#servicios" class="mobile-menu__link">Servicios</a></li>
+      <li><a href="arma-tu-proyecto.html" class="mobile-menu__link">Armá tu proyecto</a></li>
+      <li><a href="index.html#contacto" class="mobile-menu__link">Contacto</a></li>
+    </ul>
+  </div>
+
+  <main class="project-page">
+    <section class="project-hero">
+      <div class="container project-hero__inner">
+        <span class="eyebrow">Una propuesta a tu medida</span>
+        <h1>¿Qué necesita<br><em>tu negocio?</em></h1>
+        <p>No hace falta contratar todo. Elegí las áreas y tareas que te interesan y contanos brevemente en qué situación estás.</p>
+      </div>
+    </section>
+
+    <form class="project-form" id="project-form">
+      <div class="container">
+        <div class="project-grid">
+          <section class="project-area" aria-labelledby="area-marketing">
+            <div class="project-area__head">
+              <span>01</span>
+              <div>
+                <h2 id="area-marketing">Marketing Digital y Redes Sociales</h2>
+                <p>Elegí solamente lo que te gustaría trabajar.</p>
+              </div>
+            </div>
+            <div class="option-grid">
+              <label class="service-option"><input type="checkbox" name="Marketing y redes" value="Estrategia digital"><span>Estrategia digital</span></label>
+              <label class="service-option"><input type="checkbox" name="Marketing y redes" value="Social Media Management"><span>Social Media Management</span></label>
+              <label class="service-option"><input type="checkbox" name="Marketing y redes" value="Community Management"><span>Community Management</span></label>
+              <label class="service-option"><input type="checkbox" name="Marketing y redes" value="Planificación de contenidos"><span>Planificación de contenidos</span></label>
+              <label class="service-option"><input type="checkbox" name="Marketing y redes" value="Realización de contenido audiovisual"><span>Realización de contenido audiovisual</span></label>
+              <label class="service-option"><input type="checkbox" name="Marketing y redes" value="Diseño de piezas"><span>Diseño de piezas</span></label>
+              <label class="service-option"><input type="checkbox" name="Marketing y redes" value="Redacción de copys"><span>Redacción de copys</span></label>
+              <label class="service-option"><input type="checkbox" name="Marketing y redes" value="Publicidad digital"><span>Publicidad digital</span></label>
+              <label class="service-option"><input type="checkbox" name="Marketing y redes" value="Métricas e informes"><span>Métricas e informes</span></label>
+              <label class="service-option"><input type="checkbox" name="Marketing y redes" value="Google Business Profile"><span>Google Business Profile</span></label>
+            </div>
+          </section>
+
+          <section class="project-area" aria-labelledby="area-ecommerce">
+            <div class="project-area__head">
+              <span>02</span>
+              <div>
+                <h2 id="area-ecommerce">E-commerce</h2>
+                <p>Desde una tienda nueva hasta mejoras puntuales.</p>
+              </div>
+            </div>
+            <div class="option-grid">
+              <label class="service-option"><input type="checkbox" name="E-commerce" value="Crear una tienda online"><span>Crear una tienda online</span></label>
+              <label class="service-option"><input type="checkbox" name="E-commerce" value="Migrar una tienda existente"><span>Migrar una tienda existente</span></label>
+              <label class="service-option"><input type="checkbox" name="E-commerce" value="Configurar pagos y envíos"><span>Configurar pagos y envíos</span></label>
+              <label class="service-option"><input type="checkbox" name="E-commerce" value="Cargar u organizar productos"><span>Cargar u organizar productos</span></label>
+              <label class="service-option"><input type="checkbox" name="E-commerce" value="Redactar descripciones de productos"><span>Redactar descripciones de productos</span></label>
+              <label class="service-option"><input type="checkbox" name="E-commerce" value="Mejorar una tienda existente"><span>Mejorar una tienda existente</span></label>
+              <label class="service-option"><input type="checkbox" name="E-commerce" value="Integrar tienda y redes"><span>Integrar tienda y redes</span></label>
+              <label class="service-option"><input type="checkbox" name="E-commerce" value="Capacitación o soporte"><span>Capacitación o soporte</span></label>
+            </div>
+          </section>
+
+          <section class="project-area" aria-labelledby="area-web">
+            <div class="project-area__head">
+              <span>03</span>
+              <div>
+                <h2 id="area-web">Desarrollo Web</h2>
+                <p>Una web completa o una solución puntual sobre la que ya tenés.</p>
+              </div>
+            </div>
+            <div class="option-grid">
+              <label class="service-option"><input type="checkbox" name="Desarrollo web" value="Landing page"><span>Landing page</span></label>
+              <label class="service-option"><input type="checkbox" name="Desarrollo web" value="Web institucional"><span>Web institucional</span></label>
+              <label class="service-option"><input type="checkbox" name="Desarrollo web" value="Rediseño de una web existente"><span>Rediseño de una web existente</span></label>
+              <label class="service-option"><input type="checkbox" name="Desarrollo web" value="Formulario personalizado"><span>Formulario personalizado</span></label>
+              <label class="service-option"><input type="checkbox" name="Desarrollo web" value="Integraciones"><span>Integraciones</span></label>
+              <label class="service-option"><input type="checkbox" name="Desarrollo web" value="Carga de textos e imágenes"><span>Carga de textos e imágenes</span></label>
+              <label class="service-option"><input type="checkbox" name="Desarrollo web" value="Mantenimiento o mejoras"><span>Mantenimiento o mejoras</span></label>
+              <label class="service-option"><input type="checkbox" name="Desarrollo web" value="No estoy seguro, necesito orientación"><span>No estoy seguro, necesito orientación</span></label>
+            </div>
+          </section>
+        </div>
+
+        <section class="project-contact" aria-labelledby="project-contact-title">
+          <div class="project-contact__intro">
+            <span class="eyebrow">Último paso</span>
+            <h2 id="project-contact-title">Contanos un poco más</h2>
+            <p>No necesitás tener todo definido. Con esta información podemos orientarte mejor desde el primer mensaje.</p>
+            <div class="selection-count" aria-live="polite"><strong id="selection-count">0</strong> opciones seleccionadas</div>
+          </div>
+          <div class="project-contact__fields">
+            <label>Tu nombre<input type="text" name="nombre" autocomplete="name" required></label>
+            <label>Nombre del negocio<input type="text" name="negocio" autocomplete="organization"></label>
+            <label class="field-full">¿Qué tenés hoy y qué te gustaría mejorar?<textarea name="detalle" rows="5" placeholder="Por ejemplo: ya tengo una web, pero quiero sumar una tienda y empezar a trabajar las redes."></textarea></label>
+            <p class="form-error field-full" id="form-error" role="alert" hidden>Elegí al menos una opción para continuar.</p>
+            <button type="submit" class="project-submit field-full">Enviar selección por WhatsApp →</button>
+            <p class="form-note field-full">Al continuar se abrirá WhatsApp con tu selección. Podés revisar el mensaje antes de enviarlo.</p>
+          </div>
+        </section>
+      </div>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand">
+          <a href="index.html" class="logo"><span class="logo__mark"></span>Marco<em style="font-style: italic; font-weight: 300;">Studio</em></a>
+          <p>Marketing y redes, e-commerce y desarrollo web adaptados a cada negocio.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Servicios</h4>
+          <ul>
+            <li><a href="index.html#servicio-marketing">Marketing Digital y Redes</a></li>
+            <li><a href="index.html#servicio-ecommerce">E-commerce</a></li>
+            <li><a href="index.html#servicio-desarrollo">Desarrollo Web</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <ul>
+            <li><a href="mailto:digital.marcostudio@gmail.com">digital.marcostudio@gmail.com</a></li>
+            <li><a href="https://wa.me/5491164562757">+54 9 11 6456-2757</a></li>
+            <li>Buenos Aires, Argentina</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom"><span>© <span data-year>2026</span> Marco Studio.</span></div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/project.js"></script>
+</body>
+</html>

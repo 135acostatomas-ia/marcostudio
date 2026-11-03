@@ -999,6 +999,26 @@ html.is-playing .hero-mark__img {
 
 .home-cta__form button:hover { background: var(--color-ink); }
 
+.home-cta__selector {
+  align-self: stretch;
+  justify-content: center;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.home-cta__selector h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.7rem);
+  line-height: 1;
+  letter-spacing: -0.035em;
+}
+
+.home-cta__selector p { color: rgba(59, 34, 19, 0.78); }
+.home-cta__selector .btn { align-self: flex-start; margin-top: 0.5rem; }
+
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 968px) {
   .plans {
