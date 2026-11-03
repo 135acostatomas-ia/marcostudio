@@ -18,9 +18,12 @@ marco-studio/
 └── vercel.json             → Redirige las viejas URLs /pages/*.html a la tarjeta correspondiente
 ```
 
-Cada servicio (Marketing, E-commerce, Desarrollo, Producción) vive dentro de su tarjeta en el Home:
+Cada servicio (Marketing y Redes, E-commerce y Desarrollo Web) vive dentro de su tarjeta en el Home:
 al hacer clic se despliega ahí mismo. Se puede enlazar directo con `index.html#servicio-marketing`
-(`-ecommerce`, `-desarrollo`, `-produccion`). El contacto vive en `index.html#contacto`.
+(`-ecommerce`, `-desarrollo`). El contacto vive en `index.html#contacto`.
+
+`arma-tu-proyecto.html` permite seleccionar módulos de las tres áreas y prepara una consulta
+ordenada para enviar por WhatsApp.
 
 ## Stack
 
